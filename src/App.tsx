@@ -36,7 +36,7 @@ function App() {
         {currentTab === 'balances' && <Balances />}
         {currentTab === 'payment' && <Payments />}
         {currentTab === 'paid' && <Paid />}
-        {/* {currentTab === 'report' && <Report />} */}
+        {currentTab === 'report' && <Report />}
       </div>
     </div>
   );

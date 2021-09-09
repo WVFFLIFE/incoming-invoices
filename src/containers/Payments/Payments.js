@@ -20,6 +20,7 @@ import {
   EditModalError,
   ErrorModal,
 } from 'components';
+import Search from 'components/Controls/Search';
 import {
   paginationParamsPaymentsSelector,
   getPayments,
@@ -207,7 +208,7 @@ const Payments = () => {
     customFilters.accountingDate.end ||
     customFilters.paymentDate.start ||
     customFilters.paymentDate.end
-  )
+  );
 
   return (
     <>
@@ -245,10 +246,14 @@ const Payments = () => {
           />
         </FlexWrapper>
         <FlexWrapper>
-          <SearchControl
+          <SearchControl 
             value={searchTerm}
             handleChangeValue={handleChangeSearchTerm}
           />
+          {/* <Search
+            value={searchTerm}
+            handleChangeSearchTerm={handleChangeSearchTerm}
+          /> */}
           <FiltersControls
             isActive={isActiveFilter}
           >

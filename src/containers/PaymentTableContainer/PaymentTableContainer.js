@@ -1,4 +1,4 @@
-import {useCallback} from 'react';
+import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   getPayments,
@@ -6,7 +6,7 @@ import {
   selectedInvoicesSelector,
   searchTermPaymentsSelector,
   selectedCooperativeSelector,
-  getPaymentsAbleToSelect
+  getPaymentsAbleToSelect,
 } from 'selectors';
 import {
   setSortParams,
@@ -16,7 +16,7 @@ import {
   rejectPayment,
   updateBankAccount,
   payInvoices,
-  setPayNowStatus
+  setPayNowStatus,
 } from 'actions/paymentsActions';
 import PaymentsTableView from 'components/PaymentsTableView';
 
@@ -26,19 +26,21 @@ const PaymentTableContainer = () => {
     invoices, sortParams, searchTerm,
     selectedInvoices, isPayNow,
     selectedCooperatives, paymentsAbleToSelect
-  } = useSelector(state => ({
-    invoices: getPayments(state),
-    sortParams: sortPaymentsSelector(state),
-    searchTerm: searchTermPaymentsSelector(state),
-    selectedInvoices: selectedInvoicesSelector(state),
-    isPayNow: state.payments.isPayNow,
-    selectedCooperatives: selectedCooperativeSelector(state),
-    selectedAll: state.payments.selectedAll,
-    paymentsAbleToSelect: getPaymentsAbleToSelect(state),
-  }))
+  } = useSelector(state => {
+    return {
+      invoices: getPayments(state),
+      sortParams: sortPaymentsSelector(state),
+      searchTerm: searchTermPaymentsSelector(state),
+      selectedInvoices: selectedInvoicesSelector(state),
+      isPayNow: state.payments.isPayNow,
+      selectedCooperatives: selectedCooperativeSelector(state),
+      selectedAll: state.payments.selectedAll,
+      paymentsAbleToSelect: getPaymentsAbleToSelect(state),
+    }
+  })
 
   const handleChangeSortParams = useCallback((...args) => {
-    dispatch(setSortParams(...args))
+    dispatch(setSortParams(...args));
   }, [dispatch]);
 
   const handleSelectInvoice = useCallback((id) => {
@@ -46,12 +48,11 @@ const PaymentTableContainer = () => {
   }, [dispatch]);
 
   const handleSelectAllInvoices = useCallback((e) => {
-    if (e.target.checked) {
-      dispatch(selectAllInvoices(paymentsAbleToSelect))
-    } else {
-      dispatch(selectAllInvoices([]))
-    }
-
+    dispatch(selectAllInvoices(
+      e.target.checked 
+        ? paymentsAbleToSelect
+        : []
+    ))
     /* eslint-disable-next-line */
   }, [dispatch, paymentsAbleToSelect])
 

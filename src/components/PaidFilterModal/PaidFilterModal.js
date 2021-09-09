@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+
 import {
   makeStyles,
   Button
@@ -6,11 +8,11 @@ import {
 import CloseIcon from '@material-ui/icons/Close';
 import Checkbox from 'components/Checkbox';
 import clsx from 'clsx';
-import DatePicker from 'components/DatePicker';
+import RangeDatePicker from 'components/Controls/RangeDatePicker';
 import CancelIcon from '@material-ui/icons/CancelPresentationOutlined';
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 import { MessageIcon, TimeIcon } from 'components/Icons'
-import { useTranslation } from 'react-i18next';
+
 
 const useStyles = makeStyles({
   title: {
@@ -172,17 +174,23 @@ const PaidFilterModal = ({
     })
   };
 
-  const handleChangeAccountingDate = (dates) => {
+  const handleChangeAccountingDate = (range) => {
     setFilterConfig(prevState => ({
       ...prevState,
-      accountingDate: { ...dates }
+      accountingDate: {
+        start: range.from,
+        end: range.to
+      }
     }))
   }
 
-  const handleChangePaymentDate = (dates) => {
+  const handleChangePaymentDate = (range) => {
     setFilterConfig(prevState => ({
       ...prevState,
-      paymentDate: { ...dates }
+      paymentDate: { 
+        start: range.from,
+        end: range.to,
+      }
     }))
   }
 
@@ -271,13 +279,13 @@ const PaidFilterModal = ({
           {t('#modal.filter.accountingdate')}
         </p>
         <div className={classes.filter}>
-          <DatePicker 
-            start={filterConfig.accountingDate.start}
-            end={filterConfig.accountingDate.end}
+          <RangeDatePicker 
+            from={filterConfig.accountingDate.start}
+            to={filterConfig.accountingDate.end}
             disabled={
               Boolean(filterConfig.paymentDate.start || filterConfig.paymentDate.end)
             }
-            handleChangeDate={handleChangeAccountingDate}
+            onChange={handleChangeAccountingDate}
           />
         </div>
       </div>
@@ -286,13 +294,13 @@ const PaidFilterModal = ({
           {t('#modal.filter.paymentdate')}
         </p>
         <div className={classes.filter}>
-          <DatePicker 
-            start={filterConfig.paymentDate.start}
-            end={filterConfig.paymentDate.end}
+          <RangeDatePicker 
+            from={filterConfig.paymentDate.start}
+            to={filterConfig.paymentDate.end}
             disabled={
               Boolean(filterConfig.accountingDate.start || filterConfig.accountingDate.end)
             }
-            handleChangeDate={handleChangePaymentDate}
+            onChange={handleChangePaymentDate}
           />
         </div>
       </div>

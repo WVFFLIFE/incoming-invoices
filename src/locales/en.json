@@ -119,5 +119,11 @@
   "#radio.paynow": "Pay now",
   "#radio.paytoduedate": "Pay according to due date",
   "#page.title": "Accounts Payable",
-  "#datepicker.empty": "Select date or range"
+  "#datepicker.empty": "Select date or range",
+  "#date.from": "From date",
+  "#date.to": "To date",
+  "#datepicker.filter.customrange": "Custom range",
+  "#datepicker.filter.previousyear": "Previous year",
+  "#datepicker.filter.currentyear": "Current year",
+  "#datepicker.filter.lastmonth": "Last month"
 }

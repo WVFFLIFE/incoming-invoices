@@ -421,3 +421,8 @@ export const hideUpdateDateErrorPopup = () => ({
 export const initPaymentsError = () => ({
   type: actionTypes.INIT_PAYMENTS_ERROR
 })
+
+export const setDefaultPaymentsSorting = (payload) => ({
+  type: actionTypes.SET_DEFAULT_PAYMENTS_SORTING,
+  payload,
+});

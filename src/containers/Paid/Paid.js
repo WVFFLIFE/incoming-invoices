@@ -59,7 +59,7 @@ const Paid = () => {
     totalItems: getTotalPaidInvoicesSelector(state),
     customFilters: customPaidInvoicesFiltersSelector(state),
     error: getPaidError(state)
-  }))
+  }));
 
   useEffect(() => {
     batch(() => {

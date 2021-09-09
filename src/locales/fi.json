@@ -114,5 +114,11 @@
   "#radio.paynow": "Maksa heti",
   "#radio.paytoduedate": "Maksa eräpäivänä",
   "#page.title": "Ostoreskontra",
-  "#datepicker.empty": "Valitse päivä tai aikajakso"
+  "#datepicker.empty": "Valitse päivä tai aikajakso",
+  "#date.from": "Aloituspäivä",
+  "#date.to": "Päättymispäivä",
+  "#datepicker.filter.customrange": "Valitse jakso",
+  "#datepicker.filter.previousyear": "Edellinen vuosi",
+  "#datepicker.filter.currentyear": "Kuluva vuosi",
+  "#datepicker.filter.lastmonth": "Edellinen kuukausi"
 }

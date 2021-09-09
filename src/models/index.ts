@@ -65,3 +65,12 @@ export interface UpdateMessagesModel {
   IsUpdated: string | null;
   Message: string;
 }
+
+export interface EnhancedBankAccountModel extends BankAccountModel {
+  Invoices: Omit<InvoiceModel, 'BankAccounts'>[];
+}
+
+export interface DefaultError {
+  status: boolean;
+  message: string;
+}

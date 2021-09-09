@@ -65,4 +65,7 @@ export const useStyles = makeStyles(() => ({
   inadequateBalances: {
     color: '#DB0041'
   },
+  mr20: {
+    marginRight: 20
+  }
 }));

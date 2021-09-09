@@ -51,10 +51,11 @@ const INITIAL_STATE = {
     popupOpen: false
   },
   isPayNow: 'paytoduedate',
-  editAccountingDate: null
+  editAccountingDate: null,
+  defaultSorting: true,
 }
 
-export default function (state = INITIAL_STATE, action) {
+function reducer (state = INITIAL_STATE, action) {
   switch (action.type) {
     case actionTypes.FETCH_PAYMENTS_REQUEST:
       return {
@@ -112,7 +113,8 @@ export default function (state = INITIAL_STATE, action) {
     case actionTypes.SET_PAYMENTS_SORT_PARAMS:
       return {
         ...state,
-        sortParams: action.payload
+        sortParams: action.payload,
+        defaultSorting: false
       }
     case actionTypes.INIT_PAYMENTS_SORT_PARAMS:
       return {
@@ -130,7 +132,8 @@ export default function (state = INITIAL_STATE, action) {
         paginationParams: {
           ...state.paginationParams,
           currentPage: 0
-        }
+        },
+        defaultSorting: false
       }
     case actionTypes.SELECT_PAYMENT:
       return {
@@ -149,7 +152,8 @@ export default function (state = INITIAL_STATE, action) {
         paginationParams: {
           ...state.paginationParams,
           currentPage: 0
-        }
+        },
+        defaultSorting: false
       }
     case actionTypes.INIT_PAYMENTS_FILTER:
       return {
@@ -163,7 +167,8 @@ export default function (state = INITIAL_STATE, action) {
         paginationParams: {
           ...state.paginationParams,
           currentPage: 0
-        }
+        },
+        defaultSorting: false
       }
     case actionTypes.UPDATE_REQUEST:
       return {
@@ -272,7 +277,8 @@ export default function (state = INITIAL_STATE, action) {
             end: null
           }
         },
-        isPayNow: 'paynow'
+        isPayNow: 'paynow',
+        defaultSorting: true
       }
     case actionTypes.SET_PAY_NOW_STATUS:
       return {
@@ -305,7 +311,14 @@ export default function (state = INITIAL_STATE, action) {
         ...state,
         loading: false
       }
+    case actionTypes.SET_DEFAULT_PAYMENTS_SORTING:
+      return {
+        ...state,
+        defaultSorting: action.payload
+      }
     default:
       return state
   }
 }
+
+export default reducer;

@@ -11,7 +11,9 @@ import {
   isThisMonth,
   isThisYear,
   isSameDay,
-  isWithinInterval
+  isWithinInterval,
+  startOfDay,
+  endOfDay
 } from 'date-fns';
 import {
   searchByType,
@@ -262,13 +264,15 @@ const filterByAccountingDate = (invoice, { start, end }) => {
   if (start) {
     if (end) {
       return isWithinInterval(
-        initTime(new Date(invoice.AccountingDate)),
-        { start, end }
+        new Date(invoice.AccountingDate),
+        { start: startOfDay(start), end: endOfDay(end) }
       )
     }
 
-    return isSameDay(new Date(invoice.AccountingDate), start)
+    return isSameDay(new Date(invoice.AccountingDate), initTime(start))
   }
+
+  return true;
 }
 
 const filterByPaymentDate = (invoice, { start, end }) => {
@@ -279,13 +283,15 @@ const filterByPaymentDate = (invoice, { start, end }) => {
   if (start) {
     if (end) {
       return isWithinInterval(
-        initTime(new Date(invoice.PaymentDate)),
-        { start, end }
+        new Date(invoice.PaymentDate),
+        { start: startOfDay(start), end: endOfDay(end) }
       )
     }
 
-    return isSameDay(new Date(invoice.PaymentDate), start)
+    return isSameDay(new Date(invoice.PaymentDate), initTime(start))
   }
+
+  return true;
 } 
 
 function getPaymentsFilterFn(filter) {
@@ -535,13 +541,78 @@ export const getFilteredPayments = createDeepEqualSelector(
   }
 )
 
+const defaultSortingSelector = (state) => state.payments.defaultSorting;
+const defaultSortedInvoices = createDeepEqualSelector(
+  getFilteredPaymentsByCooperatives,
+  (invoices) => {
+    let rejectedWithComment = [], 
+      rejected = [],
+      withComment = [],
+      others = [];
+
+    for (let invoice of invoices) {
+      if (
+        invoice.InvoiceStatus?.Value === 752560001 &&
+        invoice.Comment
+      ) {
+        rejectedWithComment.push(invoice);
+        continue;
+      }
+
+      if (invoice.InvoiceStatus?.Value === 752560001) {
+        rejected.push(invoice);
+        continue;
+      }
+
+      if (invoice.Comment) {
+        withComment.push(invoice);
+        continue;
+      }
+      
+      others.push(invoice);
+    }
+
+    return _.concat(
+      _.orderBy(
+        rejectedWithComment,
+        (invoice) => orderByType(_.get(invoice, 'DueDate'), 'date'),
+        ['asc']
+      ),
+      _.orderBy(
+        rejected,
+        (invoice) => orderByType(_.get(invoice, 'DueDate'), 'date'),
+        ['asc']
+      ),
+      _.orderBy(
+        withComment,
+        (invoice) => orderByType(_.get(invoice, 'DueDate'), 'date'),
+        ['asc']
+      ),
+      _.orderBy(
+        others,
+        [
+          (invoice) => orderByType(_.get(invoice, 'Payer.Name'), 'string'),
+          (invoice) => orderByType(_.get(invoice, 'DueDate'), 'date'),
+        ],
+        ['asc', 'asc']
+      )
+    )
+  }
+)
+
 export const getPayments = createDeepEqualSelector(
   getFilteredPayments,
+  defaultSortedInvoices,
+  defaultSortingSelector,
   paginationParamsPaymentsSelector,
-  (invoices, paginationParams) => {
+  (invoices, defaultInvoices, defaultSorting, paginationParams) => {
     const { currentPage, rowsPerPage } = paginationParams;
 
-    return invoices
+    let currentInvoices = defaultSorting
+      ? defaultInvoices
+      : invoices;
+
+    return currentInvoices
       .slice(currentPage * rowsPerPage, currentPage * rowsPerPage + rowsPerPage)
   }
 );
@@ -697,50 +768,6 @@ const getFilteredPaidInvoices = createDeepEqualSelector(
   }
 )
 
-export const defaultSortedPaidInvoices = createDeepEqualSelector(
-  getFilteredPaidInvoicesByCooperatives,
-  (invoices) => {
-    let rejected = [],
-      withComment = [],
-      others = [];
-
-    for (let invoice of invoices) {
-      if (invoice.InvoiceStatus?.Value === 752560001) {
-        rejected.push(invoice);
-        continue;
-      }
-
-      if (invoice.Comment) {
-        withComment.push(invoice);
-        continue;
-      }
-      
-      others.push(invoice);
-    }
-
-    return _.concat(
-      _.orderBy(
-        rejected,
-        (invoice) => orderByType(invoice, _.get(invoice, 'DueDate'), 'date'),
-        'asc'
-      ),
-      _.orderBy(
-        withComment,
-        (invoice) => orderByType(invoice, _.get(invoice, 'DueDate'), 'date'),
-        'asc'
-      ),
-      _.orderBy(
-        others,
-        [
-          (invoice) => orderByType(invoice, _.get(invoice, 'Payer.Name'), 'string'),
-          (invoice) => orderByType(invoice, _.get(invoice, 'DueDate'), 'date'),
-        ],
-        ['asc', 'asc']
-      )
-    )
-  }
-)
-
 const getSortedPaidInvoices = createDeepEqualSelector(
   getFilteredPaidInvoices,
   sortPaidInvoicesSelector,
@@ -760,8 +787,6 @@ export const getPaidInvoices = createDeepEqualSelector(
   paidInvoicesPaginationParamsSelector,
   (paidInvoices, paginationParams) => {
     const { currentPage, rowsPerPage } = paginationParams;
-
-    console.log(paidInvoices, 'PAID INVOICES');
 
     return paidInvoices
       .slice(currentPage * rowsPerPage, currentPage * rowsPerPage + rowsPerPage)

@@ -13,6 +13,11 @@ const fetchCooperativesSuccess = (data) => ({
   payload: data
 })
 
+export const setCooperatives = (data) => ({
+  type: actionTypes.SELECT_COOPERATIVE,
+  payload: data
+})
+
 export const fetchCooperatives = () => {
   return (dispatch, getState) => {
     const { substitute } = getState().balances;
@@ -20,7 +25,7 @@ export const fetchCooperatives = () => {
     dispatch(fetchCooperativesRequest());
 
     HttpClient
-      .getBankAccounts(substitute.value?.Id)
+      .getCooperatives(substitute.value?.Id)
       .then(data => {
         const { Cooperatives, IsSuccess, Error } = data;
         if (IsSuccess) {
@@ -107,7 +112,7 @@ export const refreshBalancesData = () => {
     try {
       const substitutorsData = await HttpClient.getSubstitutors(SelectedSubstitutor?.Id);
       const SubstitutorId = getSubstitutorId(substitutorsData.Substitutors, SelectedSubstitutor?.Id);
-      const cooperativesData = await HttpClient.getBankAccounts(SubstitutorId);
+      const cooperativesData = await HttpClient.getCooperatives(SubstitutorId);
 
       if (
         substitutorsData.IsSuccess &&

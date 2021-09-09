@@ -93,7 +93,7 @@ const tabsConfig = [
   { id: 'balances', label: "#sidebar.tab.balances", icon: BalanceIcon },
   { id: 'payment', label: "#sidebar.tab.payments", icon: PaymentIcon },
   { id: 'paid', label: "#sidebar.tab.paid", icon: CheckCircleOutlineIcon },
-  // { id: 'report', label: '#sidebar.tab.report', icon: ReportIcon }
+  { id: 'report', label: '#sidebar.tab.report', icon: ReportIcon }
 ]
 
 const SideBar = ({

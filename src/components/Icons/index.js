@@ -23,6 +23,7 @@ export { default as DoubleArrowsLeft } from './DoubleArrowsLeft';
 export { default as DoubleArrowsRight } from './DoubleArrowsRight';
 export { default as SortArrows } from './SortArrows';
 export { default as SortArrowDesc } from './SortArrowDesc';
+export { default as CalendarArrow } from './CalendarArrow';
 
 export {
   CalendarIcon,

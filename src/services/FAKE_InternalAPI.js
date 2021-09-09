@@ -25,7 +25,7 @@ class FakeInternalAPI {
 		}
 	}
 
-	getBankAccounts = (substitutorId) => {
+	getCooperatives = (substitutorId) => {
 		return new Promise((resolve) => {
 			setTimeout(() => {
 				const { Cooperatives } = this.getBankAccountsFn(substitutorId);

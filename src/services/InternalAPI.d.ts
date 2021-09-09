@@ -69,10 +69,15 @@ declare class InternalAPI {
     invoicesIds: string[],
     substitutorId?: string
   ): Promise<unknown>;
+  public getInvoicesForReport(
+    payerId: string,
+    date: string,
+    substitutorId?: string | null,
+  ): Promise<PurchaseInvoicesRes>;
   private fetchIncomingInvoicesData(
     messageCode: MessageCode,
     requestJSON: any, 
-  ): Promise<unknown>
+  ): Promise<unknown>;
 };
 
 export default new InternalAPI();

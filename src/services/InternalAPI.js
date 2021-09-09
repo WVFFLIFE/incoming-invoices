@@ -4,14 +4,15 @@ class InternalAPI {
 
   message_code = {
     GetSubstitutors: 1,
-    GetCooperatives: 2,
+    GetBankAccounts: 2,
     GetPurchaseInvoices: 3,
     GetPaidInvoices: 4,
     ChangeBankAccount: 5,
     ChangeAccountingDate: 6,
     RejectInvoice: 7,
     PayInvoices: 8,
-    CheckBalanceDate: 9
+    CheckBalanceDate: 9,
+    GetInvoicesForReport: 10
   };
 
   getSubstitutors = async (substitutorId = null) => {
@@ -20,7 +21,7 @@ class InternalAPI {
   }
 
   getCooperatives = async (substitutorId = null) => {
-    return await this.fetchIncomingInvoicesData(this.message_code.GetCooperatives,
+    return await this.fetchIncomingInvoicesData(this.message_code.GetBankAccounts,
       { SubstitutorId: substitutorId });
   }
 
@@ -32,6 +33,15 @@ class InternalAPI {
   getPaidInvoices = async (substitutorId = null) => {
     return await this.fetchIncomingInvoicesData(this.message_code.GetPaidInvoices,
       { SubstitutorId: substitutorId });
+  }
+
+  getInvoicesForReport = async (payerId, date, substitutorId = null) => {
+    return await this.fetchIncomingInvoicesData(this.message_code.GetInvoicesForReport,
+      {
+        SubstitutorId: substitutorId,
+        PayerId: payerId,
+        Date: date
+      });
   }
 
   updateInvoiceBankAccount = async (invoiceId, bankAccountId, substitutorId = null) => {

@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { formatNum } from 'helpers';
 import toLower from 'lodash/toLower';
 
@@ -6,6 +7,7 @@ import Box from '@material-ui/core/Box';
 import DropdownSearch from 'components/DropdownSearch';
 import FiltersBar from 'components/FiltersBar';
 import { BalanceIcon, ContractIcon } from 'components/Icons';
+import { CancelButton, ApplyButton } from 'components/StyledComponents';
 
 import clsx from 'clsx';
 import { useStyles } from './style';
@@ -53,16 +55,27 @@ const Body = ({
   onClose
 }) => {
   const classes = useStyles();
+  const { t } = useTranslation();
+
   const searchInput = useRef();
 
   const [activeFilter, setActiveFilter] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
+  const [localSelectedCooperative, setLocalSelectedCooperative] = useState(() => selectedCooperative || null);
+
+  useEffect(() => {
+    setLocalSelectedCooperative(selectedCooperative);
+  }, [selectedCooperative]);
 
   useEffect(() => {
     if (searchInput.current) {
       searchInput.current.focus();
     }
   }, []);
+
+  const handleChangeLocalSelectedCooperative = (coop) => {
+    setLocalSelectedCooperative(coop);
+  }
 
   const handleChangeFilter = useCallback((filter) => {
     setActiveFilter(filter);
@@ -77,8 +90,8 @@ const Body = ({
     []
   );
 
-  const handleSelectCooperative = (cooperative) => {
-    handleChangeCooperative(cooperative);
+  const onApply = () => {
+    handleChangeCooperative(localSelectedCooperative);
     onClose();
   }
 
@@ -112,8 +125,7 @@ const Body = ({
           Array.isArray(filteredCooperatives) && filteredCooperatives
             .map(cooperative => {
               const inadequateBalances = filterByInadequateBalance(cooperative),
-                selected = selectedCooperative?.Id === cooperative.Id;
-
+                selected = localSelectedCooperative?.Id === cooperative.Id;
 
               return (
                 <li
@@ -122,9 +134,9 @@ const Body = ({
                     [classes.selected]: selected
                   })}
                   onClick={
-                    handleChangeCooperative && !selected
-                      ? () => handleSelectCooperative(cooperative)
-                      : undefined
+                    () => handleChangeLocalSelectedCooperative(
+                      selected ? null : cooperative
+                    )
                   }
                 >
                   <span className={classes.cooperativeName}>
@@ -163,6 +175,22 @@ const Body = ({
             })
         }
       </ul>
+      <Box
+        display="flex"
+        justifyContent="flex-end"
+        alignItems="center"
+        marginTop="20px"
+      >
+        <CancelButton 
+          className={classes.mr20}
+          onClick={onClose}
+        >
+          {t('#button.cancel')}
+        </CancelButton>
+        <ApplyButton onClick={onApply}>
+          {t('#button.apply')}
+        </ApplyButton>
+      </Box>
     </div>
   )
 }

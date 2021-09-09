@@ -16,7 +16,6 @@ export const useStyles = makeStyles(() => ({
     justifyContent: 'center',
     width: 30,
     height: 24,
-    borderRadius: 2,
   },
   weekShort: {
     fontSize: 14,
@@ -48,6 +47,14 @@ export const useStyles = makeStyles(() => ({
       borderColor: '#0A8DC7',
     }
   },
+  withinRange: {
+    background: 'rgba(34,64,96,0.1)'
+  },
+  activeDay: {
+    background: '#224060',
+    color: '#fff',
+    cursor: 'default'
+  },
   disabledDay: {
     color: '#CED4DA',
     cursor: 'default',
@@ -56,10 +63,16 @@ export const useStyles = makeStyles(() => ({
       color: '#CED4DA'
     }
   },
-  activeDay: {
-    background: '#224060',
-    color: '#fff',
-    cursor: 'default'
+  firstBlock: {
+    borderTopLeftRadius: 2,
+    borderBottomLeftRadius: 2
+  },
+  lastBlock: {
+    borderTopRightRadius: 2,
+    borderBottomRightRadius: 2
+  },
+  disabledActiveDay: {
+    background: '#B0B9C5',
   },
   controlsWrapper: {
     display: 'flex',
@@ -82,5 +95,46 @@ export const useStyles = makeStyles(() => ({
     fontFamily: 'Lato',
     color: '#333',
     textAlign: 'center'
+  },
+  monthsWrapper: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    width: 210
+  },
+  monthBox: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 'calc(210px / 3)',
+    height: 50,
+    cursor: 'pointer',
+    '&:hover': {
+      background: 'rgba(34, 64, 96, 0.1)'
+    }
+  },
+  month: {
+    fontSize: 14,
+    fontFamily: 'Lato',
+    color: '#333',
+    textTransform: 'capitalize'
+  },
+  selectedMonthBox: {
+    cursor: 'default',
+    background: 'rgba(34, 64, 96, 0.1)'
+  },
+  yearOutput: {
+    color: '#0A8DC7'
+  },
+  highlighted: {
+    cursor: 'pointer',
+    '&:hover': {
+      color: '#0A8DC7'
+    }
+  },
+  disabledHighlighted: {
+    cursor: 'default',
+    '&:hover': {
+      color: '#333'
+    }
   }
 }));
