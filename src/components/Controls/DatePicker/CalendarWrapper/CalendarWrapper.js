@@ -11,6 +11,7 @@ const CalendarWrapper = ({
   currentDate,
   onChange,
   onClose,
+  dateInput,
 }) => {
   const classes = useStyles();
   const { t } = useTranslation();
@@ -31,6 +32,7 @@ const CalendarWrapper = ({
       <Calendar 
         selectedDate={selectedDate}
         handleChangeDate={handleChangeDate}
+        dateInput={dateInput}
       />
       <Box
         display="flex"

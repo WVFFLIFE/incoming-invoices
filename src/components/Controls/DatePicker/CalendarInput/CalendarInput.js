@@ -23,6 +23,7 @@ const CalendarInput = ({
   date,
   pattern = 'd.M.yyyy',
   onChange,
+  onClick
 }) => {
   const classes = useStyles();
 
@@ -68,6 +69,7 @@ const CalendarInput = ({
 
   return (
     <input
+      onClick={onClick}
       disabled={disabled}
       className={clsx(
         classes.root, 

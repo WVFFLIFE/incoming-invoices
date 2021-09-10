@@ -22,6 +22,20 @@ function getLocale() {
   /* eslint-enable  */
 }
 
+export const DEFAULT_DATE_FORMAT = 'd.M.yyyy';
+
+function isValidDate(d) {
+  return d instanceof Date && !isNaN(d);
+}
+
+export const defaultFormat = (d) => {
+  if (!d) return null;
+  let date = new Date(d);
+  if (!isValidDate(date)) return null;
+
+  return format(new Date(d), DEFAULT_DATE_FORMAT);
+}
+
 export const localeFormat = (date, f) => {
   return format(date, f, { locale: getLocale() })
 }
@@ -60,6 +74,8 @@ export const orderByType = (data, type) => {
       return typeof data === 'number' ? parseFloat(data) : -Infinity
     case 'date':
       return data ? new Date(data).getTime() : -Infinity
+    case 'boolean':
+      return data ? 1 : 0;
     default:
       return data
   }

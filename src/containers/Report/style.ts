@@ -19,9 +19,6 @@ export const useStyles = makeStyles(() => ({
   wrapper: {
     width: '100%',
   },
-  mr20: {
-    marginRight: 20,
-  },
   iconButton: {
     padding: 6,
   },

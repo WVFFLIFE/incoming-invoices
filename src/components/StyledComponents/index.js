@@ -7,6 +7,13 @@ import MuiWarningIcon from '@material-ui/icons/ReportProblemOutlined';
 import MuiErrorIcon from '@material-ui/icons/ErrorOutlineOutlined';
 import MuiCancelIcon from '@material-ui/icons/CancelPresentationOutlined';
 
+export const StyledTable = styled('table')({
+  width: '100%',
+  borderSpacing: 0,
+  borderCollapse: 'collapse',
+  boxShadow: '0px 11px 15px rgba(0, 0, 0, 0.05)'
+});
+
 export const WarningIcon = styled(MuiWarningIcon)(() => ({
   fontSize: '1rem',
   color: '#DB9200'
@@ -50,3 +57,4 @@ export const ApplyButton = styled(PickerButton)({
   background: '#224060',
   color: '#fff'
 });
+

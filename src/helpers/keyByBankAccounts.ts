@@ -3,7 +3,7 @@ import {
   InvoiceModel, 
 } from 'models';
 
-import _, { has } from 'lodash';
+import _ from 'lodash';
 
 function keyByBankAccounts(invoices: InvoiceModel[]): EnhancedBankAccountModel[] {
   let enhancedBankAccountsDict: { [key: string]: EnhancedBankAccountModel } = {};
@@ -16,7 +16,7 @@ function keyByBankAccounts(invoices: InvoiceModel[]): EnhancedBankAccountModel[]
 
         if (!Id) return;
 
-        if (has(enhancedBankAccountsDict, Id)) {
+        if (_.has(enhancedBankAccountsDict, Id)) {
           _.set(
             enhancedBankAccountsDict,
             `${Id}.Invoices`,
@@ -24,13 +24,23 @@ function keyByBankAccounts(invoices: InvoiceModel[]): EnhancedBankAccountModel[]
               enhancedBankAccountsDict[Id].Invoices, 
               _.omit(invoice, 'BankAccounts')
             )
-          )
+          );
+
+          _.set(
+            enhancedBankAccountsDict,
+            `${Id}.TotalAmount`,
+            enhancedBankAccountsDict[Id].TotalAmount + (invoice.Amount || 0)
+          );
         } else {
           _.set(
             enhancedBankAccountsDict,
             Id,
-            { ...BankAccount, Invoices: _.omit(invoice, 'BankAccounts') }
-          )
+            { 
+              ...BankAccount, 
+              Invoices: [_.omit(invoice, 'BankAccounts')],
+              TotalAmount: (invoice.Amount || 0)
+            }
+          );
         }
       })
     }

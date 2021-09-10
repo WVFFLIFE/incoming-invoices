@@ -1,9 +1,10 @@
 import { 
   CooperativeModel, 
-  EnhancedBankAccountModel,
-  DefaultError 
+  DefaultError,
+  InvoiceModel
 } from 'models';
 import { 
+  useMemo,
   useState, 
   useEffect, 
   useCallback, 
@@ -17,7 +18,7 @@ import { selectReportCooperative } from 'actions/reportActions';
 
 import keyByBankAccounts from 'helpers/keyByBankAccounts';
 import format from 'date-fns/format';
-import services from 'services/InternalAPI';
+import services from 'services';
 
 import {
   ControlsBar, 
@@ -27,7 +28,6 @@ import {
 import {
   PrintIcon,
   DownloadIcon,
-  FilterIcon
 } from 'components/Icons';
 import Button from 'components/Button';
 import CoooperativePicker from 'components/CooperativePicker';
@@ -35,7 +35,7 @@ import DatePicker from 'components/Controls/DatePicker';
 import Search from 'components/Controls/Search';
 import Box from '@material-ui/core/Box';
 import FiltersBar from 'components/FiltersBar';
-import { IconButton } from 'components/StyledComponents';
+import ReportTable from 'components/ReportTable';
 
 import { useStyles } from './style';
 
@@ -48,7 +48,7 @@ const filtersList = [
 ];
 
 interface Res {
-  bankAccounts: EnhancedBankAccountModel[];
+  invoices: InvoiceModel[];
   loading: boolean;
   error: DefaultError;
 }
@@ -69,14 +69,14 @@ const Report = () => {
   }));
 
   const [res, setRes] = useState<Res>({
-    bankAccounts: [],
+    invoices: [],
     error: {
       status: false,
       message: ''
     },
     loading: false,
   })
-  const [dateFilter, setDateFilter] = useState<Date | null>(null);
+  const [dateFilter, setDateFilter] = useState<Date | null>(new Date());
   const [quickFilter, setQuickFilter] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -102,14 +102,12 @@ const Report = () => {
         if (IsSuccess) {
           setRes(s => ({
             ...s,
-            bankAccounts: PurchaseInvoices ? 
-              keyByBankAccounts(PurchaseInvoices)
-              : [],
+            invoices: PurchaseInvoices || [],
             loading: false,
           }))
         } else {
           setRes({
-            bankAccounts: [],
+            invoices: [],
             loading: false,
             error: {
               status: true,
@@ -119,7 +117,7 @@ const Report = () => {
         }
       } catch (err) {
         setRes({
-          bankAccounts: [],
+          invoices: [],
           loading: false,
           error: {
             status: true,
@@ -163,8 +161,9 @@ const Report = () => {
   )
 
   const showNotification = !selectedCooperative || !dateFilter;
+  const enhancedBankAccounts = useMemo(() => keyByBankAccounts(res.invoices), [res.invoices]);
 
-  console.log(res.bankAccounts, 'BANK_ACCOUNTS');
+  console.log(enhancedBankAccounts, 'BANKACCOUNTS');
 
   return (
     <>
@@ -207,6 +206,7 @@ const Report = () => {
               <DatePicker
                 currentDate={dateFilter}
                 onChange={handleChangeDateFilter}
+                dateInput
               />
             </Box>
             <Box>
@@ -219,13 +219,9 @@ const Report = () => {
           </Box>
           <Box>
             <Search
-              className={classes.mr20}
               searchTerm={searchTerm}
               handleChangeSearchTerm={handleChangeSearchTerm}
             />
-            <IconButton className={classes.iconButton}>
-              <FilterIcon />
-            </IconButton>
           </Box>
         </FlexWrapper>
       </ControlsBar>
@@ -243,7 +239,11 @@ const Report = () => {
                 }
               </span>
             </div>
-          ) : null
+          ) : (
+            <ReportTable 
+              bankAccounts={enhancedBankAccounts}
+            />
+          )
         }
       </Box>
       <Loader

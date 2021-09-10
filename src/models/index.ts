@@ -1,11 +1,36 @@
-export interface Option {
-  Id: string | null;
-  Name: string | null;
+export interface BaseEntityModel {
+  Id: string;
+  Name: string;
+}
+
+export interface BaseOptionSetModel {
+  Value: number;
+  Label: string;
+}
+
+export interface BaseResponseModel {
+  Error: string;
+  ErrorCode: number;
+  IsSuccess: boolean;
 }
 
 export interface Status {
   Value: number | null;
   Label: string | null;
+}
+
+export enum EntityResponseCode {
+  Ok = 1,
+  Warrning = 2,
+  Error = 3,
+  Info = 4
+}
+
+export interface EntityResponseModel {
+  EntityId: string;
+  ResponseCode: EntityResponseCode;
+  Message: string;
+  MessageCode: number;
 }
 
 export interface ValidationModel {
@@ -15,62 +40,73 @@ export interface ValidationModel {
   ResponseCode: number | null;
 }
 
-export interface BankAccountModel {
-  AllowedBalance: number | null;
-  Balance: number | null;
-  Description: string | null;
-  Id: string | null;
-  IsMain: boolean | null;
-  LastUpdated: string | null;
-  Limit: number | null;
-  Name: string | null;
-  Operator: Option | null;
+export interface BankAccountModel extends BaseEntityModel {
+  Operator: BaseEntityModel;
+  Limit: number;
+  AllowedBalance: number;
+  Balance: number;
+  Description: string;
+  LastUpdated: Date;
+  IsMain: boolean;
+  Link: string;
 }
 
-export interface CooperativeModel {
-  AllowedBalance: number | null;
-  Balance: number | null;
-  BankAccounts: BankAccountModel[] | null;
-  Id: string | null;
-  InvoiceSum: number | null;
-  Limit: number | null;
-  Name: string | null;
-  UrgentBalance: number | null;
+export interface CooperativeModel extends BaseEntityModel {
+  ClosedPeriodEndDate: Date;
+  BankAccounts: BankAccountModel[];
+  UrgentBalance: number;
+  InvoiceSum: number;
+  Limit: number;
+  AllowedBalance: number;
+  Balance: number;
 }
 
 export interface InvoiceModel {
-  AccountingDate: string | null;
-  AllowedEdit: string | null;
-  AllowedPay: string | null;
-  Amount: number | null;
-  BankAccounts: BankAccountModel[] | null;
-  BuyerBankAccountId: string | null;
-  Comment: string | null;
-  DueDate: string | null;
-  Id: string | null;
-  InvoiceDate: string | null;
-  InvoiceNumber: string | null;
-  InvoiceStatus: Status | null;
-  Link: string | null;
-  Name: string | null;
-  Payer: Option | null;
-  PaymentDate: string | null;
-  RejectComment: string | null;
-  Seller: string | null;
-  Validation: ValidationModel[] | null;
-} 
+  Id: string;
+  Payer: BaseEntityModel;
+  Seller: string;
+  DueDate: Date;
+  Amount: number;
+  InvoiceNumber: string;
+  BankAccounts: BankAccountModel[];
+  BuyerBankAccountId: string;
+  InvoiceStatus: BaseOptionSetModel;
+  PaymentDate: Date;
+  InvoiceDate: Date;
+  AccountingDate: Date;
+  Comment: string;
+  RejectComment: string;
+  AllowedPay: boolean;
+  AllowedEdit: boolean;
+  Link: string;
+  Validation: EntityResponseModel[];
+}
 
-export interface UpdateMessagesModel {
-  Id: string | null;
-  IsUpdated: string | null;
+export interface PaymentModel {
+  InvoiceId: string;
+  IsPayNow: boolean;
+}
+
+export interface UpdateItemResponseModel {
+  Id: string;
   Message: string;
+  IsUpdated: boolean;
 }
 
 export interface EnhancedBankAccountModel extends BankAccountModel {
   Invoices: Omit<InvoiceModel, 'BankAccounts'>[];
+  TotalAmount: number;
 }
 
 export interface DefaultError {
   status: boolean;
   message: string;
+}
+
+export type SortParamsType = 'string' | 'date' | 'number' | 'boolean'; 
+
+export interface SortParams {
+  order: 'asc' | 'desc';
+  orderBy: string;
+  type: SortParamsType
 }

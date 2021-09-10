@@ -6,6 +6,8 @@ import format from 'date-fns/format';
 import CalendarWrapper from './CalendarWrapper';
 import Dropdown from 'components/Dropdown';
 import { CalendarIcon } from 'components/Icons';
+import CalendarInput from './CalendarInput';
+import { IconButton } from 'components/StyledComponents';
 
 import clsx from 'clsx';
 import { useStyles } from './style';
@@ -15,6 +17,7 @@ const DatePicker = ({
   onChange,
   dateFormat = 'd.M.yyyy',
   disabled = false,
+  dateInput = false,
 }) => {
   const classes = useStyles();
   const { t } = useTranslation();
@@ -38,7 +41,15 @@ const DatePicker = ({
           [classes.disabled]: disabled
         }
       )}>
-        <CalendarIcon className={classes.icon} />
+        {/* <IconButton className={classes.iconButton}>
+          <CalendarIcon className={classes.icon} />
+        </IconButton>
+        <CalendarInput
+          className={classes.input}
+          date={currentDate}
+          onClick={preventClick}
+          onChange={console.log}
+        /> */}
         <span className={clsx(classes.output, {
           [classes.empty]: !currentDate
         })}>
@@ -58,6 +69,7 @@ const DatePicker = ({
           onChange={onChange}
           currentDate={currentDate}
           onClose={onClose}
+          dateInput={dateInput}
         />
       </Dropdown>
     </>

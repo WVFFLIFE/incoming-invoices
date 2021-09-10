@@ -1,4 +1,4 @@
-import React, {forwardRef} from 'react';
+import {forwardRef} from 'react';
 import { SvgIcon } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 

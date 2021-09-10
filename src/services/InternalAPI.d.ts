@@ -1,8 +1,8 @@
+import { Guid } from 'guid-typescript';
 import { 
-  Option, 
-  CooperativeModel, 
-  InvoiceModel,
-  UpdateMessagesModel
+  BaseEntityModel,
+  EntityResponseModel,
+  BaseResponseModel
 } from 'models';
 
 enum MessageCode {
@@ -17,67 +17,89 @@ enum MessageCode {
   CheckBalanceDate = 9
 }
 
-interface Response {
-  IsSuccess: boolean | null;
-  Error: string | null;
-  ErrorCode: number | null;
+interface SubstitutorsResponseModel extends BaseResponseModel {
+  Substitutors: BaseEntityModel[] | null;
 }
-
-interface SubstitutorsRes extends Response {
-  Substitutors: Option[] | null;
-}
-interface CooperativesRes extends Reponse {
+interface CooperativesRes extends BaseResponseModel {
   Cooperatives: CooperativeModel[] | null;
 }
-interface PurchaseInvoicesRes extends Response {
+interface PurchaseInvoicesResponseModel extends BaseResponseModel {
   PurchaseInvoices: InvoiceModel[] | null;
 }
-interface UpdateInvoiceRes extends Response {
+interface UpdateInvoiceRes extends BaseResponseModel {
   UpdateMessages: UpdateMessagesModel[] | null;
 }
-interface PaidInvoicesRes extends Response {
+interface PaidInvoicesRes extends BaseResponseModel {
   PurchaseInvoices: InvoiceModel[] | null;
+}
+interface CheckBalanceDateResponceModel extends BaseResponseModel {
+  Payers: BaseEntityModel[];
+  InvoicesIds: Guid[];
+  IsAllUpToDate: boolean;
+}
+interface PurchaseInvoicesForReportResponseModel extends PurchaseInvoicesResponseModel {
+  LA2900TotalAmount: number;
 }
 
 declare class InternalAPI {
   static message_code: MessageCode;
-  public getSubstitutors(substitutorId?: string): Promise<SubstitutorsRes>;
-  public getCooperatives(substitutorId?: string): Promise<CooperativesRes>;
-  public getPurchaseInvoices(substitutorId?: string): Promise<PurchaseInvoicesRes>;
-  public getPaidInvoices(substitutorId?: string): Promise<PaidInvoicesRes>;
+
+  public getSubstitutors(
+    substitutorId?: string
+  ): Promise<SubstitutorsResponseModel>;
+
+  public getCooperatives(
+    substitutorId?: string
+  ): Promise<CooperativesRes>;
+
+  public getPurchaseInvoices(
+    substitutorId?: string
+  ): Promise<PurchaseInvoicesResponseModel>;
+
+  public getPaidInvoices(
+    substitutorId?: string
+  ): Promise<PaidInvoicesRes>;
+
   public updateInvoiceBankAccount(
     invoiceId: string,
     bankAccountId: string,
     substitutorId: string
   ): Promise<UpdateInvoiceRes>;
+
   public updateInvoicesAccountingDate(
     invoiceIds: string[],
     accountingDate: string,
     substitutorId?: string
-  ): Promise<UpdateInvoiceRes>
+  ): Promise<UpdateInvoiceRes>;
+
   public rejectInvoice(
     invoiceId: string,
     comment: string,
     substitutorId?: string
   ): Promise<UpdateInvoiceRes>;
+
   public payInvoices(
     invoiceIds: string[],
     substitutorId?: string,
     isPayNow?: boolean,
-  ): Promise<unknown>;
+  ): Promise<EntityResponseModel>;
+
   public checkBalanceDate(
     invoicesIds: string[],
     substitutorId?: string
-  ): Promise<unknown>;
+  ): Promise<CheckBalanceDateResponceModel>;
+
   public getInvoicesForReport(
     payerId: string,
     date: string,
     substitutorId?: string | null,
-  ): Promise<PurchaseInvoicesRes>;
+  ): Promise<PurchaseInvoicesForReportResponseModel>;
+
   private fetchIncomingInvoicesData(
     messageCode: MessageCode,
     requestJSON: any, 
   ): Promise<unknown>;
+
 };
 
 export default new InternalAPI();

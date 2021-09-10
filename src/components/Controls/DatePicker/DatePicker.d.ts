@@ -13,6 +13,7 @@ export interface DatePickerProps {
    * @default false
    */
   disabled?: boolean;
+  dateInput?: boolean;
   onChange(date: Date | null): void;
 }
 

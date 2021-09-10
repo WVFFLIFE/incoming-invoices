@@ -24,6 +24,9 @@ export { default as DoubleArrowsRight } from './DoubleArrowsRight';
 export { default as SortArrows } from './SortArrows';
 export { default as SortArrowDesc } from './SortArrowDesc';
 export { default as CalendarArrow } from './CalendarArrow';
+export { default as ExpandIcon } from './ExpandIcon';
+export { default as RejectIcon } from './RejectIcon';
+export { default as PendingIcon } from './PendingIcon';
 
 export {
   CalendarIcon,

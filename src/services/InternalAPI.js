@@ -12,7 +12,8 @@ class InternalAPI {
     RejectInvoice: 7,
     PayInvoices: 8,
     CheckBalanceDate: 9,
-    GetInvoicesForReport: 10
+    GetInvoicesForReport: 10,
+    GetInvoicePDF: 11
   };
 
   getSubstitutors = async (substitutorId = null) => {
@@ -86,6 +87,14 @@ class InternalAPI {
       {
         Payments: invoicesIds.map(e => ({ InvoiceId: e })),
         SubstitutorId: substitutorId
+      }
+    );
+  }
+
+  getInvoicePDF = async (invoiceId) => {
+    return await this.fetchIncomingInvoicesData(this.message_code.GetInvoicePDF,
+      {
+        InvoiceId: invoiceId
       }
     );
   }
