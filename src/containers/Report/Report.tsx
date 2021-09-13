@@ -1,14 +1,14 @@
-import { 
-  CooperativeModel, 
+import {
+  CooperativeModel,
   DefaultError,
   InvoiceModel
 } from 'models';
-import { 
+import {
   useMemo,
-  useState, 
-  useEffect, 
-  useCallback, 
-  ChangeEvent 
+  useState,
+  useEffect,
+  useCallback,
+  ChangeEvent
 } from 'react';
 
 import { useTranslation } from 'react-i18next';
@@ -19,9 +19,14 @@ import { selectReportCooperative } from 'actions/reportActions';
 import keyByBankAccounts from 'helpers/keyByBankAccounts';
 import format from 'date-fns/format';
 import services from 'services';
+import { formatNum } from 'helpers';
+import {
+  filterByQuickFilter,
+  getTotalCounts 
+} from './helpers';
 
 import {
-  ControlsBar, 
+  ControlsBar,
   FlexWrapper,
   Loader
 } from 'components';
@@ -37,6 +42,7 @@ import Box from '@material-ui/core/Box';
 import FiltersBar from 'components/FiltersBar';
 import ReportTable from 'components/ReportTable';
 
+import clsx from 'clsx';
 import { useStyles } from './style';
 
 const filtersList = [
@@ -51,6 +57,7 @@ interface Res {
   invoices: InvoiceModel[];
   loading: boolean;
   error: DefaultError;
+  totalAmountLA2900: number;
 }
 
 const Report = () => {
@@ -58,10 +65,10 @@ const Report = () => {
   const { t } = useTranslation();
 
   const dispatch = useDispatch();
-  const { 
-    selectedCooperative, 
+  const {
+    selectedCooperative,
     cooperatives,
-    substitute, 
+    substitute,
   } = useSelector((state: any) => ({
     cooperatives: (getCooperativesOptions(state) as any),
     selectedCooperative: state.report.selectedCooperative,
@@ -70,6 +77,7 @@ const Report = () => {
 
   const [res, setRes] = useState<Res>({
     invoices: [],
+    totalAmountLA2900: 0,
     error: {
       status: false,
       message: ''
@@ -87,13 +95,13 @@ const Report = () => {
       substitutorId: string | null = null
     ) {
       try {
-        setRes(s => ({ 
-          ...s, 
-          loading: true, 
-          error: { status: false, message: '' } 
+        setRes(s => ({
+          ...s,
+          loading: true,
+          error: { status: false, message: '' }
         }));
-  
-        const { PurchaseInvoices, IsSuccess, Error } = await services.getInvoicesForReport(
+
+        const { PurchaseInvoices, IsSuccess, Error, LA2900TotalAmount } = await services.getInvoicesForReport(
           payerId,
           date,
           substitutorId,
@@ -103,11 +111,13 @@ const Report = () => {
           setRes(s => ({
             ...s,
             invoices: PurchaseInvoices || [],
+            totalAmountLA2900: LA2900TotalAmount,
             loading: false,
           }))
         } else {
           setRes({
             invoices: [],
+            totalAmountLA2900: 0,
             loading: false,
             error: {
               status: true,
@@ -118,6 +128,7 @@ const Report = () => {
       } catch (err) {
         setRes({
           invoices: [],
+          totalAmountLA2900: 0,
           loading: false,
           error: {
             status: true,
@@ -125,7 +136,6 @@ const Report = () => {
           }
         })
       }
-      
     }
 
     if (selectedCooperative?.Id && dateFilter) {
@@ -135,7 +145,7 @@ const Report = () => {
         substitute?.Id
       );
     }
-    
+
   }, [dateFilter, selectedCooperative?.Id, substitute?.Id]);
 
   const handleChangeDateFilter = useCallback(
@@ -163,13 +173,70 @@ const Report = () => {
   const showNotification = !selectedCooperative || !dateFilter;
   const enhancedBankAccounts = useMemo(() => keyByBankAccounts(res.invoices), [res.invoices]);
 
-  console.log(enhancedBankAccounts, 'BANKACCOUNTS');
+  const filteredBankAccounts = useMemo(() => {
+    return filterByQuickFilter(enhancedBankAccounts, quickFilter);
+  }, [enhancedBankAccounts, quickFilter]);
+
+  const { totalAmount, totalInvoices } = useMemo(() => {
+    return getTotalCounts(filteredBankAccounts);
+  }, [filteredBankAccounts]);
+
+  const renderCounters = () => {
+    return (
+      <Box
+        display="flex"
+        flexWrap="wrap"
+        justifyContent="space-between"
+        marginBottom="10px"
+        padding="10px 15px"
+      >
+        <Box
+          display="inline-flex"
+        >
+          <span className={clsx(classes.text, classes.cooperative)}>
+            <b>
+              {selectedCooperative.Name}
+            </b>
+          </span>
+          <span className={classes.divider}>|</span>
+          <span className={clsx(classes.text, classes.totalInvoices)}>
+            {t("#report.totalinvoices", { totalInvoices })}
+          </span>
+        </Box>
+        <Box
+          display="inline-flex"
+        >
+          <span className={clsx(classes.text, classes.totalAmount)}>
+            {t("#report.totalamount")}
+            {":"}
+            {" "}
+            <b>
+              {formatNum(totalAmount)}
+              {" "}
+              €
+            </b>
+          </span>
+          <span className={classes.divider}>|</span>
+          <span className={clsx(classes.text, {
+            [classes.red]: res.totalAmountLA2900 !== parseFloat(totalAmount.toFixed(2))
+          })}>
+            {t("#report.la2900")}
+            {":"}
+            {" "}
+            <b>
+              {formatNum(res.totalAmountLA2900)}
+            </b>
+          </span>
+        </Box>
+      </Box>
+    )
+  }
 
   return (
     <>
       <FlexWrapper className="mb-20">
         <h1 className="tab-title">
-          {t('#tab.title.report')}
+          {t('#report.title')}
         </h1>
         <Box
           display="flex"
@@ -177,13 +244,13 @@ const Report = () => {
         >
           <Button
             className={classes.printBtn}
-            label="Print PDF"
+            label={t('#report.button.printpdf')}
             icon={PrintIcon}
             onClick={() => { }}
           />
           <Button
             className={classes.loadBtn}
-            label="Load PDF"
+            label={t('#report.button.loadpdf')}
             icon={DownloadIcon}
             onClick={() => { }}
           />
@@ -206,7 +273,8 @@ const Report = () => {
               <DatePicker
                 currentDate={dateFilter}
                 onChange={handleChangeDateFilter}
-                dateInput
+                disabled={!!!selectedCooperative}
+              // dateInput
               />
             </Box>
             <Box>
@@ -225,6 +293,7 @@ const Report = () => {
           </Box>
         </FlexWrapper>
       </ControlsBar>
+      {selectedCooperative ? renderCounters() : null}
       <Box>
         {
           showNotification ? (
@@ -232,7 +301,7 @@ const Report = () => {
               <span className={classes.notification}>
                 {
                   !selectedCooperative
-                    ? 'Please select one organization only!'
+                    ? t('#report.notification.selectcooperative')
                     : !dateFilter
                       ? 'Please select the date'
                       : null
@@ -240,8 +309,8 @@ const Report = () => {
               </span>
             </div>
           ) : (
-            <ReportTable 
-              bankAccounts={enhancedBankAccounts}
+            <ReportTable
+              bankAccounts={filteredBankAccounts}
             />
           )
         }

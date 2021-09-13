@@ -33,5 +33,29 @@ export const useStyles = makeStyles(() => ({
     fontFamily: 'Proxima Nova',
     fontWeight: 300,
     color: 'rgba(0,0,0,.75)'
+  },
+  text: {
+    fontSize: 20,
+    fontFamily: 'Proxima Nova',
+    fontWeight: 300,
+  },
+  cooperative: {
+    color: '#30344B'
+  },
+  divider: {
+    marginLeft: 10,
+    marginRight: 10,
+    fontSize: 18,
+    fontWeight: 700,
+    color: '#30344B'
+  },
+  totalInvoices: {
+    color: '#30344B'
+  },
+  totalAmount: {
+    color: '#30344B'
+  },
+  red: {
+    color: '#DB0041'
   }
 }))

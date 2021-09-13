@@ -37,5 +37,21 @@ export const useStyles = makeStyles(() => ({
   },
   right: {
     textAlign: 'right'
+  },
+  link: {
+    fontSize: 'inherit',
+    fontFamily: 'inherit',
+    color: 'inherit',
+    textDecoration: 'none',
+  },
+  center: {
+    textAlign: 'center',
+  },
+  saveBtn: {
+    padding: 6,
+  },
+  saveIcon: {
+    fontSize: '1rem',
+    color: '#224060',
   }
 }))

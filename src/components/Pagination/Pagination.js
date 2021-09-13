@@ -53,6 +53,7 @@ const useStyles = makeStyles({
     textDecoration: 'underline'
   },
   count: {
+    margin: 0,
     fontSize: 14,
     fontFamily: 'Proxima Nova',
     fontWeight: 400,
@@ -140,10 +141,11 @@ const Pagination = ({
           } else if (type === 'page') {
             children = (
               <button 
-                type="button" 
+                type="button"
+                disabled={selected}
                 className={clsx(classes.item, {
                   [classes.selectedItem]: selected
-                })} 
+                })}
                 {...item}
               >
                 {page}

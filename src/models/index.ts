@@ -110,3 +110,8 @@ export interface SortParams {
   orderBy: string;
   type: SortParamsType
 }
+
+export interface PaginationParams {
+  itemsPerPage: number;
+  currentPage: number;
+}

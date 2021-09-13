@@ -28,5 +28,9 @@ export const useStyles = makeStyles(() => ({
     paddingLeft: 0,
     paddingBottom: 6,
     borderColor: 'transparent'
+  },
+  disabled: {
+    cursor: 'default',
+    opacity: .6
   }
 }))

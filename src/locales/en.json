@@ -5,7 +5,6 @@
   "#sidebar.tab.report": "Report",
   "#tab.title.paidinvoices": "Paid Invoices",
   "#tab.title.payments": "Invoice payments",
-  "#tab.title.report": "Report",
   "#button.exporttopdf": "Export to pdf",
   "#button.refresh": "Refresh",
   "#button.cancel": "Cancel",
@@ -135,5 +134,14 @@
   "#datepicker.filter.customrange": "Custom range",
   "#datepicker.filter.previousyear": "Previous year",
   "#datepicker.filter.currentyear": "Current year",
-  "#datepicker.filter.lastmonth": "Last month"
+  "#datepicker.filter.lastmonth": "Last month",
+  "#report.notification.selectcooperative": "Please select one organization only!",
+  "#report.title": "Unpaid Invoices",
+  "#report.totalinvoices": "{{totalInvoices}} invoices",
+  "#report.totalamount": "Total amount",
+  "#report.la2900": "LA 2900",
+  "#report.button.cancel": "Cancel",
+  "#report.button.apply": "Apply",
+  "#report.button.printpdf": "Print PDF",
+  "#report.button.loadpdf": "Load PDF"
 }

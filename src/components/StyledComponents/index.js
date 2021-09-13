@@ -9,6 +9,7 @@ import MuiCancelIcon from '@material-ui/icons/CancelPresentationOutlined';
 
 export const StyledTable = styled('table')({
   width: '100%',
+  background: '#fff',
   borderSpacing: 0,
   borderCollapse: 'collapse',
   boxShadow: '0px 11px 15px rgba(0, 0, 0, 0.05)'

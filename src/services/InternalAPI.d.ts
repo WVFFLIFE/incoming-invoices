@@ -40,6 +40,9 @@ interface CheckBalanceDateResponceModel extends BaseResponseModel {
 interface PurchaseInvoicesForReportResponseModel extends PurchaseInvoicesResponseModel {
   LA2900TotalAmount: number;
 }
+interface InvoicePDFResponseModel extends BaseResponseModel {
+  InvoicePDF: string;
+}
 
 declare class InternalAPI {
   static message_code: MessageCode;
@@ -94,6 +97,10 @@ declare class InternalAPI {
     date: string,
     substitutorId?: string | null,
   ): Promise<PurchaseInvoicesForReportResponseModel>;
+
+  public getInvoicePDF(
+    invoiceId: string
+  ): Promise<InvoicePDFResponseModel>;
 
   private fetchIncomingInvoicesData(
     messageCode: MessageCode,

@@ -146,6 +146,12 @@ export const isRejectedInvoice = invoice => {
     752560000
   ].includes(invoice.InvoiceStatus.Value);
 }
+export const isPaidInvoice = invoice =>
+  invoice.InvoiceStatus?.Value === 100000003;
+export const isPendingInvoice = invoice =>
+  invoice.InvoiceStatus?.Value === 100000001;
+export const isUnpaidInvoice = invoice =>
+  invoice.InvoiceStatus?.Value === 100000000;
 
 export const formatDate = (date, formatType = 'd.M.yyyy') => {
   if (!date) {
@@ -231,3 +237,5 @@ export const getText = searchTerm => text => {
     </>
   )
 }
+
+export const floatify = (num) => parseFloat((num).toFixed(10));

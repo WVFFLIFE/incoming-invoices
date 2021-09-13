@@ -27,6 +27,7 @@ export { default as CalendarArrow } from './CalendarArrow';
 export { default as ExpandIcon } from './ExpandIcon';
 export { default as RejectIcon } from './RejectIcon';
 export { default as PendingIcon } from './PendingIcon';
+export { default as SaveIcon } from './SaveIcon';
 
 export {
   CalendarIcon,

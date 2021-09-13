@@ -41,10 +41,10 @@ const CalendarWrapper = ({
         marginTop="20px"
       >
         <CancelButton className={classes.mr20} onClick={onClose}>
-          {t('#button.cancel')}
+          {t('#report.button.cancel')}
         </CancelButton>
         <ApplyButton onClick={handleApply}>
-          {t('#button.apply')}
+          {t('#report.button.apply')}
         </ApplyButton>
       </Box>
     </div>
