@@ -97,7 +97,10 @@ const Balances = () => {
   }
 
   const handleChangeSubstitute = (value) => {
-    dispatch(selectSubstitute(value))
+    batch(() => {
+      dispatch(selectSubstitute(value));
+      // dispatch(setSelectedCooperative([]));
+    })
   }
 
   const handleSelectCooperative = useCallback(cooperative => {

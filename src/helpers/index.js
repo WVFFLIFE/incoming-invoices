@@ -12,7 +12,12 @@ import {
   getMonth,
   getYear,
 } from 'date-fns';
-import { find, get, toLower } from 'lodash';
+import { 
+  find, 
+  get, 
+  toLower, 
+  isNumber
+} from 'lodash';
 
 function getLocale() {
   /* eslint-disable */
@@ -81,10 +86,14 @@ export const orderByType = (data, type) => {
   }
 }
 
+const numberToSearchFormat = (num) => {
+  return num.toFixed(2).replace('.', ',');
+}
+
 export const searchByType = (data, type, comparator, extractKey) => {
   switch (type) {
     case 'float':
-      return typeof data === 'number' ? formatNum(data) : ''
+      return typeof data === 'number' ? numberToSearchFormat(data) : ''
     case 'string':
       return data ? data.toLowerCase() : ''
     case 'date':
@@ -101,25 +110,6 @@ export const searchByType = (data, type, comparator, extractKey) => {
     default:
       return data
   }
-}
-
-export const formatNum = num => {
-  if (typeof num !== 'number') return null;
-
-  let arr = (num).toLocaleString('ru').split(','),
-    f1 = '',
-    f2 = '';
-
-  if (arr.length === 1) {
-    f1 = arr[0];
-  }
-
-  if (arr.length > 1) {
-    f1 = arr[0];
-    f2 = arr[1];
-  }
-
-  return `${f1},${f2.padEnd(2, '00')}`
 }
 
 export const isBalanceInadequate = cooperative => {
@@ -221,21 +211,70 @@ export const toDateResponse = date => {
   return `${year}-${month}-${day}T00:00:00Z`;
 }
 
-export const getText = searchTerm => text => {
-  let index = toLower(text).indexOf(toLower(searchTerm));
-  if (!searchTerm || index === -1) {
-    return text
+export const formatNum = (num) => {
+  if (typeof num !== 'number') return null;
+  return num
+    .toFixed(2)
+    .replace(/\B(?=(\d{3})+(?!\d))/g, " ")
+    .replace('.', ',');
+}
+
+function toDivide(num) {
+	let int = String(Math.trunc(num));
+
+	if(int.length <= 3) return int;
+
+	let space = 0;
+	let number = '';
+
+	for(let i = int.length - 1; i >= 0; i--) {
+		if(space === 3) {
+			number = ' ' + number;
+			space = 0;
+		}
+		number = int.charAt(i) + number;
+		space++;
+	}
+
+	return number;
+}
+
+function mergeNumberRanks(num) {
+	let [a, b] = num.split(',');
+  
+  if (b === undefined) {
+  	return toDivide(a);
   }
+  
+  if (b === '') {
+  	return `${toDivide(a)},`
+  }
+  
+  return `${toDivide(a)},${b}`;
+}
 
-  let substr = text.substr(index, searchTerm.length);
-
-  return (
-    <>
-      {text.slice(0, index)}
-      <span className="emphasized">{substr}</span>
-      {text.slice(index + substr.length)}
-    </>
-  )
+export const getText = searchTerm => {
+  return (text, type = 'string') => {
+    let s = type === 'number' && searchTerm
+      ? mergeNumberRanks(searchTerm)
+      : searchTerm;
+  
+    let index = toLower(text).indexOf(toLower(s));
+    console.log(s, text, index);
+    if (!s || index === -1) {
+      return text
+    }
+  
+    let substr = text.substr(index, s.length);
+  
+    return (
+      <>
+        {text.slice(0, index)}
+        <span className="emphasized">{substr}</span>
+        {text.slice(index + substr.length)}
+      </>
+    )
+  }
 }
 
 export const floatify = (num) => parseFloat((num).toFixed(10));

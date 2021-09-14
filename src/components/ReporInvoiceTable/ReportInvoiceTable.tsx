@@ -20,12 +20,14 @@ import { useStyles } from './style';
 
 interface ReportInvoiceTableProps {
   invoices: Omit<InvoiceModel, 'BankAccounts'>[];
+  searchTerm: string;
 }
 
 const paginationOptions = [6, 12, 24];
 
 const ReportInvoiceTable: React.FC<ReportInvoiceTableProps> = ({
-  invoices
+  invoices,
+  searchTerm
 }) => {
   const classes = useStyles();
   const { t } = useTranslation();
@@ -103,6 +105,7 @@ const ReportInvoiceTable: React.FC<ReportInvoiceTableProps> = ({
                 <ReportInvoiceTableRow 
                   key={invoice.Id}
                   invoice={invoice}
+                  searchTerm={searchTerm}
                 />
               ))
               : (

@@ -2,15 +2,16 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import format from 'date-fns/format';
 
-import Wrapper from './Wrapper';
-import Dropdown from 'components/Dropdown';
-import ArrowIcon from '@material-ui/icons/ExpandMore';
 import Box from '@material-ui/core/Box';
-import { DefaultCalendarIcon } from 'components/Icons';
-import { IconButton } from 'components/StyledComponents';
+import Wrapper from './Wrapper';
+import Dropdown from './Dropdown';
+import { 
+  DefaultCalendarIcon, 
+  ExpandMore as ArrowIcon 
+} from './Icons';
 
 import clsx from 'clsx';
-import { useStyles } from './style';
+import { IconButton, useStyles } from './style';
 
 const RangeDatePicker = ({
   from,

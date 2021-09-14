@@ -31,16 +31,14 @@ export const useStyles = makeStyles(() => ({
   arrowIcon: {
     fontSize: '1.1rem',
   },
-  allowedBalanceWrapper: {
-    paddingLeft: 15
-  },
   balancesText: {
     marginLeft: 5,
     fontSize: 13,
     fontFamily: 'Proxima Nova',
     fontWeight: 'bold',
     letterSpacing: 0.2,
-    color: '#30344B'
+    color: '#30344B',
+    whiteSpace: 'nowrap',
   },
   selectPayer: {
     fontSize: 14,

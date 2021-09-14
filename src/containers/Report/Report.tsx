@@ -7,22 +7,26 @@ import {
   useMemo,
   useState,
   useEffect,
+  useRef,
   useCallback,
   ChangeEvent
 } from 'react';
 
 import { useTranslation } from 'react-i18next';
 import { useSelector, useDispatch } from 'react-redux';
-import { getCooperativesOptions } from 'selectors';
-import { selectReportCooperative } from 'actions/reportActions';
+import { 
+  getCooperativesOptions,
+  selectedCooperativeSelector 
+} from 'selectors';
+import { setSelectedCooperative } from 'actions/settingsActions';
 
 import keyByBankAccounts from 'helpers/keyByBankAccounts';
 import format from 'date-fns/format';
 import services from 'services';
 import { formatNum } from 'helpers';
 import {
-  filterByQuickFilter,
-  getTotalCounts 
+  filterBankAccountsInvoices,
+  getTotalCounts
 } from './helpers';
 
 import {
@@ -60,18 +64,29 @@ interface Res {
   totalAmountLA2900: number;
 }
 
+function base64ToUint8Array(base64: string) {
+  const raw = atob(base64);
+  let uint8Array = new Uint8Array(raw.length);
+  for (var i = 0; i < raw.length; i++) {
+    uint8Array[i] = raw.charCodeAt(i);
+  }
+  return uint8Array;
+}
+
+
 const Report = () => {
   const classes = useStyles();
   const { t } = useTranslation();
+  const iframeRef = useRef<HTMLIFrameElement | null>(null);
 
   const dispatch = useDispatch();
   const {
-    selectedCooperative,
+    selectedCooperatives,
     cooperatives,
     substitute,
   } = useSelector((state: any) => ({
     cooperatives: (getCooperativesOptions(state) as any),
-    selectedCooperative: state.report.selectedCooperative,
+    selectedCooperatives: selectedCooperativeSelector(state),
     substitute: state.balances.substitute.value
   }));
 
@@ -87,6 +102,17 @@ const Report = () => {
   const [dateFilter, setDateFilter] = useState<Date | null>(new Date());
   const [quickFilter, setQuickFilter] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
+
+  const [selectedCooperative] = selectedCooperatives;
+
+  // const onLoad = () => {
+  //   if (iframeRef.current) {
+      
+  //     (iframeRef.current.contentWindow as any).PDFViewerApplication.open(
+  //       base64ToUint8Array(b64)
+  //     );
+  //   }
+  // }
 
   useEffect(() => {
     async function getInvoices(
@@ -146,7 +172,7 @@ const Report = () => {
       );
     }
 
-  }, [dateFilter, selectedCooperative?.Id, substitute?.Id]);
+  }, [dateFilter, selectedCooperative, substitute?.Id]);
 
   const handleChangeDateFilter = useCallback(
     (date: Date | null) => {
@@ -160,7 +186,7 @@ const Report = () => {
   }
 
   const handleSelectCooperative = (coop: CooperativeModel) => {
-    dispatch(selectReportCooperative(coop));
+    dispatch(setSelectedCooperative([coop]));
   }
 
   const handleChangeQuickFilter = useCallback(
@@ -174,8 +200,8 @@ const Report = () => {
   const enhancedBankAccounts = useMemo(() => keyByBankAccounts(res.invoices), [res.invoices]);
 
   const filteredBankAccounts = useMemo(() => {
-    return filterByQuickFilter(enhancedBankAccounts, quickFilter);
-  }, [enhancedBankAccounts, quickFilter]);
+    return filterBankAccountsInvoices(enhancedBankAccounts, quickFilter, searchTerm);
+  }, [enhancedBankAccounts, quickFilter, searchTerm]);
 
   const { totalAmount, totalInvoices } = useMemo(() => {
     return getTotalCounts(filteredBankAccounts);
@@ -234,6 +260,13 @@ const Report = () => {
 
   return (
     <>
+      {/* <iframe
+        ref={iframeRef}
+        src={`/web/viewer.html#locale=fi`}
+        title="some pdf"
+        style={{ width: 1000, height: 1000 }}
+        onLoad={onLoad}
+      /> */}
       <FlexWrapper className="mb-20">
         <h1 className="tab-title">
           {t('#report.title')}
@@ -311,6 +344,7 @@ const Report = () => {
           ) : (
             <ReportTable
               bankAccounts={filteredBankAccounts}
+              searchTerm={searchTerm}
             />
           )
         }

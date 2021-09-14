@@ -35,13 +35,18 @@ const Output = forwardRef(({
   const renderValue = () => {
     return (
       <>
-        <Box flex={1} marginRight="10px">
+        <Box 
+          flex={1} 
+          marginRight="10px"
+          justifyContent="flex-start"
+        >
           <span className={classes.name}>{selectedCooperative.Name}</span>
         </Box>
         <Box
           display="flex"
           alignItems="center"
           flex={1}
+          justifyContent="flex-end"
         >
           <Box
             display="flex"
@@ -49,15 +54,19 @@ const Output = forwardRef(({
             className={classes.balanceWrapper}
           >
             <BalanceIcon className={classes.balancesIcon} />
-            <span className={classes.balancesText}>{formatNum(selectedCooperative.AllowedBalance)}</span>
+            <span className={classes.balancesText}>
+              {formatNum(selectedCooperative.AllowedBalance)}
+            </span>
           </Box>
+          <span className="divider">|</span>
           <Box
             display="flex"
             alignItems="center"
-            className={classes.allowedBalanceWrapper}
           >
             <ContractIcon className={classes.balancesIcon} />
-            <span className={classes.balancesText}>{formatNum(selectedCooperative.InvoiceSum)}</span>
+            <span className={classes.balancesText}>
+              {formatNum(selectedCooperative.InvoiceSum)}
+            </span>
           </Box>
         </Box>
       </>

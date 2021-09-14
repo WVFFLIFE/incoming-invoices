@@ -2,7 +2,7 @@ import { EnhancedBankAccountModel } from 'models';
 import { memo, useState, useEffect } from 'react';
 
 import _get from 'lodash/get';
-import { formatNum } from 'helpers';
+import { formatNum, getText } from 'helpers';
 
 import Collapse from '@material-ui/core/Collapse';
 import { IconButton } from 'components/StyledComponents';
@@ -15,11 +15,13 @@ import { useStyles } from './style';
 interface ReportTableRowProps {
   bankAccount: EnhancedBankAccountModel;
   expanded: boolean;
+  searchTerm: string;
 }
 
 const ReportTableRow: React.FC<ReportTableRowProps> = ({
   bankAccount,
   expanded,
+  searchTerm,
 }) => {
   const classes = useStyles();
 
@@ -32,6 +34,8 @@ const ReportTableRow: React.FC<ReportTableRowProps> = ({
   const onToggle = () => {
     setOpen(!open);
   }
+
+  const highlight = getText(searchTerm);
 
   return (
     <>
@@ -46,16 +50,19 @@ const ReportTableRow: React.FC<ReportTableRowProps> = ({
           </IconButton>
         </td>
         <td className={classes.td}>
-          {_get(bankAccount, 'Name')}
+          {highlight(_get(bankAccount, 'Name'))}
         </td>
         <td className={classes.td}>
-          {_get(bankAccount, 'Operator.Name')}
+          {highlight(_get(bankAccount, 'Operator.Name'))}
         </td>
         <td className={classes.td}>
-          {_get(bankAccount, 'Description')}
+          {highlight(_get(bankAccount, 'Description'))}
         </td>
         <td className={classes.td}>
-          {formatNum(_get(bankAccount, 'TotalAmount'))}
+          {highlight(
+            formatNum(_get(bankAccount, 'TotalAmount')),
+            'number'
+          )}
         </td>
       </tr>
       <tr className={classes.tr}>
@@ -66,6 +73,7 @@ const ReportTableRow: React.FC<ReportTableRowProps> = ({
           >
             <ReportInvoiceTable 
               invoices={bankAccount.Invoices}
+              searchTerm={searchTerm}
             />
           </Collapse>
         </td>

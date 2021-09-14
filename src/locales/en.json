@@ -143,5 +143,6 @@
   "#report.button.cancel": "Cancel",
   "#report.button.apply": "Apply",
   "#report.button.printpdf": "Print PDF",
-  "#report.button.loadpdf": "Load PDF"
+  "#report.button.loadpdf": "Load PDF",
+  "#report.invoicenumber": "Invoice № {{ invoiceNumber }}"
 }

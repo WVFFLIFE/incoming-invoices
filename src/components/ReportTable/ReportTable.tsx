@@ -1,26 +1,34 @@
 import { SortParams, EnhancedBankAccountModel, SortParamsType } from 'models';
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { orderByType } from 'helpers';
 import _orderBy from 'lodash/orderBy';
 import _get from 'lodash/get';
 
 import ReportTableHead from './ReportTableHead';
-import ReportTableBody from './ReportTableBody';
+import ReportTableRow from './ReportTableRow';
 import { StyledTable } from 'components/StyledComponents';
 
 interface ReportTableProps {
   bankAccounts: EnhancedBankAccountModel[];
+  searchTerm: string;
 }
 
 const ReportTable: React.FC<ReportTableProps> = ({
-  bankAccounts
+  bankAccounts,
+  searchTerm
 }) => {
-  const [expandedAll, setExpandedAll] = useState(false);
+  const [expandedAll, setExpandedAll] = useState(() => !!searchTerm);
   const [sortParams, setSortParams] = useState<SortParams>({
     order: 'asc',
     orderBy: 'Default',
     type: 'string',
   });
+
+  useEffect(() => {
+    if (searchTerm) {
+      setExpandedAll(true);
+    }
+  }, [searchTerm])
 
   const handleToggleExpanded = () => {
     setExpandedAll(!expandedAll);
@@ -56,7 +64,6 @@ const ReportTable: React.FC<ReportTableProps> = ({
       [order]
     )
   }, [sortParams, bankAccounts]);
-  
 
   return (
     <StyledTable>
@@ -67,10 +74,20 @@ const ReportTable: React.FC<ReportTableProps> = ({
         handleToggleExpanded={handleToggleExpanded}
         handleChangeSortParams={handleChangeSortParams}
       />
-      <ReportTableBody 
-        bankAccounts={sortedBankAccounts}
-        expanded={expandedAll}
-      />
+      <tbody>
+      {
+        sortedBankAccounts.map(bankAccount => {
+          return (
+            <ReportTableRow 
+              key={bankAccount.Id}
+              bankAccount={bankAccount}
+              expanded={expandedAll}
+              searchTerm={searchTerm}
+            />
+          )
+        })
+      }
+      </tbody>
     </StyledTable>
   )
 }

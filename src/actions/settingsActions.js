@@ -16,8 +16,6 @@ export const setCurrentTab = (tab, shouldSelectCooperative = true) => {
     const { cooperatives } = getState().balances;
     const { selectedCooperatives } = getState().settings;
 
-    console.log(selectedCooperatives, shouldSelectCooperative);
-
     batch(() => {
       if (shouldSelectCooperative) {
 
@@ -38,6 +36,15 @@ export const setCurrentTab = (tab, shouldSelectCooperative = true) => {
         }
 
         if (tab === 'paid') {
+          if (selectedCooperatives.length !== 1) {
+            dispatch({
+              type: actionTypes.SELECT_COOPERATIVE,
+              payload: []
+            })
+          }
+        }
+
+        if (tab === 'report') {
           if (selectedCooperatives.length !== 1) {
             dispatch({
               type: actionTypes.SELECT_COOPERATIVE,

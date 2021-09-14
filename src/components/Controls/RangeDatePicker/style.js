@@ -1,4 +1,12 @@
-import { makeStyles } from '@material-ui/core';
+import Button from '@material-ui/core/Button';
+
+import { makeStyles, styled } from '@material-ui/core';
+
+export const IconButton = styled(Button)({
+  minWidth: 'auto',
+  borderRadius: '50%',
+  padding: 1
+})
 
 export const useStyles = makeStyles(() => ({
   root: {
