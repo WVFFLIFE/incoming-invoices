@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from 'react';
+import { useEffect, useCallback } from 'react';
 import { useDispatch, useSelector, batch } from 'react-redux';
 import {
   fetchPaidInvoices,
@@ -18,12 +18,12 @@ import {
   Loader,
   Pagination,
   RefreshButton,
-  SearchControl,
   FiltersControls,
   PaidFilterModal,
   ErrorModal,
   Dialog
 } from 'components';
+import Search from 'components/Controls/Search';
 import {
   getPaidInvoices,
   loadingPaidInvoicesSelector,
@@ -141,9 +141,9 @@ const Paid = () => {
           />
         </FlexWrapper>
         <FlexWrapper>
-          <SearchControl
-            value={searchTerm}
-            handleChangeValue={handleChangeSearchTerm}
+          <Search
+            searchTerm={searchTerm}
+            handleChangeSearchTerm={handleChangeSearchTerm}
           />
           <FiltersControls
             isActive={isActive}

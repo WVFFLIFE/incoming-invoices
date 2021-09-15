@@ -1,10 +1,10 @@
-import { InvoiceModel } from 'models';
+import { BaseInvoiceModel } from 'models';
 import { useTranslation } from 'react-i18next';
 
 import { useStyles } from './style';
 
 interface InvoiceDetailedViewProps {
-  invoice: Omit<InvoiceModel, 'BankAccounts'>;
+  invoice: BaseInvoiceModel;
 }
 
 const InvoiceDetailedView: React.FC<InvoiceDetailedViewProps> = ({

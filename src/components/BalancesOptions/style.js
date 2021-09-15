@@ -33,7 +33,8 @@ export const useStyles = makeStyles({
     fontSize: 13,
     fontFamily: 'Proxima Nova',
     fontWeight: 400,
-    color: '#30344B'
+    color: '#30344B',
+    whiteSpace: 'nowrap',
   },
   flex: {
     display: 'flex',
@@ -92,37 +93,8 @@ export const useStyles = makeStyles({
     justifyContent: 'flex-end',
     marginTop: 40
   },
-  cancelBtn: {
-    minWidth: 'auto',
-    marginRight: 15,
-    padding: '6px 24px',
-    fontSize: 14,
-    fontFamily: 'Lato',
-    fontWeight: 700,
-    border: 0,
-    background: 'transparent',
-    borderRadius: 20,
-    color: '#224060',
-    textDecoration: 'underline',
-    textTransform: 'none',
-    '&:hover': {
-      textDecoration: 'underline'
-    }
-  },
-  resolveBtn: {
-    minWidth: 'auto',
-    padding: '6px 24px',
-    fontSize: 14,
-    fontFamily: 'Proxima Nova',
-    fontWeight: 400,
-    lineHeight: 'normal',
-    letterSpacing: 0.23,
-    border: 0,
-    background: '#224060',
-    borderRadius: 20,
-    color: '#FFFFFF',
-    textDecoration: 'none',
-    textTransform: 'none',
+  mr20: {
+    marginRight: 20,
   },
   disabledApplyButton: {
     opacity: .6,

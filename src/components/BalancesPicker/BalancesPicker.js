@@ -37,21 +37,22 @@ const BalancesPicker = ({
   const renderValue = () => {
     const [option] = selectedItems;
     return (
-      <>
+      <div className={classes.wrapper}>
         <div className={classes.valueWrapper}>
           <span className={classes.name}>{option?.Name}</span>
         </div>
         <div className={classes.flex}>
-          <div className={clsx(classes.flex, classes.balanceWrapper)}>
+          <div className={classes.flex}>
             <BalanceIcon className={classes.balancesIcon} />
             <span className={classes.balancesText}>{formatNum(option.AllowedBalance)}</span>
           </div>
-          <div className={clsx(classes.flex, classes.allowedBalanceWrapper)}>
+          <span className="divider">|</span>
+          <div className={classes.flex}>
             <ContractIcon className={classes.balancesIcon} />
             <span className={classes.balancesText}>{formatNum(option.InvoiceSum)}</span>
           </div>
         </div>
-      </>
+      </div>
     )
   }
 
@@ -94,7 +95,7 @@ const BalancesPicker = ({
             <>
               <Button
                 classes={{
-                  root: clsx(classes.button, classes.buttonPrev),
+                  root: classes.button,
                   disabled: classes.buttonDisabled
                 }}
                 disabled={disabledPrev}
@@ -108,7 +109,7 @@ const BalancesPicker = ({
               {renderValue()}
               <Button
                 classes={{
-                  root: clsx(classes.button, classes.buttonNext),
+                  root: classes.button,
                   disabled: classes.buttonDisabled
                 }}
                 disabled={disabledNext}
@@ -128,7 +129,7 @@ const BalancesPicker = ({
         }
         <Button
           classes={{
-            root: clsx(classes.button, classes.expandButton),
+            root: classes.button,
             disabled: classes.buttonDisabled
           }}
         >

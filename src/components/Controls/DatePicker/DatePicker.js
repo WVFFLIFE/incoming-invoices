@@ -50,6 +50,12 @@ const DatePicker = ({
           onClick={preventClick}
           onChange={console.log}
         /> */}
+        <IconButton 
+          className={classes.iconButton}
+          disabled={disabled}
+        >
+          <CalendarIcon className={classes.icon} />
+        </IconButton>
         <span className={clsx(classes.output, {
           [classes.empty]: !currentDate
         })}>

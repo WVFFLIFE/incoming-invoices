@@ -27,7 +27,6 @@ import {
   BalancesView,
   ControlsBar,
   FiltersBar,
-  SearchControl,
   FlexWrapper,
   RefreshButton,
   Autocomplete,
@@ -36,6 +35,7 @@ import {
   Dialog,
   ErrorModal
 } from 'components';
+import Search from 'components/Controls/Search';
 
 const filtersList = [
   { id: 'inadequateBalance', label: '#filter.inadequatebalance' },
@@ -61,7 +61,7 @@ const Balances = () => {
     error: getBalancesError(state)
   }));
   const dispatch = useDispatch();
-  const {t} = useTranslation();
+  const { t } = useTranslation();
 
   useEffect(() => {
     dispatch(refreshBalancesData());
@@ -140,9 +140,9 @@ const Balances = () => {
             handleChangeFilter={handleChangeFilter}
           />
         </FlexWrapper>
-        <SearchControl
-          value={searchTerm}
-          handleChangeValue={handleChangeSearchTerm}
+        <Search
+          searchTerm={searchTerm}
+          handleChangeSearchTerm={handleChangeSearchTerm}
         />
       </ControlsBar>
       <BalancesView
@@ -170,7 +170,7 @@ const Balances = () => {
         open={error.status}
         handleClose={closeErrorModal}
       >
-        <ErrorModal 
+        <ErrorModal
           message={error.message}
         />
       </Dialog>

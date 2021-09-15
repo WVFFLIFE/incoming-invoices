@@ -1,5 +1,8 @@
 import { useEffect, useRef } from "react";
 
+import { SearchIcon } from 'components/Icons';
+
+import clsx from 'clsx';
 import { useStyles } from './style';
 
 const Input = ({
@@ -24,13 +27,18 @@ const Input = ({
   }
 
   return (
-    <input
-      className={classes.root}
-      ref={inputRef}
-      value={value}
-      onChange={onChange}
-      onKeyPress={handleKeyDown}
-    />
+    <div className={classes.searchWrapper}>
+      <div className={classes.relative}>
+        <SearchIcon className={classes.searchIcon} />
+        <input
+          className={clsx('picker', classes.root)}
+          ref={inputRef}
+          value={value}
+          onChange={onChange}
+          onKeyPress={handleKeyDown}
+        />
+      </div>
+    </div>
   )
 }
 

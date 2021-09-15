@@ -2,7 +2,8 @@ import { Guid } from 'guid-typescript';
 import { 
   BaseEntityModel,
   EntityResponseModel,
-  BaseResponseModel
+  BaseResponseModel,
+  EnhancedInvoiceModel
 } from 'models';
 
 enum MessageCode {
@@ -24,13 +25,13 @@ interface CooperativesRes extends BaseResponseModel {
   Cooperatives: CooperativeModel[] | null;
 }
 interface PurchaseInvoicesResponseModel extends BaseResponseModel {
-  PurchaseInvoices: InvoiceModel[] | null;
+  PurchaseInvoices: EnhancedInvoiceModel[] | null;
 }
 interface UpdateInvoiceRes extends BaseResponseModel {
   UpdateMessages: UpdateMessagesModel[] | null;
 }
 interface PaidInvoicesRes extends BaseResponseModel {
-  PurchaseInvoices: InvoiceModel[] | null;
+  PurchaseInvoices: EnhancedInvoiceModel[] | null;
 }
 interface CheckBalanceDateResponceModel extends BaseResponseModel {
   Payers: BaseEntityModel[];

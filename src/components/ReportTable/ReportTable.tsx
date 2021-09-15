@@ -81,7 +81,7 @@ const ReportTable: React.FC<ReportTableProps> = ({
             <ReportTableRow 
               key={bankAccount.Id}
               bankAccount={bankAccount}
-              expanded={expandedAll}
+              expanded={expandedAll || !!bankAccount.IsMain}
               searchTerm={searchTerm}
             />
           )

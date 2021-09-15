@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Dropdown from 'components/Dropdown';
 import { IconButton } from 'components/StyledComponents'
 import { SearchIcon } from 'components/Icons';
+import CloseIcon from '@material-ui/icons/Close';
 import Input from './Input';
 
 import clsx from 'clsx';
@@ -35,14 +36,19 @@ const Search = ({
     <>
       <IconButton
         className={clsx(classes.iconButton, className, {
-          [classes.active]: !isEmpty(searchTerm)
+          [classes.active]: !isEmpty(searchTerm),
+          [classes.open]: open,
         })}
         onClick={onOpen}
       >
-        <SearchIcon />
+        {
+          open
+            ? <CloseIcon className={classes.closeIcon} />
+            : <SearchIcon className={classes.searchIcon} />
+        }
       </IconButton>
       <Dropdown
-        className={classes.searchWrapper}
+        className={classes.dropdown}
         anchorEl={anchorEl}
         open={open}
         onClose={onClose}
@@ -55,7 +61,7 @@ const Search = ({
           horizontal: 'right',
         }}
       >
-        <Input 
+        <Input
           value={searchTerm}
           onChange={handleChangeSearchTerm}
           onClose={onClose}

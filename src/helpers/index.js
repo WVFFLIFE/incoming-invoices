@@ -258,9 +258,8 @@ export const getText = searchTerm => {
     let s = type === 'number' && searchTerm
       ? mergeNumberRanks(searchTerm)
       : searchTerm;
-  
+
     let index = toLower(text).indexOf(toLower(s));
-    console.log(s, text, index);
     if (!s || index === -1) {
       return text
     }

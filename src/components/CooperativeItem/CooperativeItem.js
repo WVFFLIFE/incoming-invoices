@@ -29,7 +29,7 @@ const CooperativeItem = ({
     setExpanded(!expanded);
   }
 
-  const getTextView = getText(searchTerm);
+  const highlight = getText(searchTerm);
   const isBankAccounts = !!data.BankAccounts.length;
   const isAllowedBalanceInadequate = typeof data?.AllowedBalance === 'number' && data.UrgentBalance > 0 && data.AllowedBalance < data.UrgentBalance;
   const isBalanceInadequate = typeof data?.AllowedBalance !== 'number' && data.UrgentBalance > 0 && data.Balance < data.UrgentBalance;
@@ -53,7 +53,7 @@ const CooperativeItem = ({
               anchorOriginTopRightRectangle: classes.anchorOriginTopRightRectangle
             }}
           >
-            <span className={classes.name}>{getTextView(data.Name)}</span>
+            <span className={classes.name}>{highlight(data.Name)}</span>
           </Badge>
           {isBankAccounts ? (
             <Button
@@ -70,7 +70,7 @@ const CooperativeItem = ({
         </div>
         <div className={classes.contentWrapper}>
           <span className={classes.limit}>
-            {getTextView(formatNum(data.Limit))}
+            {highlight(formatNum(data.Limit), 'number')}
           </span>
         </div>
         <div className={clsx(classes.contentWrapper, {
@@ -81,7 +81,7 @@ const CooperativeItem = ({
             [classes.bold]: data.AllowedBalance > data.UrgentBalance
           })}>
             {
-              getTextView(formatNum(data.AllowedBalance))
+              highlight(formatNum(data.AllowedBalance), 'number')
             }
           </span>
           {isAllowedBalanceInadequate ? <span className={classes.dot}></span> : null}
@@ -94,7 +94,7 @@ const CooperativeItem = ({
             [classes.pinkBalance]: isBalanceInadequate,
           })}>
             {
-              getTextView(formatNum(data.Balance))
+              highlight(formatNum(data.Balance), 'number')
             }
           </span>
           {isBalanceInadequate ? <span className={classes.dot}></span> : null}
@@ -103,12 +103,12 @@ const CooperativeItem = ({
           <span className={clsx(classes.urgent, {
             [classes.zeroUrgent]: isUrgentZero
           })}>
-            {getTextView(formatNum(data.UrgentBalance))}
+            {highlight(formatNum(data.UrgentBalance), 'number')}
           </span>
         </div>
         <div className={classes.contentWrapper}>
           <span className={classes.sumInvoice}>
-            {getTextView(formatNum(data.InvoiceSum))}
+            {highlight(formatNum(data.InvoiceSum), 'number')}
           </span>
         </div>
         <div className={classes.contentWrapper}>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useDispatch, useSelector, batch } from 'react-redux';
 import {useTranslation} from 'react-i18next';
 import {
@@ -7,7 +7,6 @@ import {
   FiltersBar,
   Pagination,
   RefreshButton,
-  SearchControl,
   FiltersControls,
   PaySelectedButton,
   EditButton,
@@ -246,14 +245,10 @@ const Payments = () => {
           />
         </FlexWrapper>
         <FlexWrapper>
-          <SearchControl 
-            value={searchTerm}
-            handleChangeValue={handleChangeSearchTerm}
-          />
-          {/* <Search
-            value={searchTerm}
+          <Search
+            searchTerm={searchTerm}
             handleChangeSearchTerm={handleChangeSearchTerm}
-          /> */}
+          />
           <FiltersControls
             isActive={isActiveFilter}
           >

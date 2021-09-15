@@ -47,6 +47,7 @@ const FiltersBar = ({
   filtersList,
   activeFilter,
   handleChangeFilter,
+  disabled = false,
   withMargin = false
 }) => {
   const classes = useStyles();
@@ -64,9 +65,12 @@ const FiltersBar = ({
             className={clsx(classes.filterItem, {
               [classes.activeFilter]: isActive,
               [classes.withMargin]: withMargin,
-              [classes.disabled]: filterItem?.disabled
+              [classes.disabled]: filterItem?.disabled || disabled
             })}
-            onClick={filterItem?.disabled ? () => {} : () => handleChangeFilter(filterItem.id)}
+            onClick={
+              filterItem?.disabled || disabled
+                ? undefined 
+                : () => handleChangeFilter(filterItem.id)}
           >
             {t(filterItem.label)}
           </div>

@@ -1,7 +1,7 @@
 import {
   SortParams,
   SortParamsType,
-  InvoiceModel,
+  BaseInvoiceModel,
   PaginationParams
 } from 'models';
 import { useState, useMemo, useCallback } from 'react';
@@ -19,7 +19,7 @@ import ReportInvoiceTableRow from './ReportInvoiceTableRow';
 import { useStyles } from './style';
 
 interface ReportInvoiceTableProps {
-  invoices: Omit<InvoiceModel, 'BankAccounts'>[];
+  invoices: BaseInvoiceModel[];
   searchTerm: string;
 }
 

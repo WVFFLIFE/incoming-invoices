@@ -1,7 +1,8 @@
+import { b64 } from './base64';
 import {
   CooperativeModel,
   DefaultError,
-  InvoiceModel
+  EnhancedInvoiceModel
 } from 'models';
 import {
   useMemo,
@@ -58,7 +59,7 @@ const filtersList = [
 ];
 
 interface Res {
-  invoices: InvoiceModel[];
+  invoices: EnhancedInvoiceModel[];
   loading: boolean;
   error: DefaultError;
   totalAmountLA2900: number;
@@ -99,20 +100,20 @@ const Report = () => {
     },
     loading: false,
   })
-  const [dateFilter, setDateFilter] = useState<Date | null>(new Date());
+  const [dateFilter, setDateFilter] = useState<Date | null>(null);
   const [quickFilter, setQuickFilter] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
 
   const [selectedCooperative] = selectedCooperatives;
 
-  // const onLoad = () => {
-  //   if (iframeRef.current) {
+  const onLoad = () => {
+    if (iframeRef.current) {
       
-  //     (iframeRef.current.contentWindow as any).PDFViewerApplication.open(
-  //       base64ToUint8Array(b64)
-  //     );
-  //   }
-  // }
+      (iframeRef.current.contentWindow as any).PDFViewerApplication.open(
+        base64ToUint8Array(b64)
+      );
+    }
+  }
 
   useEffect(() => {
     async function getInvoices(
@@ -251,6 +252,8 @@ const Report = () => {
             {" "}
             <b>
               {formatNum(res.totalAmountLA2900)}
+              {" "}
+              €
             </b>
           </span>
         </Box>
@@ -315,6 +318,7 @@ const Report = () => {
                 activeFilter={quickFilter}
                 filtersList={filtersList}
                 handleChangeFilter={handleChangeQuickFilter}
+                disabled={!!!res.invoices.length}
               />
             </Box>
           </Box>
@@ -336,7 +340,7 @@ const Report = () => {
                   !selectedCooperative
                     ? t('#report.notification.selectcooperative')
                     : !dateFilter
-                      ? 'Please select the date'
+                      ? t('#report.notification.selectdate')
                       : null
                 }
               </span>

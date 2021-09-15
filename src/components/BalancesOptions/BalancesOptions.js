@@ -4,6 +4,7 @@ import {
 } from '@material-ui/core';
 import { List } from 'react-virtualized';
 import { ResizableBox } from 'react-resizable';
+import { CancelButton, ApplyButton } from 'components/StyledComponents';
 import { BalanceIcon, ContractIcon } from 'components/Icons';
 import FiltersBar from 'components/FiltersBar';
 import Checkbox from 'components/Checkbox';
@@ -201,24 +202,15 @@ const BalancesOptions = ({
         </div>
         {options.length ? renderOptions(currentOptions) : null}
         <div className={classes.actionsWrapper}>
-          <Button
-            classes={{
-              root: classes.cancelBtn
-            }}
-            onClick={handleClose}
-          >
+          <CancelButton onClick={handleClose} className={classes.mr20}>
             {t('#button.cancel')}
-          </Button>
-          <Button
-            classes={{
-              root: classes.resolveBtn,
-              disabled: classes.disabledApplyButton
-            }}
+          </CancelButton>
+          <ApplyButton
             disabled={options.length === 0}
             onClick={handleChangeSelectedItem}
           >
             {t('#button.use')}
-          </Button>
+          </ApplyButton>
         </div>
       </div>
     </ResizableBox>

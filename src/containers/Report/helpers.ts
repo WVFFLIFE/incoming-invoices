@@ -1,5 +1,5 @@
 import {
-  InvoiceModel,
+  BaseInvoiceModel,
   EnhancedBankAccountModel,
 } from 'models';
 
@@ -47,14 +47,14 @@ function filterByPaymentSearchTerm<T extends {}>(
   })
 }
 
-function countTotalAmount(invoices: Omit<InvoiceModel, 'BankAccounts'>[]) {
+function countTotalAmount(invoices: BaseInvoiceModel[]) {
   return invoices.reduce((acc, next) => {
     return floatify(acc + (next.Amount || 0));
   }, 0);
 }
 
 function filterByQuickFilter(
-  invoice: Omit<InvoiceModel, 'BankAccounts'>,
+  invoice: BaseInvoiceModel,
   quickFilter: string
 ) {
   switch(quickFilter) {

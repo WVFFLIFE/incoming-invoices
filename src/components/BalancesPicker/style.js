@@ -5,14 +5,25 @@ export const useStyles = makeStyles({
     position: 'relative',
     display: 'flex',
     alignItems: 'center',
-    minWidth: 500,
+    justifyContent: 'space-between',
     minHeight: 40,
+    width: 500,
     marginRight: 20,
-    paddingLeft: 30,
-    paddingRight: 55,
+    paddingLeft: 15,
+    paddingRight: 15,
     background: '#fff',
     borderRadius: 3,
-    boxShadow: 'inset 0 1px 4px 0 rgba(0,0,0,0.15)'
+    boxShadow: 'inset 0 1px 4px 0 rgb(0 0 0 / 15%)',
+    cursor: 'pointer',
+    '&:focus': {
+      outlineColor: '#0A8DC7'
+    }
+  },
+  wrapper: {
+    display: 'flex',
+    flex: 1,
+    alignItems: 'center',
+    margin: '0 5px',
   },
   name: {
     fontSize: 13,
@@ -21,27 +32,14 @@ export const useStyles = makeStyles({
     color: '#30344B'
   },
   valueWrapper: {
-    minWidth: 230,
-    width: '100%',
-    marginRight: 10
+    flex: 1,
+    marginRight: 10,
+    justifyContent: 'flex-start',
   },
   button: {
     minWidth: 'auto',
-    marginTop: 2,
-    padding: 2,
+    padding: 0,
     borderRadius: '50%'
-  },
-  buttonPrev: {
-    position: 'absolute',
-    left: 5,
-    top: '50%',
-    transform: 'translateY(-58%)',
-  },
-  buttonNext: {
-    position: 'absolute',
-    right: 25,
-    top: '50%',
-    transform: 'translateY(-58%)',
   },
   icon: {
     fontSize: '1.1rem',
@@ -51,38 +49,16 @@ export const useStyles = makeStyles({
     opacity: .3
   },
   balancesIcon: {
-    marginRight: 7,
     fill: '#30344B'
   },
-  balanceWrapper: {
-    position: 'relative',
-    paddingRight: 15,
-    '&::before': {
-      content: "''",
-      position: 'absolute',
-      top: '50%',
-      right: 0,
-      width: 1,
-      height: 10,
-      background: '#30344B',
-      transform: 'translateY(-50%)'
-    }
-  },
-  allowedBalanceWrapper: {
-    paddingLeft: 15
-  },
   balancesText: {
+    marginLeft: 5,
     fontSize: 13,
     fontFamily: 'Proxima Nova',
     fontWeight: 'bold',
     letterSpacing: 0.2,
-    color: '#30344B'
-  },
-  expandButton: {
-    position: 'absolute',
-    right: 5,
-    top: '50%',
-    transform: 'translateY(-58%)'
+    color: '#30344B',
+    whiteSpace: 'nowrap'
   },
   expandOpen: {
     transform: 'rotate(180deg)',

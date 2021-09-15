@@ -136,6 +136,7 @@
   "#datepicker.filter.currentyear": "Current year",
   "#datepicker.filter.lastmonth": "Last month",
   "#report.notification.selectcooperative": "Please select one organization only!",
+  "#report.notification.selectdate": "Please select date",
   "#report.title": "Unpaid Invoices",
   "#report.totalinvoices": "{{totalInvoices}} invoices",
   "#report.totalamount": "Total amount",

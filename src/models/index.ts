@@ -41,18 +41,18 @@ export interface ValidationModel {
 }
 
 export interface BankAccountModel extends BaseEntityModel {
-  Operator: BaseEntityModel;
-  Limit: number;
-  AllowedBalance: number;
-  Balance: number;
-  Description: string;
-  LastUpdated: Date;
-  IsMain: boolean;
-  Link: string;
+  Operator: BaseEntityModel | null;
+  Limit: number | null;
+  AllowedBalance: number | null;
+  Balance: number | null;
+  Description: string | null;
+  LastUpdated: string | null;
+  IsMain: boolean | null;
+  Link: string | null;
 }
 
 export interface CooperativeModel extends BaseEntityModel {
-  ClosedPeriodEndDate: Date;
+  ClosedPeriodEndDate: string;
   BankAccounts: BankAccountModel[];
   UrgentBalance: number;
   InvoiceSum: number;
@@ -61,25 +61,29 @@ export interface CooperativeModel extends BaseEntityModel {
   Balance: number;
 }
 
-export interface InvoiceModel {
+export interface BaseInvoiceModel {
   Id: string;
   Payer: BaseEntityModel;
   Seller: string;
-  DueDate: Date;
+  DueDate: string | null;
   Amount: number;
   InvoiceNumber: string;
   BankAccounts: BankAccountModel[];
   BuyerBankAccountId: string;
   InvoiceStatus: BaseOptionSetModel;
-  PaymentDate: Date;
-  InvoiceDate: Date;
-  AccountingDate: Date;
+  PaymentDate: string | null;
+  InvoiceDate: string | null;
+  AccountingDate: string | null;
   Comment: string;
   RejectComment: string;
   AllowedPay: boolean;
   AllowedEdit: boolean;
   Link: string;
   Validation: EntityResponseModel[];
+}
+
+export interface EnhancedInvoiceModel extends BaseInvoiceModel {
+  BankAccount: BankAccountModel | null;
 }
 
 export interface PaymentModel {
@@ -94,7 +98,7 @@ export interface UpdateItemResponseModel {
 }
 
 export interface EnhancedBankAccountModel extends BankAccountModel {
-  Invoices: Omit<InvoiceModel, 'BankAccounts'>[];
+  Invoices: BaseInvoiceModel[];
   TotalAmount: number;
 }
 

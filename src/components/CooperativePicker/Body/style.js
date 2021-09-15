@@ -36,7 +36,8 @@ export const useStyles = makeStyles(() => ({
     fontSize: 13,
     fontFamily: 'Proxima Nova',
     fontWeight: 400,
-    color: '#30344B'
+    color: '#30344B',
+    whiteSpace: 'nowrap'
   },
   balancesIcon: {
     marginRight: 7,

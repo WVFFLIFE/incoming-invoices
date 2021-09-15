@@ -1,4 +1,4 @@
-import { InvoiceModel } from 'models';
+import { BaseInvoiceModel } from 'models';
 import { memo, useState, MouseEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -39,12 +39,12 @@ function base64ToBlob(base64: string) {
 }
 
 interface ReportInvoiceTableRowProps {
-  invoice: Omit<InvoiceModel, 'BankAccounts'>;
+  invoice: BaseInvoiceModel;
   searchTerm: string;
 }
 
 interface ModalState {
-  invoice: Omit<InvoiceModel, 'BankAccounts'> | null;
+  invoice: BaseInvoiceModel | null;
   open: boolean;
 }
 
@@ -74,7 +74,7 @@ const ReportInvoiceTableRow: React.FC<ReportInvoiceTableRowProps> = ({
     }
   }
 
-  const selectInvoice = (invoice: Omit<InvoiceModel, 'BankAccounts'>) => {
+  const selectInvoice = (invoice: BaseInvoiceModel) => {
     setModalState({
       invoice,
       open: true

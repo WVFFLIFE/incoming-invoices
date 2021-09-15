@@ -8,7 +8,6 @@ export const useStyles = makeStyles(() => ({
     cursor: 'pointer',
   },
   output: {
-    marginLeft: 10,
     fontSize: 14,
     fontFamily: 'Proxima Nova',
     color: '#000'
