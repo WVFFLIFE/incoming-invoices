@@ -25,6 +25,16 @@ import InvoiceDetailedView from '../InvoiceDetailedView';
 import clsx from 'clsx';
 import { useStyles } from "./style";
 
+interface ReportInvoiceTableRowProps {
+  invoice: BaseInvoiceModel;
+  searchTerm: string;
+}
+
+interface ModalState {
+  invoice: BaseInvoiceModel | null;
+  open: boolean;
+}
+
 function base64ToBlob(base64: string) {
   const binary = atob(base64.replace(/\s/g, ''));
   const len = binary.length;
@@ -36,16 +46,6 @@ function base64ToBlob(base64: string) {
   }
 
   return new Blob([view], { type: 'application/pdf' })
-}
-
-interface ReportInvoiceTableRowProps {
-  invoice: BaseInvoiceModel;
-  searchTerm: string;
-}
-
-interface ModalState {
-  invoice: BaseInvoiceModel | null;
-  open: boolean;
 }
 
 const ReportInvoiceTableRow: React.FC<ReportInvoiceTableRowProps> = ({

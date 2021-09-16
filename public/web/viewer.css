@@ -1,18 +1,3 @@
-/* Copyright 2014 Mozilla Foundation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 .textLayer {
   position: absolute;
   left: 0;
@@ -563,8 +548,8 @@
   overflow: visible;
   border: var(--page-border);
   background-clip: content-box;
-  -o-border-image: url(images/shadow.png) 9 9 repeat;
-     border-image: url(images/shadow.png) 9 9 repeat;
+  -o-border-image: url(./images/shadow.png) 9 9 repeat;
+     border-image: url(./images/shadow.png) 9 9 repeat;
   background-color: rgba(255, 255, 255, 1);
 }
 
@@ -641,7 +626,7 @@
   top: 0;
   right: 0;
   bottom: 0;
-  background: url("images/loading-icon.gif") center no-repeat;
+  background: url("./images/loading_icon.gif") center no-repeat;
 }
 
 .pdfPresentationMode .pdfViewer {
@@ -718,42 +703,42 @@
   --overlay-button-bg-color: rgba(12, 12, 13, 0.1);
   --overlay-button-hover-bg-color: rgba(12, 12, 13, 0.3);
 
-  --loading-icon: url(images/loading.svg);
-  --treeitem-expanded-icon: url(images/treeitem-expanded.svg);
-  --treeitem-collapsed-icon: url(images/treeitem-collapsed.svg);
-  --toolbarButton-menuArrow-icon: url(images/toolbarButton-menuArrow.svg);
-  --toolbarButton-sidebarToggle-icon: url(images/toolbarButton-sidebarToggle.svg);
-  --toolbarButton-secondaryToolbarToggle-icon: url(images/toolbarButton-secondaryToolbarToggle.svg);
-  --toolbarButton-pageUp-icon: url(images/toolbarButton-pageUp.svg);
-  --toolbarButton-pageDown-icon: url(images/toolbarButton-pageDown.svg);
-  --toolbarButton-zoomOut-icon: url(images/toolbarButton-zoomOut.svg);
-  --toolbarButton-zoomIn-icon: url(images/toolbarButton-zoomIn.svg);
-  --toolbarButton-presentationMode-icon: url(images/toolbarButton-presentationMode.svg);
-  --toolbarButton-print-icon: url(images/toolbarButton-print.svg);
-  --toolbarButton-openFile-icon: url(images/toolbarButton-openFile.svg);
-  --toolbarButton-download-icon: url(images/toolbarButton-download.svg);
-  --toolbarButton-bookmark-icon: url(images/toolbarButton-bookmark.svg);
-  --toolbarButton-viewThumbnail-icon: url(images/toolbarButton-viewThumbnail.svg);
-  --toolbarButton-viewOutline-icon: url(images/toolbarButton-viewOutline.svg);
-  --toolbarButton-viewAttachments-icon: url(images/toolbarButton-viewAttachments.svg);
-  --toolbarButton-viewLayers-icon: url(images/toolbarButton-viewLayers.svg);
-  --toolbarButton-currentOutlineItem-icon: url(images/toolbarButton-currentOutlineItem.svg);
-  --toolbarButton-search-icon: url(images/toolbarButton-search.svg);
-  --findbarButton-previous-icon: url(images/findbarButton-previous.svg);
-  --findbarButton-next-icon: url(images/findbarButton-next.svg);
-  --secondaryToolbarButton-firstPage-icon: url(images/secondaryToolbarButton-firstPage.svg);
-  --secondaryToolbarButton-lastPage-icon: url(images/secondaryToolbarButton-lastPage.svg);
-  --secondaryToolbarButton-rotateCcw-icon: url(images/secondaryToolbarButton-rotateCcw.svg);
-  --secondaryToolbarButton-rotateCw-icon: url(images/secondaryToolbarButton-rotateCw.svg);
-  --secondaryToolbarButton-selectTool-icon: url(images/secondaryToolbarButton-selectTool.svg);
-  --secondaryToolbarButton-handTool-icon: url(images/secondaryToolbarButton-handTool.svg);
-  --secondaryToolbarButton-scrollVertical-icon: url(images/secondaryToolbarButton-scrollVertical.svg);
-  --secondaryToolbarButton-scrollHorizontal-icon: url(images/secondaryToolbarButton-scrollHorizontal.svg);
-  --secondaryToolbarButton-scrollWrapped-icon: url(images/secondaryToolbarButton-scrollWrapped.svg);
-  --secondaryToolbarButton-spreadNone-icon: url(images/secondaryToolbarButton-spreadNone.svg);
-  --secondaryToolbarButton-spreadOdd-icon: url(images/secondaryToolbarButton-spreadOdd.svg);
-  --secondaryToolbarButton-spreadEven-icon: url(images/secondaryToolbarButton-spreadEven.svg);
-  --secondaryToolbarButton-documentProperties-icon: url(images/secondaryToolbarButton-documentProperties.svg);
+  --loading-icon: url(././images/loading.svg);
+  --treeitem-expanded-icon: url(./images/treeitem_expanded.svg);
+  --treeitem-collapsed-icon: url(./images/treeitem_collapsed.svg);
+  --toolbarButton-menuArrow-icon: url(./images/toolbarButton_menuArrow.svg);
+  --toolbarButton-sidebarToggle-icon: url(./images/toolbarButton_sidebarToggle.png);
+  --toolbarButton-secondaryToolbarToggle-icon: url(./images/toolbarButton_secondaryToolbarToggle.svg);
+  --toolbarButton-pageUp-icon: url(./images/toolbarButton_pageUp.png);
+  --toolbarButton-pageDown-icon: url(./images/toolbarButton_pageDown.png);
+  --toolbarButton-zoomOut-icon: url(./images/toolbarButton_zoomOut.png);
+  --toolbarButton-zoomIn-icon: url(./images/toolbarButton_zoomIn.png);
+  --toolbarButton-presentationMode-icon: url(./images/toolbarButton_presentationMode.svg);
+  --toolbarButton-print-icon: url(./images/toolbarButton_print.svg);
+  --toolbarButton-openFile-icon: url(./images/toolbarButton_openFile.svg);
+  --toolbarButton-download-icon: url(./images/toolbarButton_download.svg);
+  --toolbarButton-bookmark-icon: url(./images/toolbarButton_bookmark.svg);
+  --toolbarButton-viewThumbnail-icon: url(./images/toolbarButton_viewThumbnail.png);
+  --toolbarButton-viewOutline-icon: url(./images/toolbarButton_viewOutline.png);
+  --toolbarButton-viewAttachments-icon: url(./images/toolbarButton_viewAttachments.png);
+  --toolbarButton-viewLayers-icon: url(./images/toolbarButton_viewLayers.png);
+  --toolbarButton-currentOutlineItem-icon: url(./images/toolbarButton_currentOutlineItem.svg);
+  --toolbarButton-search-icon: url(./images/toolbarButton_search.png);
+  --findbarButton-previous-icon: url(./images/findbarButton_previous.png);
+  --findbarButton-next-icon: url(./images/findbarButton_next.png);
+  --secondaryToolbarButton-firstPage-icon: url(./images/secondaryToolbarButton_firstPage.svg);
+  --secondaryToolbarButton-lastPage-icon: url(./images/secondaryToolbarButton_lastPage.svg);
+  --secondaryToolbarButton-rotateCcw-icon: url(./images/secondaryToolbarButton_rotateCcw.svg);
+  --secondaryToolbarButton-rotateCw-icon: url(./images/secondaryToolbarButton_rotateCw.svg);
+  --secondaryToolbarButton-selectTool-icon: url(./images/secondaryToolbarButton_selectTool.svg);
+  --secondaryToolbarButton-handTool-icon: url(./images/secondaryToolbarButton_handTool.svg);
+  --secondaryToolbarButton-scrollVertical-icon: url(./images/secondaryToolbarButton_scrollVertical.svg);
+  --secondaryToolbarButton-scrollHorizontal-icon: url(./images/secondaryToolbarButton_scrollHorizontal.svg);
+  --secondaryToolbarButton-scrollWrapped-icon: url(./images/secondaryToolbarButton_scrollWrapped.svg);
+  --secondaryToolbarButton-spreadNone-icon: url(./images/secondaryToolbarButton_spreadNone.svg);
+  --secondaryToolbarButton-spreadOdd-icon: url(./images/secondaryToolbarButton_spreadOdd.svg);
+  --secondaryToolbarButton-spreadEven-icon: url(./images/secondaryToolbarButton_spreadEven.svg);
+  --secondaryToolbarButton-documentProperties-icon: url(./images/secondaryToolbarButton_documentProperties.svg);
 }
 
   :root {
@@ -798,7 +783,7 @@
     /* This image is used in <input> elements, which unfortunately means that
      * the `mask-image` approach used with all of the other images doesn't work
      * here; hence why we still have two versions of this particular image. */
-    --loading-icon: url(images/loading-dark.svg);
+    --loading-icon: url(./images/loading_dark.svg);
   }
 
 
@@ -1570,9 +1555,9 @@ html[dir="rtl"] #toolbarViewerLeft > .toolbarButton:first-child {
   background-color: var(--toggled-btn-color);
 }
 
-.toolbarButton.toggled::before {
+/* .toolbarButton.toggled::before {
   background-color: var(--toggled-btn-color);
-}
+} */
 
 .toolbarButton.toggled:hover:active,
 .splitToolbarButton.toggled > .toolbarButton.toggled:hover:active,
@@ -1642,7 +1627,7 @@ html[dir="rtl"] .dropdownToolbarButton > select {
   height: 1px;
 }
 
-.toolbarButton::before,
+/* .toolbarButton::before, */
 .secondaryToolbarButton::before,
 .dropdownToolbarButton::after,
 .treeItemToggler::before {
@@ -1666,13 +1651,14 @@ html[dir="rtl"] .dropdownToolbarButton > select {
 }
 
 .toolbarButton::before {
-  opacity: var(--toolbar-icon-opacity);
+  position: absolute;
+  display: inline-block;
   top: 6px;
   left: 6px;
 }
 
-.toolbarButton:hover::before,
-.toolbarButton:focus::before,
+/* .toolbarButton:hover::before,
+.toolbarButton:focus::before, */
 .secondaryToolbarButton:hover::before,
 .secondaryToolbarButton:focus::before {
   background-color: var(--toolbar-icon-hover-bg-color);
@@ -1690,8 +1676,9 @@ html[dir="rtl"] .secondaryToolbarButton::before {
 }
 
 .toolbarButton#sidebarToggle::before {
-  -webkit-mask-image: var(--toolbarButton-sidebarToggle-icon);
-  mask-image: var(--toolbarButton-sidebarToggle-icon);
+  content: var(--toolbarButton-sidebarToggle-icon);
+  top: 2px;
+  left: 2px;
 }
 html[dir="rtl"] .toolbarButton#sidebarToggle::before {
   transform: scaleX(-1);
@@ -1706,33 +1693,27 @@ html[dir="rtl"] .toolbarButton#secondaryToolbarToggle::before {
 }
 
 .toolbarButton.findPrevious::before {
-  -webkit-mask-image: var(--findbarButton-previous-icon);
-  mask-image: var(--findbarButton-previous-icon);
+  content: var(--findbarButton-previous-icon);
 }
 
 .toolbarButton.findNext::before {
-  -webkit-mask-image: var(--findbarButton-next-icon);
-  mask-image: var(--findbarButton-next-icon);
+  content: var(--findbarButton-next-icon);
 }
 
 .toolbarButton.pageUp::before {
-  -webkit-mask-image: var(--toolbarButton-pageUp-icon);
-  mask-image: var(--toolbarButton-pageUp-icon);
+  content: var(--toolbarButton-pageUp-icon);
 }
 
 .toolbarButton.pageDown::before {
-  -webkit-mask-image: var(--toolbarButton-pageDown-icon);
-  mask-image: var(--toolbarButton-pageDown-icon);
+  content: var(--toolbarButton-pageDown-icon);
 }
 
 .toolbarButton.zoomOut::before {
-  -webkit-mask-image: var(--toolbarButton-zoomOut-icon);
-  mask-image: var(--toolbarButton-zoomOut-icon);
+  content: var(--toolbarButton-zoomOut-icon);
 }
 
 .toolbarButton.zoomIn::before {
-  -webkit-mask-image: var(--toolbarButton-zoomIn-icon);
-  mask-image: var(--toolbarButton-zoomIn-icon);
+  content: var(--toolbarButton-zoomIn-icon);
 }
 
 .toolbarButton.presentationMode::before,
@@ -1776,26 +1757,22 @@ html[dir="rtl"] .toolbarButton#secondaryToolbarToggle::before {
 }
 
 #viewThumbnail.toolbarButton::before {
-  -webkit-mask-image: var(--toolbarButton-viewThumbnail-icon);
-  mask-image: var(--toolbarButton-viewThumbnail-icon);
+  content: var(--toolbarButton-viewThumbnail-icon);
 }
 
 #viewOutline.toolbarButton::before {
-  -webkit-mask-image: var(--toolbarButton-viewOutline-icon);
-  mask-image: var(--toolbarButton-viewOutline-icon);
+  content: var(--toolbarButton-viewOutline-icon);
 }
 html[dir="rtl"] #viewOutline.toolbarButton::before {
   transform: scaleX(-1);
 }
 
 #viewAttachments.toolbarButton::before {
-  -webkit-mask-image: var(--toolbarButton-viewAttachments-icon);
-  mask-image: var(--toolbarButton-viewAttachments-icon);
+  content: var(--toolbarButton-viewAttachments-icon);
 }
 
 #viewLayers.toolbarButton::before {
-  -webkit-mask-image: var(--toolbarButton-viewLayers-icon);
-  mask-image: var(--toolbarButton-viewLayers-icon);
+  content: var(--toolbarButton-viewLayers-icon);
 }
 
 #currentOutlineItem.toolbarButton::before {
@@ -1807,8 +1784,7 @@ html[dir="rtl"] #currentOutlineItem.toolbarButton::before {
 }
 
 #viewFind.toolbarButton::before {
-  -webkit-mask-image: var(--toolbarButton-search-icon);
-  mask-image: var(--toolbarButton-search-icon);
+  content: var(--toolbarButton-search-icon);
 }
 
 .toolbarButton.pdfSidebarNotification::after {
@@ -2433,7 +2409,7 @@ html[dir="rtl"] #documentPropertiesOverlay .row > * {
 }
 
 .grab-to-pan-grab {
-  cursor: url("images/grab.cur"), move !important;
+  cursor: url("./images/grab.cur"), move !important;
   cursor: -webkit-grab !important;
   cursor: grab !important;
 }
@@ -2443,7 +2419,7 @@ html[dir="rtl"] #documentPropertiesOverlay .row > * {
 }
 .grab-to-pan-grab:active,
 .grab-to-pan-grabbing {
-  cursor: url("images/grabbing.cur"), move !important;
+  cursor: url("./images/grabbing.cur"), move !important;
   cursor: -webkit-grabbing !important;
   cursor: grabbing !important;
   position: fixed;

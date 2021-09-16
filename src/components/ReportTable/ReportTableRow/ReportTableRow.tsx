@@ -1,5 +1,5 @@
 import { EnhancedBankAccountModel } from 'models';
-import { memo, useState, useEffect } from 'react';
+import { memo, useState, useEffect, useRef } from 'react';
 
 import _get from 'lodash/get';
 import { formatNum, getText } from 'helpers';
@@ -25,10 +25,18 @@ const ReportTableRow: React.FC<ReportTableRowProps> = ({
 }) => {
   const classes = useStyles();
 
-  const [open, setOpen] = useState(() => expanded);
+  const rendered = useRef(false);
+
+  const [open, setOpen] = useState(() => 
+    expanded || !!bankAccount.IsMain
+  );
 
   useEffect(() => {
-    setOpen(expanded);
+    if (rendered.current) {
+      setOpen(expanded);
+    } else {
+      rendered.current = true;
+    }
   }, [expanded]);
 
   const onToggle = () => {

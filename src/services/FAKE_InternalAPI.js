@@ -50,13 +50,13 @@ class FakeInternalAPI {
 					PurchaseInvoices: [
 						{
 								"Payer": {
-										"Id": "a5933092-d1a4-e611-8103-005056ac126a",
-										"Name": "Kiinteistö Oy Levihovi 3"
+										"Id": "c98e3773-9ca1-e611-8103-005056ac126a",
+										"Name": "Kiinteistö Oy Kirkkokatu 8"
 								},
-								"Seller": "Rovakaira Oy",
-								"DueDate": "2020-10-20T00:00:00+03:00",
-								"Amount": 105.45,
-								"InvoiceNumber": "46664042",
+								"Seller": "Aletta Oy",
+								"DueDate": "2021-05-26T00:00:00+03:00",
+								"Amount": 852.32,
+								"InvoiceNumber": "210526000514290",
 								"BankAccounts": [
 										{
 												"Operator": {
@@ -64,105 +64,436 @@ class FakeInternalAPI {
 														"Name": "Nordea (NDEAFIHH)"
 												},
 												"Limit": 0,
-												"AllowedBalance": 30754.03,
-												"Balance": 30754.03,
-												"Description": "Vastike",
+												"AllowedBalance": 2739.19,
+												"Balance": 2739.19,
+												"Description": "TEst-test-123456",
 												"LastUpdated": "2020-12-29T06:17:00+02:00",
-												"IsMain": true,
+												"IsMain": false,
 												"Link": null,
-												"Id": "c860493c-74bc-e611-8103-005056ac2752",
-												"Name": "FI7511073000634083"
-										}
-								],
-								"BuyerBankAccountId": "c860493c-74bc-e611-8103-005056ac2752",
-								"BankAccount": {
-										"Operator": {
-												"Id": "426337be-e332-e611-80fd-005056ac2752",
-												"Name": "Nordea (NDEAFIHH)"
+												"Id": "bc60493c-74bc-e611-8103-005056ac2752",
+												"Name": "FI3615853007100857"
 										},
-										"Limit": 0,
-										"AllowedBalance": 30754.03,
-										"Balance": 30754.03,
-										"Description": "Vastike",
-										"LastUpdated": "2020-12-29T06:17:00+02:00",
-										"IsMain": true,
-										"Link": null,
-										"Id": "c860493c-74bc-e611-8103-005056ac2752",
-										"Name": "FI7511073000634083"
-								},
-								"InvoiceStatus": {
-										"Value": 100000001,
-										"Label": "Pending paid"
-								},
-								"PaymentDate": "2020-11-23T00:00:00Z",
-								"InvoiceDate": "2020-10-03T00:00:00+03:00",
-								"AccountingDate": "2020-10-03T00:00:00+03:00",
-								"Comment": null,
-								"RejectComment": null,
-								"AllowedPay": true,
-								"AllowedEdit": true,
-								"Link": "/main.aspx?etn=invoice&id=68087e98-502d-eb11-810e-005056ac5877&pagetype=entityrecord",
-								"Validation": [],
-								"Id": "68087e98-502d-eb11-810e-005056ac5877",
-								"Name": "46664042"
-						},
-						{
-								"Payer": {
-										"Id": "a5933092-d1a4-e611-8103-005056ac126a",
-										"Name": "Kiinteistö Oy Levihovi 3"
-								},
-								"Seller": "Rovakaira Oy",
-								"DueDate": "2020-09-20T00:00:00+03:00",
-								"Amount": 101.56,
-								"InvoiceNumber": "46664043",
-								"BankAccounts": [
 										{
 												"Operator": {
-														"Id": "426337be-e332-e611-80fd-005056ac2752",
-														"Name": "Nordea (NDEAFIHH)"
+														"Id": "3c6337be-e332-e611-80fd-005056ac2752",
+														"Name": "Handelsbanken (HANDFIHH)"
 												},
-												"Limit": 0,
-												"AllowedBalance": 30754.03,
-												"Balance": 30754.03,
+												"Limit": 25000,
+												"AllowedBalance": 61693.2,
+												"Balance": 36693.2,
 												"Description": "Vastike",
-												"LastUpdated": "2020-12-29T06:17:00+02:00",
+												"LastUpdated": "2020-12-09T12:07:00+02:00",
 												"IsMain": true,
 												"Link": null,
-												"Id": "c860493c-74bc-e611-8103-005056ac2752",
-												"Name": "FI7511073000634083"
+												"Id": "be60493c-74bc-e611-8103-005056ac2752",
+												"Name": "FI8331311001382708"
+										},
+										{
+												"Operator": {
+														"Id": "bde3d829-01cd-e611-8103-005056ac5819",
+														"Name": "YAP Solutions Oy (FIYAPSOL)"
+												},
+												"Limit": null,
+												"AllowedBalance": null,
+												"Balance": null,
+												"Description": "TEST 16092021",
+												"LastUpdated": null,
+												"IsMain": false,
+												"Link": null,
+												"Id": "773c0519-b216-ec11-817e-005056bbf149",
+												"Name": "NE1122445577889966"
 										}
 								],
-								"BuyerBankAccountId": "c860493c-74bc-e611-8103-005056ac2752",
+								"BuyerBankAccountId": "bc60493c-74bc-e611-8103-005056ac2752",
 								"BankAccount": {
 										"Operator": {
 												"Id": "426337be-e332-e611-80fd-005056ac2752",
 												"Name": "Nordea (NDEAFIHH)"
 										},
 										"Limit": 0,
-										"AllowedBalance": 30754.03,
-										"Balance": 30754.03,
-										"Description": "Vastike",
+										"AllowedBalance": 2739.19,
+										"Balance": 2739.19,
+										"Description": "TEst-test-123456",
 										"LastUpdated": "2020-12-29T06:17:00+02:00",
-										"IsMain": true,
+										"IsMain": false,
 										"Link": null,
-										"Id": "c860493c-74bc-e611-8103-005056ac2752",
-										"Name": "FI7511073000634083"
+										"Id": "bc60493c-74bc-e611-8103-005056ac2752",
+										"Name": "FI3615853007100857"
 								},
 								"InvoiceStatus": {
 										"Value": 752560001,
 										"Label": "Rejected"
 								},
-								"PaymentDate": "2020-11-23T00:00:00Z",
-								"InvoiceDate": "2020-09-03T00:00:00+03:00",
-								"AccountingDate": "2020-09-03T00:00:00+03:00",
+								"PaymentDate": null,
+								"InvoiceDate": "2021-05-26T00:00:00+03:00",
+								"AccountingDate": "2021-05-15T00:00:00+03:00",
 								"Comment": null,
-								"RejectComment": "RJCT Kate puuttuu TEST 9. \r\n",
+								"RejectComment": null,
 								"AllowedPay": true,
 								"AllowedEdit": true,
-								"Link": "/main.aspx?etn=invoice&id=6d087e98-502d-eb11-810e-005056ac5877&pagetype=entityrecord",
+								"Link": "/main.aspx?etn=invoice&id=ddec3b94-f3bd-eb11-817e-005056bbf149&pagetype=entityrecord",
 								"Validation": [],
-								"Id": "6d087e98-502d-eb11-810e-005056ac5877",
-								"Name": "46664043"
+								"Id": "ddec3b94-f3bd-eb11-817e-005056bbf149",
+								"Name": "210526000514290"
+						},
+						{
+								"Payer": {
+										"Id": "c98e3773-9ca1-e611-8103-005056ac126a",
+										"Name": "Kiinteistö Oy Kirkkokatu 8"
+								},
+								"Seller": "Aletta Oy",
+								"DueDate": "2021-05-31T00:00:00+03:00",
+								"Amount": 852.32,
+								"InvoiceNumber": "210530000845969",
+								"BankAccounts": [
+										{
+												"Operator": {
+														"Id": "426337be-e332-e611-80fd-005056ac2752",
+														"Name": "Nordea (NDEAFIHH)"
+												},
+												"Limit": 0,
+												"AllowedBalance": 2739.19,
+												"Balance": 2739.19,
+												"Description": "TEst-test-123456",
+												"LastUpdated": "2020-12-29T06:17:00+02:00",
+												"IsMain": false,
+												"Link": null,
+												"Id": "bc60493c-74bc-e611-8103-005056ac2752",
+												"Name": "FI3615853007100857"
+										},
+										{
+												"Operator": {
+														"Id": "3c6337be-e332-e611-80fd-005056ac2752",
+														"Name": "Handelsbanken (HANDFIHH)"
+												},
+												"Limit": 25000,
+												"AllowedBalance": 61693.2,
+												"Balance": 36693.2,
+												"Description": "Vastike",
+												"LastUpdated": "2020-12-09T12:07:00+02:00",
+												"IsMain": true,
+												"Link": null,
+												"Id": "be60493c-74bc-e611-8103-005056ac2752",
+												"Name": "FI8331311001382708"
+										},
+										{
+												"Operator": {
+														"Id": "bde3d829-01cd-e611-8103-005056ac5819",
+														"Name": "YAP Solutions Oy (FIYAPSOL)"
+												},
+												"Limit": null,
+												"AllowedBalance": null,
+												"Balance": null,
+												"Description": "TEST 16092021",
+												"LastUpdated": null,
+												"IsMain": false,
+												"Link": null,
+												"Id": "773c0519-b216-ec11-817e-005056bbf149",
+												"Name": "NE1122445577889966"
+										}
+								],
+								"BuyerBankAccountId": "be60493c-74bc-e611-8103-005056ac2752",
+								"BankAccount": {
+										"Operator": {
+												"Id": "3c6337be-e332-e611-80fd-005056ac2752",
+												"Name": "Handelsbanken (HANDFIHH)"
+										},
+										"Limit": 25000,
+										"AllowedBalance": 61693.2,
+										"Balance": 36693.2,
+										"Description": "Vastike",
+										"LastUpdated": "2020-12-09T12:07:00+02:00",
+										"IsMain": true,
+										"Link": null,
+										"Id": "be60493c-74bc-e611-8103-005056ac2752",
+										"Name": "FI8331311001382708"
+								},
+								"InvoiceStatus": {
+										"Value": 100000000,
+										"Label": "Not paid"
+								},
+								"PaymentDate": null,
+								"InvoiceDate": "2021-05-30T00:00:00+03:00",
+								"AccountingDate": "2021-05-31T03:00:00+03:00",
+								"Comment": "test 07092021 - 2\n111\n222\n333\n444\n555",
+								"RejectComment": null,
+								"AllowedPay": true,
+								"AllowedEdit": true,
+								"Link": "/main.aspx?etn=invoice&id=415b1005-d3c0-eb11-817e-005056bbf149&pagetype=entityrecord",
+								"Validation": [],
+								"Id": "415b1005-d3c0-eb11-817e-005056bbf149",
+								"Name": "210530000845969"
+						},
+						{
+								"Payer": {
+										"Id": "c98e3773-9ca1-e611-8103-005056ac126a",
+										"Name": "Kiinteistö Oy Kirkkokatu 8"
+								},
+								"Seller": "Aletta Oy",
+								"DueDate": "2021-05-31T00:00:00+03:00",
+								"Amount": 1200,
+								"InvoiceNumber": "KR3105",
+								"BankAccounts": [
+										{
+												"Operator": {
+														"Id": "426337be-e332-e611-80fd-005056ac2752",
+														"Name": "Nordea (NDEAFIHH)"
+												},
+												"Limit": 0,
+												"AllowedBalance": 2739.19,
+												"Balance": 2739.19,
+												"Description": "TEst-test-123456",
+												"LastUpdated": "2020-12-29T06:17:00+02:00",
+												"IsMain": false,
+												"Link": null,
+												"Id": "bc60493c-74bc-e611-8103-005056ac2752",
+												"Name": "FI3615853007100857"
+										},
+										{
+												"Operator": {
+														"Id": "3c6337be-e332-e611-80fd-005056ac2752",
+														"Name": "Handelsbanken (HANDFIHH)"
+												},
+												"Limit": 25000,
+												"AllowedBalance": 61693.2,
+												"Balance": 36693.2,
+												"Description": "Vastike",
+												"LastUpdated": "2020-12-09T12:07:00+02:00",
+												"IsMain": true,
+												"Link": null,
+												"Id": "be60493c-74bc-e611-8103-005056ac2752",
+												"Name": "FI8331311001382708"
+										},
+										{
+												"Operator": {
+														"Id": "bde3d829-01cd-e611-8103-005056ac5819",
+														"Name": "YAP Solutions Oy (FIYAPSOL)"
+												},
+												"Limit": null,
+												"AllowedBalance": null,
+												"Balance": null,
+												"Description": "TEST 16092021",
+												"LastUpdated": null,
+												"IsMain": false,
+												"Link": null,
+												"Id": "773c0519-b216-ec11-817e-005056bbf149",
+												"Name": "NE1122445577889966"
+										}
+								],
+								"BuyerBankAccountId": "bc60493c-74bc-e611-8103-005056ac2752",
+								"BankAccount": {
+										"Operator": {
+												"Id": "426337be-e332-e611-80fd-005056ac2752",
+												"Name": "Nordea (NDEAFIHH)"
+										},
+										"Limit": 0,
+										"AllowedBalance": 2739.19,
+										"Balance": 2739.19,
+										"Description": "TEst-test-123456",
+										"LastUpdated": "2020-12-29T06:17:00+02:00",
+										"IsMain": false,
+										"Link": null,
+										"Id": "bc60493c-74bc-e611-8103-005056ac2752",
+										"Name": "FI3615853007100857"
+								},
+								"InvoiceStatus": {
+										"Value": 752560001,
+										"Label": "Rejected"
+								},
+								"PaymentDate": null,
+								"InvoiceDate": "2021-05-12T00:00:00+03:00",
+								"AccountingDate": "2021-05-12T00:00:00+03:00",
+								"Comment": null,
+								"RejectComment": null,
+								"AllowedPay": true,
+								"AllowedEdit": true,
+								"Link": "/main.aspx?etn=invoice&id=db34240b-05c2-eb11-817e-005056bbf149&pagetype=entityrecord",
+								"Validation": [],
+								"Id": "db34240b-05c2-eb11-817e-005056bbf149",
+								"Name": "KR3105"
+						},
+						{
+								"Payer": {
+										"Id": "c98e3773-9ca1-e611-8103-005056ac126a",
+										"Name": "Kiinteistö Oy Kirkkokatu 8"
+								},
+								"Seller": "Aletta Oy",
+								"DueDate": "2021-05-31T00:00:00+03:00",
+								"Amount": 880.8,
+								"InvoiceNumber": "KR310503",
+								"BankAccounts": [
+										{
+												"Operator": {
+														"Id": "426337be-e332-e611-80fd-005056ac2752",
+														"Name": "Nordea (NDEAFIHH)"
+												},
+												"Limit": 0,
+												"AllowedBalance": 2739.19,
+												"Balance": 2739.19,
+												"Description": "TEst-test-123456",
+												"LastUpdated": "2020-12-29T06:17:00+02:00",
+												"IsMain": false,
+												"Link": null,
+												"Id": "bc60493c-74bc-e611-8103-005056ac2752",
+												"Name": "FI3615853007100857"
+										},
+										{
+												"Operator": {
+														"Id": "3c6337be-e332-e611-80fd-005056ac2752",
+														"Name": "Handelsbanken (HANDFIHH)"
+												},
+												"Limit": 25000,
+												"AllowedBalance": 61693.2,
+												"Balance": 36693.2,
+												"Description": "Vastike",
+												"LastUpdated": "2020-12-09T12:07:00+02:00",
+												"IsMain": true,
+												"Link": null,
+												"Id": "be60493c-74bc-e611-8103-005056ac2752",
+												"Name": "FI8331311001382708"
+										},
+										{
+												"Operator": {
+														"Id": "bde3d829-01cd-e611-8103-005056ac5819",
+														"Name": "YAP Solutions Oy (FIYAPSOL)"
+												},
+												"Limit": null,
+												"AllowedBalance": null,
+												"Balance": null,
+												"Description": "TEST 16092021",
+												"LastUpdated": null,
+												"IsMain": false,
+												"Link": null,
+												"Id": "773c0519-b216-ec11-817e-005056bbf149",
+												"Name": "NE1122445577889966"
+										}
+								],
+								"BuyerBankAccountId": "be60493c-74bc-e611-8103-005056ac2752",
+								"BankAccount": {
+										"Operator": {
+												"Id": "3c6337be-e332-e611-80fd-005056ac2752",
+												"Name": "Handelsbanken (HANDFIHH)"
+										},
+										"Limit": 25000,
+										"AllowedBalance": 61693.2,
+										"Balance": 36693.2,
+										"Description": "Vastike",
+										"LastUpdated": "2020-12-09T12:07:00+02:00",
+										"IsMain": true,
+										"Link": null,
+										"Id": "be60493c-74bc-e611-8103-005056ac2752",
+										"Name": "FI8331311001382708"
+								},
+								"InvoiceStatus": {
+										"Value": 100000000,
+										"Label": "Not paid"
+								},
+								"PaymentDate": null,
+								"InvoiceDate": "2021-05-04T00:00:00+03:00",
+								"AccountingDate": "2021-05-04T00:00:00+03:00",
+								"Comment": null,
+								"RejectComment": null,
+								"AllowedPay": true,
+								"AllowedEdit": true,
+								"Link": "/main.aspx?etn=invoice&id=53ddeb28-06c2-eb11-817e-005056bbf149&pagetype=entityrecord",
+								"Validation": [],
+								"Id": "53ddeb28-06c2-eb11-817e-005056bbf149",
+								"Name": "KR310503"
+						},
+						{
+								"Payer": {
+										"Id": "c98e3773-9ca1-e611-8103-005056ac126a",
+										"Name": "Kiinteistö Oy Kirkkokatu 8"
+								},
+								"Seller": "Aletta Oy",
+								"DueDate": "2021-05-31T00:00:00+03:00",
+								"Amount": 550.5,
+								"InvoiceNumber": "KR310599",
+								"BankAccounts": [
+										{
+												"Operator": {
+														"Id": "426337be-e332-e611-80fd-005056ac2752",
+														"Name": "Nordea (NDEAFIHH)"
+												},
+												"Limit": 0,
+												"AllowedBalance": 2739.19,
+												"Balance": 2739.19,
+												"Description": "TEst-test-123456",
+												"LastUpdated": "2020-12-29T06:17:00+02:00",
+												"IsMain": false,
+												"Link": null,
+												"Id": "bc60493c-74bc-e611-8103-005056ac2752",
+												"Name": "FI3615853007100857"
+										},
+										{
+												"Operator": {
+														"Id": "3c6337be-e332-e611-80fd-005056ac2752",
+														"Name": "Handelsbanken (HANDFIHH)"
+												},
+												"Limit": 25000,
+												"AllowedBalance": 61693.2,
+												"Balance": 36693.2,
+												"Description": "Vastike",
+												"LastUpdated": "2020-12-09T12:07:00+02:00",
+												"IsMain": true,
+												"Link": null,
+												"Id": "be60493c-74bc-e611-8103-005056ac2752",
+												"Name": "FI8331311001382708"
+										},
+										{
+												"Operator": {
+														"Id": "bde3d829-01cd-e611-8103-005056ac5819",
+														"Name": "YAP Solutions Oy (FIYAPSOL)"
+												},
+												"Limit": null,
+												"AllowedBalance": null,
+												"Balance": null,
+												"Description": "TEST 16092021",
+												"LastUpdated": null,
+												"IsMain": false,
+												"Link": null,
+												"Id": "773c0519-b216-ec11-817e-005056bbf149",
+												"Name": "NE1122445577889966"
+										}
+								],
+								"BuyerBankAccountId": "773c0519-b216-ec11-817e-005056bbf149",
+								"BankAccount": {
+										"Operator": {
+												"Id": "bde3d829-01cd-e611-8103-005056ac5819",
+												"Name": "YAP Solutions Oy (FIYAPSOL)"
+										},
+										"Limit": null,
+										"AllowedBalance": null,
+										"Balance": null,
+										"Description": "TEST 16092021",
+										"LastUpdated": null,
+										"IsMain": false,
+										"Link": null,
+										"Id": "773c0519-b216-ec11-817e-005056bbf149",
+										"Name": "NE1122445577889966"
+								},
+								"InvoiceStatus": {
+										"Value": 100000000,
+										"Label": "Not paid"
+								},
+								"PaymentDate": null,
+								"InvoiceDate": "2021-05-05T00:00:00+03:00",
+								"AccountingDate": "2021-05-05T00:00:00+03:00",
+								"Comment": "appr comment 08092021-2\n\n111",
+								"RejectComment": null,
+								"AllowedPay": false,
+								"AllowedEdit": true,
+								"Link": "/main.aspx?etn=invoice&id=b7e6b9e8-06c2-eb11-817e-005056bbf149&pagetype=entityrecord",
+								"Validation": [
+										{
+												"EntityId": "b7e6b9e8-06c2-eb11-817e-005056bbf149",
+												"ResponseCode": 3,
+												"Message": "Not all required fields (Fileservice, Payment File Type, Operator Code) are filled in the Payer Operator",
+												"MessageCode": 106
+										}
+								],
+								"Id": "b7e6b9e8-06c2-eb11-817e-005056bbf149",
+								"Name": "KR310599"
 						}
 				],
 					// PurchaseInvoices: [

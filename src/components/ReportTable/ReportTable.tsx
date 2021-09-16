@@ -51,9 +51,10 @@ const ReportTable: React.FC<ReportTableProps> = ({
     const { order, orderBy, type } = sortParams;
 
     if (sortParams.orderBy === 'Default') {
+      console.log(bankAccounts);
       return _orderBy(
         bankAccounts,
-        (bankAccount) => orderByType(bankAccount.IsMain, 'boolean')
+        (bankAccount) => orderByType(bankAccount.IsMain, 'boolean'),
         ['desc']
       )
     }
@@ -81,7 +82,7 @@ const ReportTable: React.FC<ReportTableProps> = ({
             <ReportTableRow 
               key={bankAccount.Id}
               bankAccount={bankAccount}
-              expanded={expandedAll || !!bankAccount.IsMain}
+              expanded={expandedAll}
               searchTerm={searchTerm}
             />
           )

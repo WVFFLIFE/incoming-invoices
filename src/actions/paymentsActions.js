@@ -18,7 +18,10 @@ import {
   openRejectedByUserModal,
   setPaidStatusResponse,
   openPaidStatusModal,
-} from './modalsActions'
+} from './modalsActions';
+import {
+  fetchCooperatives
+} from './balancesActions';
 
 const getFilteredResponses = Responses => {
   let rejectedByUserResponse = [],
@@ -324,6 +327,8 @@ const payInvoicesAction = (selectedInvoices, IsPayNow) => {
               dispatch(openPaidStatusModal());
             })
           }
+
+          dispatch(fetchCooperatives());
         } else {
           dispatch({ type: actionTypes.PAYMENTS_REQUEST_FAILED, payload: Error })
         }

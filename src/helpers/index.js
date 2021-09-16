@@ -15,9 +15,15 @@ import {
 import { 
   find, 
   get, 
-  toLower, 
-  isNumber
+  toLower
 } from 'lodash';
+
+export function getPDFLang() {
+  /* eslint-disable */
+  return top?.window?.USER_LANGUAGE_CODE === 1035
+    ? 'fi'
+    : 'en-US';
+}
 
 function getLocale() {
   /* eslint-disable */

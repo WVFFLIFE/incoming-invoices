@@ -16,7 +16,21 @@ const fetchCooperativesSuccess = (data) => ({
 export const setCooperatives = (data) => ({
   type: actionTypes.SELECT_COOPERATIVE,
   payload: data
-})
+});
+
+export const updateSelectedCooperative = (cooperatives) => {
+  return (dispatch, getState) => {
+    const { selectedCooperatives } = getState().settings;
+
+    const modifiedCooperatives = selectedCooperatives.map(selectedCoop => {
+      const newCoop = cooperatives.find(coop => coop.Id === selectedCoop.Id);
+
+      return newCoop || selectedCoop;
+    });
+
+    dispatch(setCooperatives(modifiedCooperatives));
+  }
+}
 
 export const fetchCooperatives = () => {
   return (dispatch, getState) => {
@@ -29,11 +43,15 @@ export const fetchCooperatives = () => {
       .then(data => {
         const { Cooperatives, IsSuccess, Error } = data;
         if (IsSuccess) {
-          dispatch(
-            fetchCooperativesSuccess(
-              keyBy(Cooperatives, 'Id')
-            )
-          )
+          batch(() => {
+            dispatch(
+              fetchCooperativesSuccess(
+                keyBy(Cooperatives, 'Id')
+              )
+            );
+            dispatch(updateSelectedCooperative(Cooperatives));
+          })
+          
         } else {
           dispatch({ 
             type: actionTypes.BALANCES_REQUEST_FAILED,

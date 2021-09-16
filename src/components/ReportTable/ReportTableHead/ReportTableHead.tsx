@@ -1,10 +1,9 @@
 import { SortParamsType } from 'models';
 import { useTranslation } from 'react-i18next';
 
-import ArrowDown from '@material-ui/icons/KeyboardArrowDown';
 import { IconButton } from 'components/StyledComponents';
 import SortedTableCell from 'components/Common/SortedTableCell';
-import { ExpandIcon } from 'components/Icons';
+import { ExpandIcon, SortArrows } from 'components/Icons';
 
 import clsx from 'clsx';
 import { useStyles } from './style';
@@ -38,7 +37,7 @@ const ReportTableHead: React.FC<ReportTableHeadProps> = ({
             {
               expanded
                 ? <ExpandIcon className={classes.expandIcon} />
-                : <ArrowDown className={classes.expandIcon} />
+                : <SortArrows className={classes.expandIcon} />
             }
           </IconButton>
         </td>

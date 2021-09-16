@@ -1,4 +1,3 @@
-import { b64 } from './base64';
 import {
   CooperativeModel,
   DefaultError,
@@ -65,16 +64,6 @@ interface Res {
   totalAmountLA2900: number;
 }
 
-function base64ToUint8Array(base64: string) {
-  const raw = atob(base64);
-  let uint8Array = new Uint8Array(raw.length);
-  for (var i = 0; i < raw.length; i++) {
-    uint8Array[i] = raw.charCodeAt(i);
-  }
-  return uint8Array;
-}
-
-
 const Report = () => {
   const classes = useStyles();
   const { t } = useTranslation();
@@ -105,15 +94,6 @@ const Report = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const [selectedCooperative] = selectedCooperatives;
-
-  const onLoad = () => {
-    if (iframeRef.current) {
-      
-      (iframeRef.current.contentWindow as any).PDFViewerApplication.open(
-        base64ToUint8Array(b64)
-      );
-    }
-  }
 
   useEffect(() => {
     async function getInvoices(
@@ -263,13 +243,6 @@ const Report = () => {
 
   return (
     <>
-      {/* <iframe
-        ref={iframeRef}
-        src={`/web/viewer.html#locale=fi`}
-        title="some pdf"
-        style={{ width: 1000, height: 1000 }}
-        onLoad={onLoad}
-      /> */}
       <FlexWrapper className="mb-20">
         <h1 className="tab-title">
           {t('#report.title')}
