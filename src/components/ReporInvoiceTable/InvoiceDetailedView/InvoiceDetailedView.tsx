@@ -182,13 +182,6 @@ const InvoiceDetailedView: React.FC<InvoiceDetailedViewProps> = ({
         }
       </div>
       {renderContent()}
-      <iframe
-          ref={iframeRef}
-          className={classes.iframe}
-          src={`/web/viewer.html#locale=${getPDFLang()}`}
-          title={`Invoice ${invoice.InvoiceNumber}`}
-          onLoad={onLoad}
-        />
     </div>
   )
 }

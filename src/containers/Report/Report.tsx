@@ -14,9 +14,9 @@ import {
 
 import { useTranslation } from 'react-i18next';
 import { useSelector, useDispatch } from 'react-redux';
-import { 
+import {
   getCooperativesOptions,
-  selectedCooperativeSelector 
+  selectedCooperativeSelector
 } from 'selectors';
 import { setSelectedCooperative } from 'actions/settingsActions';
 
@@ -57,8 +57,31 @@ const filtersList = [
   { id: 'unpaid', label: '#filter.unpaid' }
 ];
 
+function base64ToUint8Array(base64: string) {
+  const raw = atob(base64);
+  let uint8Array = new Uint8Array(raw.length);
+  for (var i = 0; i < raw.length; i++) {
+    uint8Array[i] = raw.charCodeAt(i);
+  }
+  return uint8Array;
+}
+
+function base64ToBlob(base64: string) {
+  const binary = atob(base64.replace(/\s/g, ''));
+  const len = binary.length;
+  const buffer = new ArrayBuffer(len);
+  const view = new Uint8Array(buffer);
+
+  for (let i = 0; i < len; i++) {
+    view[i] = binary.charCodeAt(i);
+  }
+
+  return new Blob([view], { type: 'application/pdf' })
+}
+
 interface Res {
   invoices: EnhancedInvoiceModel[];
+  base64: string | null;
   loading: boolean;
   error: DefaultError;
   totalAmountLA2900: number;
@@ -82,6 +105,7 @@ const Report = () => {
 
   const [res, setRes] = useState<Res>({
     invoices: [],
+    base64: null,
     totalAmountLA2900: 0,
     error: {
       status: false,
@@ -92,28 +116,23 @@ const Report = () => {
   const [dateFilter, setDateFilter] = useState<Date | null>(null);
   const [quickFilter, setQuickFilter] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
+  const [iframeLoaded, setIframeLoaded] = useState(false);
 
   const [selectedCooperative] = selectedCooperatives;
 
-  useEffect(() => {
-    async function getInvoices(
-      payerId: string,
-      date: string,
-      substitutorId: string | null = null
-    ) {
-      try {
-        setRes(s => ({
-          ...s,
-          loading: true,
-          error: { status: false, message: '' }
-        }));
-
-        const { PurchaseInvoices, IsSuccess, Error, LA2900TotalAmount } = await services.getInvoicesForReport(
-          payerId,
-          date,
-          substitutorId,
-        )
-
+  const fetchInvoices = async (
+    payerId: string,
+    date: string,
+    substitutorId: string | null = null
+  ) => {
+    try {
+      const { PurchaseInvoices, IsSuccess, Error, LA2900TotalAmount } = await services.getInvoicesForReport(
+        payerId,
+        date,
+        substitutorId,
+      );
+  
+      if (IsSuccess) {
         if (IsSuccess) {
           setRes(s => ({
             ...s,
@@ -123,6 +142,7 @@ const Report = () => {
           }))
         } else {
           setRes({
+            base64: null,
             invoices: [],
             totalAmountLA2900: 0,
             loading: false,
@@ -132,21 +152,63 @@ const Report = () => {
             }
           })
         }
-      } catch (err) {
-        setRes({
-          invoices: [],
-          totalAmountLA2900: 0,
-          loading: false,
-          error: {
-            status: true,
-            message: `System error: ${err}`
-          }
-        })
       }
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  const fetchInvoicesPDF = async (
+    payerId: string,
+    date: string,
+    substitutorId: string | null = null
+  ) => {
+    try {
+      const { InvoicesPDF, IsSuccess } = await services.getInvoicesPDF(
+        payerId,
+        date,
+        substitutorId,
+      );
+
+      if (IsSuccess) {
+        setRes(s => ({
+          ...s,
+          base64: InvoicesPDF || null
+        }))
+      } else {
+        setRes(s => ({
+          ...s,
+          base64: null
+        }))
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  useEffect(() => {
+    async function getData(
+      payerId: string,
+      date: string,
+      substitutorId: string | null = null
+    ) {
+      setRes(s => ({
+        ...s,
+        loading: true,
+        base64: null,
+      }))
+
+      await fetchInvoices(payerId, date, substitutorId);
+      await fetchInvoicesPDF(payerId, date, substitutorId);
+
+      setRes(s => ({
+        ...s,
+        loading: false,
+      }));
     }
 
     if (selectedCooperative?.Id && dateFilter) {
-      getInvoices(
+      getData(
         selectedCooperative?.Id,
         format(dateFilter, 'yyyy-MM-dd'),
         substitute?.Id
@@ -154,6 +216,24 @@ const Report = () => {
     }
 
   }, [dateFilter, selectedCooperative, substitute?.Id]);
+
+  const saveInvoice = () => {
+    if (res.base64 && iframeLoaded) {
+      saveAs(
+        base64ToBlob(res.base64), 
+        `${t('#report.pdf.name', { coopName: selectedCooperative?.Name || '' })}.pdf`
+      );
+    }
+  }
+
+  const printInvoice = () => {
+    if (res.base64 && iframeLoaded) {
+      (iframeRef.current as any)
+        .contentWindow
+        .PDFViewerApplication
+        .triggerPrinting()
+    }
+  }
 
   const handleChangeDateFilter = useCallback(
     (date: Date | null) => {
@@ -187,6 +267,16 @@ const Report = () => {
   const { totalAmount, totalInvoices } = useMemo(() => {
     return getTotalCounts(filteredBankAccounts);
   }, [filteredBankAccounts]);
+
+  const onLoad = () => {
+    if (iframeRef.current && res.base64) {
+
+      (iframeRef.current as any).contentWindow.PDFViewerApplication.open(
+        base64ToUint8Array(res.base64)
+      );
+      setIframeLoaded(true);
+    }
+  }
 
   const renderCounters = () => {
     return (
@@ -243,6 +333,18 @@ const Report = () => {
 
   return (
     <>
+      {
+        res.base64
+          ? (
+            <iframe
+              ref={iframeRef}
+              className={classes.visuallyHidden}
+              title="data iframe"
+              src={`static/viewer/web/viewer.html`}
+              onLoad={onLoad}
+            />
+          ) : null
+      }
       <FlexWrapper className="mb-20">
         <h1 className="tab-title">
           {t('#report.title')}
@@ -255,13 +357,15 @@ const Report = () => {
             className={classes.printBtn}
             label={t('#report.button.printpdf')}
             icon={PrintIcon}
-            onClick={() => { }}
+            disabled={!!!res.base64 || !!!res.invoices.length || !iframeLoaded}
+            onClick={printInvoice}
           />
           <Button
             className={classes.loadBtn}
             label={t('#report.button.loadpdf')}
             icon={DownloadIcon}
-            onClick={() => { }}
+            disabled={!!!res.base64 || !!!res.invoices.length || !iframeLoaded}
+            onClick={saveInvoice}
           />
         </Box>
       </FlexWrapper>

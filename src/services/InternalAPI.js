@@ -13,7 +13,8 @@ class InternalAPI {
     PayInvoices: 8,
     CheckBalanceDate: 9,
     GetInvoicesForReport: 10,
-    GetInvoicePDF: 11
+    GetInvoicePDF: 11,
+    GetInvoicesPDF: 12
   };
 
   getSubstitutors = async (substitutorId = null) => {
@@ -97,6 +98,16 @@ class InternalAPI {
         InvoiceId: invoiceId
       }
     );
+  }
+
+  getInvoicesPDF = async (payerId, date, substitutorId = null) => {
+    return await this.fetchIncomingInvoicesData(this.message_code.GetInvoicesPDF,
+      {
+        SubstitutorId: substitutorId,
+        PayerId: payerId,
+        Date: date,
+        LanguageCode: window?.USER_LANGUAGE_CODE
+      });
   }
 
   fetchIncomingInvoicesData = async (messageCode, requestJson) => {

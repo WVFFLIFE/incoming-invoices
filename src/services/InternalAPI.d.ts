@@ -15,7 +15,10 @@ enum MessageCode {
   ChangeAccountingDate = 6,
   RejectInvoice = 7,
   PayInvoices = 8,
-  CheckBalanceDate = 9
+  CheckBalanceDate = 9,
+  GetInvoicesForReport = 10,
+  GetInvoicePDF = 11,
+  GetInvoicesPDF = 12
 }
 
 interface SubstitutorsResponseModel extends BaseResponseModel {
@@ -43,6 +46,9 @@ interface PurchaseInvoicesForReportResponseModel extends PurchaseInvoicesRespons
 }
 interface InvoicePDFResponseModel extends BaseResponseModel {
   InvoicePDF: string;
+}
+interface InvoicesPDFResponseModel extends BaseResponseModel {
+  InvoicesPDF: string;
 }
 
 declare class InternalAPI {
@@ -102,6 +108,12 @@ declare class InternalAPI {
   public getInvoicePDF(
     invoiceId: string
   ): Promise<InvoicePDFResponseModel>;
+
+  public getInvoicesPDF(
+    payerId: string,
+    date: string,
+    substitutorId?: string | null,
+  ): Promise<InvoicesPDFResponseModel>;
 
   private fetchIncomingInvoicesData(
     messageCode: MessageCode,

@@ -14,6 +14,9 @@ export const useStyles = makeStyles(() => ({
       background: '#224060',
       opacity: .9,
       transition: 'all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms'
+    },
+    '&.Mui-disabled': {
+      color: 'rgba(255, 255, 255, .8)'
     }
   },
   wrapper: {
@@ -57,5 +60,12 @@ export const useStyles = makeStyles(() => ({
   },
   red: {
     color: '#DB0041'
-  }
+  },
+  visuallyHidden: {
+    position: 'absolute',
+    clip: 'rect(0 0 0 0)',
+    width: 1,
+    height: 1,
+    margin: -1,
+  },
 }))

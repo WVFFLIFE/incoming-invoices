@@ -47,6 +47,10 @@ export const useStyles = makeStyles(() => ({
       borderColor: '#0A8DC7',
     }
   },
+  today: {
+    fontWeight: 600,
+    background: 'rgba(0, 0, 0, .05)',
+  },
   withinRange: {
     background: 'rgba(34,64,96,0.1)'
   },
@@ -54,6 +58,13 @@ export const useStyles = makeStyles(() => ({
     background: '#224060',
     color: '#fff',
     cursor: 'default'
+  },
+  notCurrentMonth: {
+    color: '#CED4DA',
+    '&:hover': {
+      background: 'transparent',
+      color: '#CED4DA'
+    }
   },
   disabledDay: {
     color: '#CED4DA',

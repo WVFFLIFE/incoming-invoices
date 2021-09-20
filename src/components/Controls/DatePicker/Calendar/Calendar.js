@@ -13,7 +13,8 @@ import {
   isAfter,
   setMonth,
   isWithinInterval,
-  setYear
+  setYear,
+  isToday,
 } from 'date-fns';
 import { 
   getShortWeeks, 
@@ -229,8 +230,9 @@ const Calendar = ({
                     week.map(day => {
                       const isCurrentMonth = getMonth(monthDate) === getMonth(day),
                         isDayActive = isSameDay(selectedDate, day),
-                        disabledDay = !isCurrentMonth || disabled,
-                        withinRange = isWithinRange(selectedDate, day, limitDate);
+                        disabledDay = disabled,
+                        withinRange = isWithinRange(selectedDate, day, limitDate),
+                        today     = isToday(day);
 
                       return (
                         <div
@@ -239,10 +241,12 @@ const Calendar = ({
                             classes.box,
                             classes.dayBox,
                             {
-                              [classes.activeDay]: isDayActive,
+                              [classes.today]: today,
                               [classes.withinRange]: withinRange,
+                              [classes.activeDay]: isDayActive,
                               [classes.firstBlock]: isDayActive && isAfter(limitDate, selectedDate),
                               [classes.lastBlock]: isDayActive && isAfter(selectedDate, limitDate),
+                              [classes.notCurrentMonth]: !isCurrentMonth,
                               [classes.disabledDay]: disabledDay,
                               [classes.disabledActiveDay]: isDayActive && disabledDay
                             }

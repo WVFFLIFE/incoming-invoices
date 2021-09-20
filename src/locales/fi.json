@@ -145,5 +145,6 @@
   "#report.button.apply": "Käytä",
   "#report.button.printpdf": "Tulosta PDF",
   "#report.button.loadpdf": "Lataa PDF",
-  "#report.invoicenumber": "Lasku nro {{ invoiceNumber }}"
+  "#report.invoicenumber": "Lasku nro {{ invoiceNumber }}",
+  "#report.pdf.name": "Avoimet laskut {{ coopName }}"
 }
