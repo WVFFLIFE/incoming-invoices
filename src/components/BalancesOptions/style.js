@@ -124,5 +124,8 @@ export const useStyles = makeStyles({
     background: '#64798F',
     borderColor: 'transparent',
     color: '#fff',
+  },
+  mock: {
+    height: 220
   }
 });

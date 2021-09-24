@@ -200,7 +200,7 @@ const BalancesOptions = ({
             </div>
           )}
         </div>
-        {options.length ? renderOptions(currentOptions) : null}
+        {options.length ? renderOptions(currentOptions) : <div className={classes.mock}></div>}
         <div className={classes.actionsWrapper}>
           <CancelButton onClick={handleClose} className={classes.mr20}>
             {t('#button.cancel')}

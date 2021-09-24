@@ -34,8 +34,8 @@ const ReportInvoiceTable: React.FC<ReportInvoiceTableProps> = ({
 
   const [sortParams, setSortParams] = useState<SortParams>({
     order: 'asc',
-    orderBy: 'InvoiceNumber',
-    type: 'string',
+    orderBy: 'AccountingDate',
+    type: 'date',
   });
   const [paginationParams, setPaginationParams] = useState<PaginationParams>({
     currentPage: 0,
