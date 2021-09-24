@@ -56,6 +56,10 @@ export const CancelButton = styled(PickerButton)({
 
 export const ApplyButton = styled(PickerButton)({
   background: '#224060',
-  color: '#fff'
+  color: '#fff',
+  '&.Mui-disabled': {
+    color: '#fff',
+    opacity: .5,
+  },
 });
 

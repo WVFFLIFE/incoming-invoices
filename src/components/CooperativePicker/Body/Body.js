@@ -187,7 +187,7 @@ const Body = ({
         >
           {t('#report.button.cancel')}
         </CancelButton>
-        <ApplyButton onClick={onApply}>
+        <ApplyButton onClick={onApply} disabled={cooperatives.length === 0}>
           {t('#report.button.apply')}
         </ApplyButton>
       </Box>

@@ -49,527 +49,231 @@ class FakeInternalAPI {
 					LA2900TotalAmount: -70838.84,
 					PurchaseInvoices: [
 						{
-								"Payer": {
-										"Id": "c98e3773-9ca1-e611-8103-005056ac126a",
-										"Name": "Kiinteistö Oy Kirkkokatu 8"
+							"Payer": {
+								"Id": "c98e3773-9ca1-e611-8103-005056ac126a",
+								"Name": "Kiinteistö Oy Kirkkokatu 8"
+							},
+							"Seller": "Aletta Oy",
+							"DueDate": "2021-05-26T00:00:00+03:00",
+							"Amount": 852.32,
+							"InvoiceNumber": "210526000514290",
+							"BankAccounts": [
+								{
+									"Operator": {
+										"Id": "426337be-e332-e611-80fd-005056ac2752",
+										"Name": "Nordea (NDEAFIHH)"
+									},
+									"Limit": 0,
+									"AllowedBalance": 2739.19,
+									"Balance": 2739.19,
+									"Description": "TEst-test-123456",
+									"LastUpdated": "2020-12-29T06:17:00+02:00",
+									"IsMain": false,
+									"Link": null,
+									"Id": "bc60493c-74bc-e611-8103-005056ac2752",
+									"Name": "FI3615853007100857"
 								},
-								"Seller": "Aletta Oy",
-								"DueDate": "2021-05-26T00:00:00+03:00",
-								"Amount": 852.32,
-								"InvoiceNumber": "210526000514290",
-								"BankAccounts": [
-										{
-												"Operator": {
-														"Id": "426337be-e332-e611-80fd-005056ac2752",
-														"Name": "Nordea (NDEAFIHH)"
-												},
-												"Limit": 0,
-												"AllowedBalance": 2739.19,
-												"Balance": 2739.19,
-												"Description": "TEst-test-123456",
-												"LastUpdated": "2020-12-29T06:17:00+02:00",
-												"IsMain": false,
-												"Link": null,
-												"Id": "bc60493c-74bc-e611-8103-005056ac2752",
-												"Name": "FI3615853007100857"
-										},
-										{
-												"Operator": {
-														"Id": "3c6337be-e332-e611-80fd-005056ac2752",
-														"Name": "Handelsbanken (HANDFIHH)"
-												},
-												"Limit": 25000,
-												"AllowedBalance": 61693.2,
-												"Balance": 36693.2,
-												"Description": "Vastike",
-												"LastUpdated": "2020-12-09T12:07:00+02:00",
-												"IsMain": true,
-												"Link": null,
-												"Id": "be60493c-74bc-e611-8103-005056ac2752",
-												"Name": "FI8331311001382708"
-										},
-										{
-												"Operator": {
-														"Id": "bde3d829-01cd-e611-8103-005056ac5819",
-														"Name": "YAP Solutions Oy (FIYAPSOL)"
-												},
-												"Limit": null,
-												"AllowedBalance": null,
-												"Balance": null,
-												"Description": "TEST 16092021",
-												"LastUpdated": null,
-												"IsMain": false,
-												"Link": null,
-												"Id": "773c0519-b216-ec11-817e-005056bbf149",
-												"Name": "NE1122445577889966"
-										}
-								],
-								"BuyerBankAccountId": "bc60493c-74bc-e611-8103-005056ac2752",
-								"BankAccount": {
-										"Operator": {
-												"Id": "426337be-e332-e611-80fd-005056ac2752",
-												"Name": "Nordea (NDEAFIHH)"
-										},
-										"Limit": 0,
-										"AllowedBalance": 2739.19,
-										"Balance": 2739.19,
-										"Description": "TEst-test-123456",
-										"LastUpdated": "2020-12-29T06:17:00+02:00",
-										"IsMain": false,
-										"Link": null,
-										"Id": "bc60493c-74bc-e611-8103-005056ac2752",
-										"Name": "FI3615853007100857"
+								{
+									"Operator": {
+										"Id": "3c6337be-e332-e611-80fd-005056ac2752",
+										"Name": "Handelsbanken (HANDFIHH)"
+									},
+									"Limit": 25000,
+									"AllowedBalance": 61693.2,
+									"Balance": 36693.2,
+									"Description": "Vastike",
+									"LastUpdated": "2020-12-09T12:07:00+02:00",
+									"IsMain": true,
+									"Link": null,
+									"Id": "be60493c-74bc-e611-8103-005056ac2752",
+									"Name": "FI8331311001382708"
 								},
-								"InvoiceStatus": {
-										"Value": 752560001,
-										"Label": "Rejected"
+								{
+									"Operator": {
+										"Id": "bde3d829-01cd-e611-8103-005056ac5819",
+										"Name": "YAP Solutions Oy (FIYAPSOL)"
+									},
+									"Limit": null,
+									"AllowedBalance": null,
+									"Balance": null,
+									"Description": "TEST 16092021",
+									"LastUpdated": null,
+									"IsMain": false,
+									"Link": null,
+									"Id": "773c0519-b216-ec11-817e-005056bbf149",
+									"Name": "NE1122445577889966"
+								}
+							],
+							"BuyerBankAccountId": "bc60493c-74bc-e611-8103-005056ac2752",
+							"BankAccount": {
+								"Operator": {
+									"Id": "426337be-e332-e611-80fd-005056ac2752",
+									"Name": "Nordea (NDEAFIHH)"
 								},
-								"PaymentDate": null,
-								"InvoiceDate": "2021-05-26T00:00:00+03:00",
-								"AccountingDate": "2021-05-15T00:00:00+03:00",
-								"Comment": null,
-								"RejectComment": null,
-								"AllowedPay": true,
-								"AllowedEdit": true,
-								"Link": "/main.aspx?etn=invoice&id=ddec3b94-f3bd-eb11-817e-005056bbf149&pagetype=entityrecord",
-								"Validation": [],
-								"Id": "ddec3b94-f3bd-eb11-817e-005056bbf149",
-								"Name": "210526000514290"
+								"Limit": 0,
+								"AllowedBalance": 2739.19,
+								"Balance": 2739.19,
+								"Description": "TEst-test-123456",
+								"LastUpdated": "2020-12-29T06:17:00+02:00",
+								"IsMain": false,
+								"Link": null,
+								"Id": "bc60493c-74bc-e611-8103-005056ac2752",
+								"Name": "FI3615853007100857"
+							},
+							"InvoiceStatus": {
+								"Value": 752560001,
+								"Label": "Rejected"
+							},
+							"PaymentDate": null,
+							"InvoiceDate": "2021-05-26T00:00:00+03:00",
+							"AccountingDate": "2021-05-15T00:00:00+03:00",
+							"Comment": null,
+							"RejectComment": null,
+							"AllowedPay": true,
+							"AllowedEdit": true,
+							"Link": "/main.aspx?etn=invoice&id=ddec3b94-f3bd-eb11-817e-005056bbf149&pagetype=entityrecord",
+							"Validation": [],
+							"Id": "ddec3b94-f3bd-eb11-817e-005056bbf149",
+							"Name": "210526000514290"
 						},
 						{
-								"Payer": {
-										"Id": "c98e3773-9ca1-e611-8103-005056ac126a",
-										"Name": "Kiinteistö Oy Kirkkokatu 8"
+							"Payer": {
+								"Id": "a98ee91c-e3ea-e711-8105-005056ac5819",
+								"Name": "As Oy Demotalo"
+							},
+							"Seller": "Howden Finland Oy",
+							"DueDate": "2020-12-02T00:00:00+02:00",
+							"Amount": 728.27,
+							"InvoiceNumber": "321084",
+							"BankAccounts": [
+								{
+									"Operator": {
+										"Id": "386337be-e332-e611-80fd-005056ac2752",
+										"Name": "Danske Bank (DABAFIHH)"
+									},
+									"Limit": 0,
+									"AllowedBalance": 87.49,
+									"Balance": 87.49,
+									"Description": "second",
+									"LastUpdated": "2020-11-09T18:00:00+02:00",
+									"IsMain": false,
+									"Link": null,
+									"Id": "62ed235d-66f6-ea11-810e-005056ac5877",
+									"Name": "FI0383183710016878"
 								},
-								"Seller": "Aletta Oy",
-								"DueDate": "2021-05-31T00:00:00+03:00",
-								"Amount": 852.32,
-								"InvoiceNumber": "210530000845969",
-								"BankAccounts": [
-										{
-												"Operator": {
-														"Id": "426337be-e332-e611-80fd-005056ac2752",
-														"Name": "Nordea (NDEAFIHH)"
-												},
-												"Limit": 0,
-												"AllowedBalance": 2739.19,
-												"Balance": 2739.19,
-												"Description": "TEst-test-123456",
-												"LastUpdated": "2020-12-29T06:17:00+02:00",
-												"IsMain": false,
-												"Link": null,
-												"Id": "bc60493c-74bc-e611-8103-005056ac2752",
-												"Name": "FI3615853007100857"
-										},
-										{
-												"Operator": {
-														"Id": "3c6337be-e332-e611-80fd-005056ac2752",
-														"Name": "Handelsbanken (HANDFIHH)"
-												},
-												"Limit": 25000,
-												"AllowedBalance": 61693.2,
-												"Balance": 36693.2,
-												"Description": "Vastike",
-												"LastUpdated": "2020-12-09T12:07:00+02:00",
-												"IsMain": true,
-												"Link": null,
-												"Id": "be60493c-74bc-e611-8103-005056ac2752",
-												"Name": "FI8331311001382708"
-										},
-										{
-												"Operator": {
-														"Id": "bde3d829-01cd-e611-8103-005056ac5819",
-														"Name": "YAP Solutions Oy (FIYAPSOL)"
-												},
-												"Limit": null,
-												"AllowedBalance": null,
-												"Balance": null,
-												"Description": "TEST 16092021",
-												"LastUpdated": null,
-												"IsMain": false,
-												"Link": null,
-												"Id": "773c0519-b216-ec11-817e-005056bbf149",
-												"Name": "NE1122445577889966"
-										}
-								],
-								"BuyerBankAccountId": "be60493c-74bc-e611-8103-005056ac2752",
-								"BankAccount": {
-										"Operator": {
-												"Id": "3c6337be-e332-e611-80fd-005056ac2752",
-												"Name": "Handelsbanken (HANDFIHH)"
-										},
-										"Limit": 25000,
-										"AllowedBalance": 61693.2,
-										"Balance": 36693.2,
-										"Description": "Vastike",
-										"LastUpdated": "2020-12-09T12:07:00+02:00",
-										"IsMain": true,
-										"Link": null,
-										"Id": "be60493c-74bc-e611-8103-005056ac2752",
-										"Name": "FI8331311001382708"
+								{
+									"Operator": {
+										"Id": "446337be-e332-e611-80fd-005056ac2752",
+										"Name": "Osuuspankki (OKOYFIHH)"
+									},
+									"Limit": 0,
+									"AllowedBalance": null,
+									"Balance": -103.68,
+									"Description": null,
+									"LastUpdated": "2020-11-05T00:00:00+02:00",
+									"IsMain": false,
+									"Link": null,
+									"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+									"Name": "FI6850000120350201"
 								},
-								"InvoiceStatus": {
-										"Value": 100000000,
-										"Label": "Not paid"
+								{
+									"Operator": {
+										"Id": "e82f8838-1a4f-e611-80ff-005056ac5819",
+										"Name": "POP Pankki (POPFFI22)"
+									},
+									"Limit": null,
+									"AllowedBalance": 136.02,
+									"Balance": 136.02,
+									"Description": "Discription",
+									"LastUpdated": "2020-11-23T03:35:00+02:00",
+									"IsMain": true,
+									"Link": null,
+									"Id": "34f0ec6f-8eac-ea11-8110-005056ac71e1",
+									"Name": "FI7647300010355781"
 								},
-								"PaymentDate": null,
-								"InvoiceDate": "2021-05-30T00:00:00+03:00",
-								"AccountingDate": "2021-05-31T03:00:00+03:00",
-								"Comment": "test 07092021 - 2\n111\n222\n333\n444\n555",
-								"RejectComment": null,
-								"AllowedPay": true,
-								"AllowedEdit": true,
-								"Link": "/main.aspx?etn=invoice&id=415b1005-d3c0-eb11-817e-005056bbf149&pagetype=entityrecord",
-								"Validation": [],
-								"Id": "415b1005-d3c0-eb11-817e-005056bbf149",
-								"Name": "210530000845969"
+								{
+									"Operator": {
+										"Id": "386337be-e332-e611-80fd-005056ac2752",
+										"Name": "Danske Bank (DABAFIHH)"
+									},
+									"Limit": null,
+									"AllowedBalance": null,
+									"Balance": null,
+									"Description": null,
+									"LastUpdated": null,
+									"IsMain": false,
+									"Link": null,
+									"Id": "87195a45-9938-eb11-817e-005056bbf149",
+									"Name": "FI0383183710016878"
+								}
+							],
+							"BuyerBankAccountId": "03739f96-66f6-ea11-810e-005056ac5877",
+							"BankAccount": {
+								"Operator": {
+									"Id": "446337be-e332-e611-80fd-005056ac2752",
+									"Name": "Osuuspankki (OKOYFIHH)"
+								},
+								"Limit": 0,
+								"AllowedBalance": null,
+								"Balance": -103.68,
+								"Description": null,
+								"LastUpdated": "2020-11-05T00:00:00+02:00",
+								"IsMain": false,
+								"Link": null,
+								"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+								"Name": "FI6850000120350201"
+							},
+							"InvoiceStatus": {
+								"Value": 100000000,
+								"Label": "Not paid"
+							},
+							"PaymentDate": null,
+							"InvoiceDate": "2020-11-02T00:00:00+02:00",
+							"AccountingDate": "2020-11-02T00:00:00+02:00",
+							"Comment": null,
+							"RejectComment": null,
+							"AllowedPay": false,
+							"AllowedEdit": true,
+							"Link": "/main.aspx?etn=invoice&id=051c5ec7-f42a-eb11-810e-005056ac5877&pagetype=entityrecord",
+							"Validation": [
+								{
+									"EntityId": "051c5ec7-f42a-eb11-810e-005056ac5877",
+									"ResponseCode": 3,
+									"Message": "Not all required fields (Operator, Bank ID) are filled in the Payer Bank Account",
+									"MessageCode": 101
+								}
+							],
+							"Id": "051c5ec7-f42a-eb11-810e-005056ac5877",
+							"Name": "321084"
 						},
-						{
-								"Payer": {
-										"Id": "c98e3773-9ca1-e611-8103-005056ac126a",
-										"Name": "Kiinteistö Oy Kirkkokatu 8"
-								},
-								"Seller": "Aletta Oy",
-								"DueDate": "2021-05-31T00:00:00+03:00",
-								"Amount": 1200,
-								"InvoiceNumber": "KR3105",
-								"BankAccounts": [
-										{
-												"Operator": {
-														"Id": "426337be-e332-e611-80fd-005056ac2752",
-														"Name": "Nordea (NDEAFIHH)"
-												},
-												"Limit": 0,
-												"AllowedBalance": 2739.19,
-												"Balance": 2739.19,
-												"Description": "TEst-test-123456",
-												"LastUpdated": "2020-12-29T06:17:00+02:00",
-												"IsMain": false,
-												"Link": null,
-												"Id": "bc60493c-74bc-e611-8103-005056ac2752",
-												"Name": "FI3615853007100857"
-										},
-										{
-												"Operator": {
-														"Id": "3c6337be-e332-e611-80fd-005056ac2752",
-														"Name": "Handelsbanken (HANDFIHH)"
-												},
-												"Limit": 25000,
-												"AllowedBalance": 61693.2,
-												"Balance": 36693.2,
-												"Description": "Vastike",
-												"LastUpdated": "2020-12-09T12:07:00+02:00",
-												"IsMain": true,
-												"Link": null,
-												"Id": "be60493c-74bc-e611-8103-005056ac2752",
-												"Name": "FI8331311001382708"
-										},
-										{
-												"Operator": {
-														"Id": "bde3d829-01cd-e611-8103-005056ac5819",
-														"Name": "YAP Solutions Oy (FIYAPSOL)"
-												},
-												"Limit": null,
-												"AllowedBalance": null,
-												"Balance": null,
-												"Description": "TEST 16092021",
-												"LastUpdated": null,
-												"IsMain": false,
-												"Link": null,
-												"Id": "773c0519-b216-ec11-817e-005056bbf149",
-												"Name": "NE1122445577889966"
-										}
-								],
-								"BuyerBankAccountId": "bc60493c-74bc-e611-8103-005056ac2752",
-								"BankAccount": {
-										"Operator": {
-												"Id": "426337be-e332-e611-80fd-005056ac2752",
-												"Name": "Nordea (NDEAFIHH)"
-										},
-										"Limit": 0,
-										"AllowedBalance": 2739.19,
-										"Balance": 2739.19,
-										"Description": "TEst-test-123456",
-										"LastUpdated": "2020-12-29T06:17:00+02:00",
-										"IsMain": false,
-										"Link": null,
-										"Id": "bc60493c-74bc-e611-8103-005056ac2752",
-										"Name": "FI3615853007100857"
-								},
-								"InvoiceStatus": {
-										"Value": 752560001,
-										"Label": "Rejected"
-								},
-								"PaymentDate": null,
-								"InvoiceDate": "2021-05-12T00:00:00+03:00",
-								"AccountingDate": "2021-05-12T00:00:00+03:00",
-								"Comment": null,
-								"RejectComment": null,
-								"AllowedPay": true,
-								"AllowedEdit": true,
-								"Link": "/main.aspx?etn=invoice&id=db34240b-05c2-eb11-817e-005056bbf149&pagetype=entityrecord",
-								"Validation": [],
-								"Id": "db34240b-05c2-eb11-817e-005056bbf149",
-								"Name": "KR3105"
-						},
-						{
-								"Payer": {
-										"Id": "c98e3773-9ca1-e611-8103-005056ac126a",
-										"Name": "Kiinteistö Oy Kirkkokatu 8"
-								},
-								"Seller": "Aletta Oy",
-								"DueDate": "2021-05-31T00:00:00+03:00",
-								"Amount": 880.8,
-								"InvoiceNumber": "KR310503",
-								"BankAccounts": [
-										{
-												"Operator": {
-														"Id": "426337be-e332-e611-80fd-005056ac2752",
-														"Name": "Nordea (NDEAFIHH)"
-												},
-												"Limit": 0,
-												"AllowedBalance": 2739.19,
-												"Balance": 2739.19,
-												"Description": "TEst-test-123456",
-												"LastUpdated": "2020-12-29T06:17:00+02:00",
-												"IsMain": false,
-												"Link": null,
-												"Id": "bc60493c-74bc-e611-8103-005056ac2752",
-												"Name": "FI3615853007100857"
-										},
-										{
-												"Operator": {
-														"Id": "3c6337be-e332-e611-80fd-005056ac2752",
-														"Name": "Handelsbanken (HANDFIHH)"
-												},
-												"Limit": 25000,
-												"AllowedBalance": 61693.2,
-												"Balance": 36693.2,
-												"Description": "Vastike",
-												"LastUpdated": "2020-12-09T12:07:00+02:00",
-												"IsMain": true,
-												"Link": null,
-												"Id": "be60493c-74bc-e611-8103-005056ac2752",
-												"Name": "FI8331311001382708"
-										},
-										{
-												"Operator": {
-														"Id": "bde3d829-01cd-e611-8103-005056ac5819",
-														"Name": "YAP Solutions Oy (FIYAPSOL)"
-												},
-												"Limit": null,
-												"AllowedBalance": null,
-												"Balance": null,
-												"Description": "TEST 16092021",
-												"LastUpdated": null,
-												"IsMain": false,
-												"Link": null,
-												"Id": "773c0519-b216-ec11-817e-005056bbf149",
-												"Name": "NE1122445577889966"
-										}
-								],
-								"BuyerBankAccountId": "be60493c-74bc-e611-8103-005056ac2752",
-								"BankAccount": {
-										"Operator": {
-												"Id": "3c6337be-e332-e611-80fd-005056ac2752",
-												"Name": "Handelsbanken (HANDFIHH)"
-										},
-										"Limit": 25000,
-										"AllowedBalance": 61693.2,
-										"Balance": 36693.2,
-										"Description": "Vastike",
-										"LastUpdated": "2020-12-09T12:07:00+02:00",
-										"IsMain": true,
-										"Link": null,
-										"Id": "be60493c-74bc-e611-8103-005056ac2752",
-										"Name": "FI8331311001382708"
-								},
-								"InvoiceStatus": {
-										"Value": 100000000,
-										"Label": "Not paid"
-								},
-								"PaymentDate": null,
-								"InvoiceDate": "2021-05-04T00:00:00+03:00",
-								"AccountingDate": "2021-05-04T00:00:00+03:00",
-								"Comment": null,
-								"RejectComment": null,
-								"AllowedPay": true,
-								"AllowedEdit": true,
-								"Link": "/main.aspx?etn=invoice&id=53ddeb28-06c2-eb11-817e-005056bbf149&pagetype=entityrecord",
-								"Validation": [],
-								"Id": "53ddeb28-06c2-eb11-817e-005056bbf149",
-								"Name": "KR310503"
-						},
-						{
-								"Payer": {
-										"Id": "c98e3773-9ca1-e611-8103-005056ac126a",
-										"Name": "Kiinteistö Oy Kirkkokatu 8"
-								},
-								"Seller": "Aletta Oy",
-								"DueDate": "2021-05-31T00:00:00+03:00",
-								"Amount": 550.5,
-								"InvoiceNumber": "KR310599",
-								"BankAccounts": [
-										{
-												"Operator": {
-														"Id": "426337be-e332-e611-80fd-005056ac2752",
-														"Name": "Nordea (NDEAFIHH)"
-												},
-												"Limit": 0,
-												"AllowedBalance": 2739.19,
-												"Balance": 2739.19,
-												"Description": "TEst-test-123456",
-												"LastUpdated": "2020-12-29T06:17:00+02:00",
-												"IsMain": false,
-												"Link": null,
-												"Id": "bc60493c-74bc-e611-8103-005056ac2752",
-												"Name": "FI3615853007100857"
-										},
-										{
-												"Operator": {
-														"Id": "3c6337be-e332-e611-80fd-005056ac2752",
-														"Name": "Handelsbanken (HANDFIHH)"
-												},
-												"Limit": 25000,
-												"AllowedBalance": 61693.2,
-												"Balance": 36693.2,
-												"Description": "Vastike",
-												"LastUpdated": "2020-12-09T12:07:00+02:00",
-												"IsMain": true,
-												"Link": null,
-												"Id": "be60493c-74bc-e611-8103-005056ac2752",
-												"Name": "FI8331311001382708"
-										},
-										{
-												"Operator": {
-														"Id": "bde3d829-01cd-e611-8103-005056ac5819",
-														"Name": "YAP Solutions Oy (FIYAPSOL)"
-												},
-												"Limit": null,
-												"AllowedBalance": null,
-												"Balance": null,
-												"Description": "TEST 16092021",
-												"LastUpdated": null,
-												"IsMain": false,
-												"Link": null,
-												"Id": "773c0519-b216-ec11-817e-005056bbf149",
-												"Name": "NE1122445577889966"
-										}
-								],
-								"BuyerBankAccountId": "773c0519-b216-ec11-817e-005056bbf149",
-								"BankAccount": {
-										"Operator": {
-												"Id": "bde3d829-01cd-e611-8103-005056ac5819",
-												"Name": "YAP Solutions Oy (FIYAPSOL)"
-										},
-										"Limit": null,
-										"AllowedBalance": null,
-										"Balance": null,
-										"Description": "TEST 16092021",
-										"LastUpdated": null,
-										"IsMain": false,
-										"Link": null,
-										"Id": "773c0519-b216-ec11-817e-005056bbf149",
-										"Name": "NE1122445577889966"
-								},
-								"InvoiceStatus": {
-										"Value": 100000000,
-										"Label": "Not paid"
-								},
-								"PaymentDate": null,
-								"InvoiceDate": "2021-05-05T00:00:00+03:00",
-								"AccountingDate": "2021-05-05T00:00:00+03:00",
-								"Comment": "appr comment 08092021-2\n\n111",
-								"RejectComment": null,
-								"AllowedPay": false,
-								"AllowedEdit": true,
-								"Link": "/main.aspx?etn=invoice&id=b7e6b9e8-06c2-eb11-817e-005056bbf149&pagetype=entityrecord",
-								"Validation": [
-										{
-												"EntityId": "b7e6b9e8-06c2-eb11-817e-005056bbf149",
-												"ResponseCode": 3,
-												"Message": "Not all required fields (Fileservice, Payment File Type, Operator Code) are filled in the Payer Operator",
-												"MessageCode": 106
-										}
-								],
-								"Id": "b7e6b9e8-06c2-eb11-817e-005056bbf149",
-								"Name": "KR310599"
-						}
-				],
+					],
 					// PurchaseInvoices: [
-					// 	{
-					// 		"Payer": {
-					// 			"Id": "a98ee91c-e3ea-e711-8105-005056ac5819",
-					// 			"Name": "As Oy Demotalo"
+					// {
+					// 	"Payer": {
+					// 		"Id": "a98ee91c-e3ea-e711-8105-005056ac5819",
+					// 		"Name": "As Oy Demotalo"
+					// 	},
+					// 	"Seller": "Howden Finland Oy",
+					// 	"DueDate": "2020-12-02T00:00:00+02:00",
+					// 	"Amount": 728.27,
+					// 	"InvoiceNumber": "321084",
+					// 	"BankAccounts": [
+					// 		{
+					// 			"Operator": {
+					// 				"Id": "386337be-e332-e611-80fd-005056ac2752",
+					// 				"Name": "Danske Bank (DABAFIHH)"
+					// 			},
+					// 			"Limit": 0,
+					// 			"AllowedBalance": 87.49,
+					// 			"Balance": 87.49,
+					// 			"Description": "second",
+					// 			"LastUpdated": "2020-11-09T18:00:00+02:00",
+					// 			"IsMain": false,
+					// 			"Link": null,
+					// 			"Id": "62ed235d-66f6-ea11-810e-005056ac5877",
+					// 			"Name": "FI0383183710016878"
 					// 		},
-					// 		"Seller": "Howden Finland Oy",
-					// 		"DueDate": "2020-12-02T00:00:00+02:00",
-					// 		"Amount": 728.27,
-					// 		"InvoiceNumber": "321084",
-					// 		"BankAccounts": [
-					// 			{
-					// 				"Operator": {
-					// 					"Id": "386337be-e332-e611-80fd-005056ac2752",
-					// 					"Name": "Danske Bank (DABAFIHH)"
-					// 				},
-					// 				"Limit": 0,
-					// 				"AllowedBalance": 87.49,
-					// 				"Balance": 87.49,
-					// 				"Description": "second",
-					// 				"LastUpdated": "2020-11-09T18:00:00+02:00",
-					// 				"IsMain": false,
-					// 				"Link": null,
-					// 				"Id": "62ed235d-66f6-ea11-810e-005056ac5877",
-					// 				"Name": "FI0383183710016878"
-					// 			},
-					// 			{
-					// 				"Operator": {
-					// 					"Id": "446337be-e332-e611-80fd-005056ac2752",
-					// 					"Name": "Osuuspankki (OKOYFIHH)"
-					// 				},
-					// 				"Limit": 0,
-					// 				"AllowedBalance": null,
-					// 				"Balance": -103.68,
-					// 				"Description": null,
-					// 				"LastUpdated": "2020-11-05T00:00:00+02:00",
-					// 				"IsMain": false,
-					// 				"Link": null,
-					// 				"Id": "03739f96-66f6-ea11-810e-005056ac5877",
-					// 				"Name": "FI6850000120350201"
-					// 			},
-					// 			{
-					// 				"Operator": {
-					// 					"Id": "e82f8838-1a4f-e611-80ff-005056ac5819",
-					// 					"Name": "POP Pankki (POPFFI22)"
-					// 				},
-					// 				"Limit": null,
-					// 				"AllowedBalance": 136.02,
-					// 				"Balance": 136.02,
-					// 				"Description": "Discription",
-					// 				"LastUpdated": "2020-11-23T03:35:00+02:00",
-					// 				"IsMain": true,
-					// 				"Link": null,
-					// 				"Id": "34f0ec6f-8eac-ea11-8110-005056ac71e1",
-					// 				"Name": "FI7647300010355781"
-					// 			},
-					// 			{
-					// 				"Operator": {
-					// 					"Id": "386337be-e332-e611-80fd-005056ac2752",
-					// 					"Name": "Danske Bank (DABAFIHH)"
-					// 				},
-					// 				"Limit": null,
-					// 				"AllowedBalance": null,
-					// 				"Balance": null,
-					// 				"Description": null,
-					// 				"LastUpdated": null,
-					// 				"IsMain": false,
-					// 				"Link": null,
-					// 				"Id": "87195a45-9938-eb11-817e-005056bbf149",
-					// 				"Name": "FI0383183710016878"
-					// 			}
-					// 		],
-					// 		"BuyerBankAccountId": "03739f96-66f6-ea11-810e-005056ac5877",
-					// 		"BankAccount": {
+					// 		{
 					// 			"Operator": {
 					// 				"Id": "446337be-e332-e611-80fd-005056ac2752",
 					// 				"Name": "Osuuspankki (OKOYFIHH)"
@@ -584,29 +288,76 @@ class FakeInternalAPI {
 					// 			"Id": "03739f96-66f6-ea11-810e-005056ac5877",
 					// 			"Name": "FI6850000120350201"
 					// 		},
-					// 		"InvoiceStatus": {
-					// 			"Value": 100000000,
-					// 			"Label": "Not paid"
+					// 		{
+					// 			"Operator": {
+					// 				"Id": "e82f8838-1a4f-e611-80ff-005056ac5819",
+					// 				"Name": "POP Pankki (POPFFI22)"
+					// 			},
+					// 			"Limit": null,
+					// 			"AllowedBalance": 136.02,
+					// 			"Balance": 136.02,
+					// 			"Description": "Discription",
+					// 			"LastUpdated": "2020-11-23T03:35:00+02:00",
+					// 			"IsMain": true,
+					// 			"Link": null,
+					// 			"Id": "34f0ec6f-8eac-ea11-8110-005056ac71e1",
+					// 			"Name": "FI7647300010355781"
 					// 		},
-					// 		"PaymentDate": null,
-					// 		"InvoiceDate": "2020-11-02T00:00:00+02:00",
-					// 		"AccountingDate": "2020-11-02T00:00:00+02:00",
-					// 		"Comment": null,
-					// 		"RejectComment": null,
-					// 		"AllowedPay": false,
-					// 		"AllowedEdit": true,
-					// 		"Link": "/main.aspx?etn=invoice&id=051c5ec7-f42a-eb11-810e-005056ac5877&pagetype=entityrecord",
-					// 		"Validation": [
-					// 			{
-					// 				"EntityId": "051c5ec7-f42a-eb11-810e-005056ac5877",
-					// 				"ResponseCode": 3,
-					// 				"Message": "Not all required fields (Operator, Bank ID) are filled in the Payer Bank Account",
-					// 				"MessageCode": 101
-					// 			}
-					// 		],
-					// 		"Id": "051c5ec7-f42a-eb11-810e-005056ac5877",
-					// 		"Name": "321084"
+					// 		{
+					// 			"Operator": {
+					// 				"Id": "386337be-e332-e611-80fd-005056ac2752",
+					// 				"Name": "Danske Bank (DABAFIHH)"
+					// 			},
+					// 			"Limit": null,
+					// 			"AllowedBalance": null,
+					// 			"Balance": null,
+					// 			"Description": null,
+					// 			"LastUpdated": null,
+					// 			"IsMain": false,
+					// 			"Link": null,
+					// 			"Id": "87195a45-9938-eb11-817e-005056bbf149",
+					// 			"Name": "FI0383183710016878"
+					// 		}
+					// 	],
+					// 	"BuyerBankAccountId": "03739f96-66f6-ea11-810e-005056ac5877",
+					// 	"BankAccount": {
+					// 		"Operator": {
+					// 			"Id": "446337be-e332-e611-80fd-005056ac2752",
+					// 			"Name": "Osuuspankki (OKOYFIHH)"
+					// 		},
+					// 		"Limit": 0,
+					// 		"AllowedBalance": null,
+					// 		"Balance": -103.68,
+					// 		"Description": null,
+					// 		"LastUpdated": "2020-11-05T00:00:00+02:00",
+					// 		"IsMain": false,
+					// 		"Link": null,
+					// 		"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+					// 		"Name": "FI6850000120350201"
 					// 	},
+					// 	"InvoiceStatus": {
+					// 		"Value": 100000000,
+					// 		"Label": "Not paid"
+					// 	},
+					// 	"PaymentDate": null,
+					// 	"InvoiceDate": "2020-11-02T00:00:00+02:00",
+					// 	"AccountingDate": "2020-11-02T00:00:00+02:00",
+					// 	"Comment": null,
+					// 	"RejectComment": null,
+					// 	"AllowedPay": false,
+					// 	"AllowedEdit": true,
+					// 	"Link": "/main.aspx?etn=invoice&id=051c5ec7-f42a-eb11-810e-005056ac5877&pagetype=entityrecord",
+					// 	"Validation": [
+					// 		{
+					// 			"EntityId": "051c5ec7-f42a-eb11-810e-005056ac5877",
+					// 			"ResponseCode": 3,
+					// 			"Message": "Not all required fields (Operator, Bank ID) are filled in the Payer Bank Account",
+					// 			"MessageCode": 101
+					// 		}
+					// 	],
+					// 	"Id": "051c5ec7-f42a-eb11-810e-005056ac5877",
+					// 	"Name": "321084"
+					// },
 					// 	{
 					// 		"Payer": {
 					// 			"Id": "a98ee91c-e3ea-e711-8105-005056ac5819",
@@ -3367,26 +3118,3092 @@ class FakeInternalAPI {
 		let result = {
 			IsSuccess: true,
 			Error: 'Something went wrong, please reload the page',
-			ErrorCode: 0
+			ErrorCode: 0,
+			PurchaseInvoices: [
+				{
+					"Payer": {
+						"Id": "a98ee91c-e3ea-e711-8105-005056ac5819",
+						"Name": "As Oy Demotalo"
+					},
+					"Seller": "Howden Finland Oy",
+					"DueDate": "2020-12-02T00:00:00+02:00",
+					"Amount": 728.27,
+					"InvoiceNumber": "321084",
+					"BankAccounts": [
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": 87.49,
+							"Balance": 87.49,
+							"Description": "second",
+							"LastUpdated": "2020-11-09T18:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "62ed235d-66f6-ea11-810e-005056ac5877",
+							"Name": "FI0383183710016878"
+						},
+						{
+							"Operator": {
+								"Id": "446337be-e332-e611-80fd-005056ac2752",
+								"Name": "Osuuspankki (OKOYFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": null,
+							"Balance": -103.68,
+							"Description": null,
+							"LastUpdated": "2020-11-05T00:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+							"Name": "FI6850000120350201"
+						},
+						{
+							"Operator": {
+								"Id": "e82f8838-1a4f-e611-80ff-005056ac5819",
+								"Name": "POP Pankki (POPFFI22)"
+							},
+							"Limit": null,
+							"AllowedBalance": 136.02,
+							"Balance": 136.02,
+							"Description": "Discription",
+							"LastUpdated": "2020-11-23T03:35:00+02:00",
+							"IsMain": true,
+							"Link": null,
+							"Id": "34f0ec6f-8eac-ea11-8110-005056ac71e1",
+							"Name": "FI7647300010355781"
+						},
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": null,
+							"AllowedBalance": null,
+							"Balance": null,
+							"Description": null,
+							"LastUpdated": null,
+							"IsMain": false,
+							"Link": null,
+							"Id": "87195a45-9938-eb11-817e-005056bbf149",
+							"Name": "FI0383183710016878"
+						}
+					],
+					"BuyerBankAccountId": "03739f96-66f6-ea11-810e-005056ac5877",
+					"BankAccount": {
+						"Operator": {
+							"Id": "446337be-e332-e611-80fd-005056ac2752",
+							"Name": "Osuuspankki (OKOYFIHH)"
+						},
+						"Limit": 0,
+						"AllowedBalance": null,
+						"Balance": -103.68,
+						"Description": null,
+						"LastUpdated": "2020-11-05T00:00:00+02:00",
+						"IsMain": false,
+						"Link": null,
+						"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+						"Name": "FI6850000120350201"
+					},
+					"InvoiceStatus": {
+						"Value": 100000000,
+						"Label": "Not paid"
+					},
+					"PaymentDate": null,
+					"InvoiceDate": "2020-11-02T00:00:00+02:00",
+					"AccountingDate": "2020-11-02T00:00:00+02:00",
+					"Comment": null,
+					"RejectComment": null,
+					"AllowedPay": false,
+					"AllowedEdit": true,
+					"Link": "/main.aspx?etn=invoice&id=051c5ec7-f42a-eb11-810e-005056ac5877&pagetype=entityrecord",
+					"Validation": [
+						{
+							"EntityId": "051c5ec7-f42a-eb11-810e-005056ac5877",
+							"ResponseCode": 3,
+							"Message": "Not all required fields (Operator, Bank ID) are filled in the Payer Bank Account",
+							"MessageCode": 101
+						}
+					],
+					"Id": "051c5ec7-f42a-eb11-810e-005056ac5877",
+					"Name": "321084"
+				},
+				{
+					"Payer": {
+						"Id": "a98ee91c-e3ea-e711-8105-005056ac5819",
+						"Name": "As Oy Demotalo"
+					},
+					"Seller": "Kiinteistö-Tahkola Oulu Oy",
+					"DueDate": "2020-11-21T00:00:00+02:00",
+					"Amount": 31,
+					"InvoiceNumber": "97054193",
+					"BankAccounts": [
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": 87.49,
+							"Balance": 87.49,
+							"Description": "second",
+							"LastUpdated": "2020-11-09T18:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "62ed235d-66f6-ea11-810e-005056ac5877",
+							"Name": "FI0383183710016878"
+						},
+						{
+							"Operator": {
+								"Id": "446337be-e332-e611-80fd-005056ac2752",
+								"Name": "Osuuspankki (OKOYFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": null,
+							"Balance": -103.68,
+							"Description": null,
+							"LastUpdated": "2020-11-05T00:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+							"Name": "FI6850000120350201"
+						},
+						{
+							"Operator": {
+								"Id": "e82f8838-1a4f-e611-80ff-005056ac5819",
+								"Name": "POP Pankki (POPFFI22)"
+							},
+							"Limit": null,
+							"AllowedBalance": 136.02,
+							"Balance": 136.02,
+							"Description": "Discription",
+							"LastUpdated": "2020-11-23T03:35:00+02:00",
+							"IsMain": true,
+							"Link": null,
+							"Id": "34f0ec6f-8eac-ea11-8110-005056ac71e1",
+							"Name": "FI7647300010355781"
+						},
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": null,
+							"AllowedBalance": null,
+							"Balance": null,
+							"Description": null,
+							"LastUpdated": null,
+							"IsMain": false,
+							"Link": null,
+							"Id": "87195a45-9938-eb11-817e-005056bbf149",
+							"Name": "FI0383183710016878"
+						}
+					],
+					"BuyerBankAccountId": "62ed235d-66f6-ea11-810e-005056ac5877",
+					"BankAccount": {
+						"Operator": {
+							"Id": "386337be-e332-e611-80fd-005056ac2752",
+							"Name": "Danske Bank (DABAFIHH)"
+						},
+						"Limit": 0,
+						"AllowedBalance": 87.49,
+						"Balance": 87.49,
+						"Description": "second",
+						"LastUpdated": "2020-11-09T18:00:00+02:00",
+						"IsMain": false,
+						"Link": null,
+						"Id": "62ed235d-66f6-ea11-810e-005056ac5877",
+						"Name": "FI0383183710016878"
+					},
+					"InvoiceStatus": {
+						"Value": 100000000,
+						"Label": "Not paid"
+					},
+					"PaymentDate": null,
+					"InvoiceDate": "2020-11-19T00:00:00+02:00",
+					"AccountingDate": "2020-11-20T02:00:00+02:00",
+					"Comment": null,
+					"RejectComment": null,
+					"AllowedPay": false,
+					"AllowedEdit": true,
+					"Link": "/main.aspx?etn=invoice&id=9cb287be-c433-eb11-817e-005056bbf149&pagetype=entityrecord",
+					"Validation": [
+						{
+							"EntityId": "9cb287be-c433-eb11-817e-005056bbf149",
+							"ResponseCode": 3,
+							"Message": "Not all required fields (Operator, Bank ID) are filled in the Payer Bank Account",
+							"MessageCode": 101
+						}
+					],
+					"Id": "9cb287be-c433-eb11-817e-005056bbf149",
+					"Name": "97054193"
+				},
+				{
+					"Payer": {
+						"Id": "a98ee91c-e3ea-e711-8105-005056ac5819",
+						"Name": "As Oy Demotalo"
+					},
+					"Seller": "Viria Security Oy",
+					"DueDate": "2020-11-27T00:00:00+02:00",
+					"Amount": 276.4,
+					"InvoiceNumber": "10589324",
+					"BankAccounts": [
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": 87.49,
+							"Balance": 87.49,
+							"Description": "second",
+							"LastUpdated": "2020-11-09T18:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "62ed235d-66f6-ea11-810e-005056ac5877",
+							"Name": "FI0383183710016878"
+						},
+						{
+							"Operator": {
+								"Id": "446337be-e332-e611-80fd-005056ac2752",
+								"Name": "Osuuspankki (OKOYFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": null,
+							"Balance": -103.68,
+							"Description": null,
+							"LastUpdated": "2020-11-05T00:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+							"Name": "FI6850000120350201"
+						},
+						{
+							"Operator": {
+								"Id": "e82f8838-1a4f-e611-80ff-005056ac5819",
+								"Name": "POP Pankki (POPFFI22)"
+							},
+							"Limit": null,
+							"AllowedBalance": 136.02,
+							"Balance": 136.02,
+							"Description": "Discription",
+							"LastUpdated": "2020-11-23T03:35:00+02:00",
+							"IsMain": true,
+							"Link": null,
+							"Id": "34f0ec6f-8eac-ea11-8110-005056ac71e1",
+							"Name": "FI7647300010355781"
+						},
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": null,
+							"AllowedBalance": null,
+							"Balance": null,
+							"Description": null,
+							"LastUpdated": null,
+							"IsMain": false,
+							"Link": null,
+							"Id": "87195a45-9938-eb11-817e-005056bbf149",
+							"Name": "FI0383183710016878"
+						}
+					],
+					"BuyerBankAccountId": "03739f96-66f6-ea11-810e-005056ac5877",
+					"BankAccount": {
+						"Operator": {
+							"Id": "446337be-e332-e611-80fd-005056ac2752",
+							"Name": "Osuuspankki (OKOYFIHH)"
+						},
+						"Limit": 0,
+						"AllowedBalance": null,
+						"Balance": -103.68,
+						"Description": null,
+						"LastUpdated": "2020-11-05T00:00:00+02:00",
+						"IsMain": false,
+						"Link": null,
+						"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+						"Name": "FI6850000120350201"
+					},
+					"InvoiceStatus": {
+						"Value": 100000000,
+						"Label": "Not paid"
+					},
+					"PaymentDate": null,
+					"InvoiceDate": "2020-11-13T00:00:00+02:00",
+					"AccountingDate": "2020-11-13T00:00:00+02:00",
+					"Comment": null,
+					"RejectComment": null,
+					"AllowedPay": false,
+					"AllowedEdit": true,
+					"Link": "/main.aspx?etn=invoice&id=93db5441-c533-eb11-817e-005056bbf149&pagetype=entityrecord",
+					"Validation": [
+						{
+							"EntityId": "93db5441-c533-eb11-817e-005056bbf149",
+							"ResponseCode": 3,
+							"Message": "Not all required fields (Operator, Bank ID) are filled in the Payer Bank Account",
+							"MessageCode": 101
+						}
+					],
+					"Id": "93db5441-c533-eb11-817e-005056bbf149",
+					"Name": "10589324"
+				},
+				{
+					"Payer": {
+						"Id": "a98ee91c-e3ea-e711-8105-005056ac5819",
+						"Name": "As Oy Demotalo"
+					},
+					"Seller": "Korpisähkö Oy",
+					"DueDate": "2020-12-01T00:00:00+02:00",
+					"Amount": 407.86,
+					"InvoiceNumber": "143850",
+					"BankAccounts": [
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": 87.49,
+							"Balance": 87.49,
+							"Description": "second",
+							"LastUpdated": "2020-11-09T18:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "62ed235d-66f6-ea11-810e-005056ac5877",
+							"Name": "FI0383183710016878"
+						},
+						{
+							"Operator": {
+								"Id": "446337be-e332-e611-80fd-005056ac2752",
+								"Name": "Osuuspankki (OKOYFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": null,
+							"Balance": -103.68,
+							"Description": null,
+							"LastUpdated": "2020-11-05T00:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+							"Name": "FI6850000120350201"
+						},
+						{
+							"Operator": {
+								"Id": "e82f8838-1a4f-e611-80ff-005056ac5819",
+								"Name": "POP Pankki (POPFFI22)"
+							},
+							"Limit": null,
+							"AllowedBalance": 136.02,
+							"Balance": 136.02,
+							"Description": "Discription",
+							"LastUpdated": "2020-11-23T03:35:00+02:00",
+							"IsMain": true,
+							"Link": null,
+							"Id": "34f0ec6f-8eac-ea11-8110-005056ac71e1",
+							"Name": "FI7647300010355781"
+						},
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": null,
+							"AllowedBalance": null,
+							"Balance": null,
+							"Description": null,
+							"LastUpdated": null,
+							"IsMain": false,
+							"Link": null,
+							"Id": "87195a45-9938-eb11-817e-005056bbf149",
+							"Name": "FI0383183710016878"
+						}
+					],
+					"BuyerBankAccountId": "03739f96-66f6-ea11-810e-005056ac5877",
+					"BankAccount": {
+						"Operator": {
+							"Id": "446337be-e332-e611-80fd-005056ac2752",
+							"Name": "Osuuspankki (OKOYFIHH)"
+						},
+						"Limit": 0,
+						"AllowedBalance": null,
+						"Balance": -103.68,
+						"Description": null,
+						"LastUpdated": "2020-11-05T00:00:00+02:00",
+						"IsMain": false,
+						"Link": null,
+						"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+						"Name": "FI6850000120350201"
+					},
+					"InvoiceStatus": {
+						"Value": 100000000,
+						"Label": "Not paid"
+					},
+					"PaymentDate": null,
+					"InvoiceDate": "2020-11-24T00:00:00+02:00",
+					"AccountingDate": "2020-11-24T00:00:00+02:00",
+					"Comment": null,
+					"RejectComment": null,
+					"AllowedPay": false,
+					"AllowedEdit": true,
+					"Link": "/main.aspx?etn=invoice&id=99db5441-c533-eb11-817e-005056bbf149&pagetype=entityrecord",
+					"Validation": [
+						{
+							"EntityId": "99db5441-c533-eb11-817e-005056bbf149",
+							"ResponseCode": 3,
+							"Message": "Not all required fields (Operator, Bank ID) are filled in the Payer Bank Account",
+							"MessageCode": 101
+						}
+					],
+					"Id": "99db5441-c533-eb11-817e-005056bbf149",
+					"Name": "143850"
+				},
+				{
+					"Payer": {
+						"Id": "a98ee91c-e3ea-e711-8105-005056ac5819",
+						"Name": "As Oy Demotalo"
+					},
+					"Seller": "Oomi Palvelut Oy",
+					"DueDate": "2020-12-03T00:00:00+02:00",
+					"Amount": 29.03,
+					"InvoiceNumber": "2004253216",
+					"BankAccounts": [
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": 87.49,
+							"Balance": 87.49,
+							"Description": "second",
+							"LastUpdated": "2020-11-09T18:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "62ed235d-66f6-ea11-810e-005056ac5877",
+							"Name": "FI0383183710016878"
+						},
+						{
+							"Operator": {
+								"Id": "446337be-e332-e611-80fd-005056ac2752",
+								"Name": "Osuuspankki (OKOYFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": null,
+							"Balance": -103.68,
+							"Description": null,
+							"LastUpdated": "2020-11-05T00:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+							"Name": "FI6850000120350201"
+						},
+						{
+							"Operator": {
+								"Id": "e82f8838-1a4f-e611-80ff-005056ac5819",
+								"Name": "POP Pankki (POPFFI22)"
+							},
+							"Limit": null,
+							"AllowedBalance": 136.02,
+							"Balance": 136.02,
+							"Description": "Discription",
+							"LastUpdated": "2020-11-23T03:35:00+02:00",
+							"IsMain": true,
+							"Link": null,
+							"Id": "34f0ec6f-8eac-ea11-8110-005056ac71e1",
+							"Name": "FI7647300010355781"
+						},
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": null,
+							"AllowedBalance": null,
+							"Balance": null,
+							"Description": null,
+							"LastUpdated": null,
+							"IsMain": false,
+							"Link": null,
+							"Id": "87195a45-9938-eb11-817e-005056bbf149",
+							"Name": "FI0383183710016878"
+						}
+					],
+					"BuyerBankAccountId": "03739f96-66f6-ea11-810e-005056ac5877",
+					"BankAccount": {
+						"Operator": {
+							"Id": "446337be-e332-e611-80fd-005056ac2752",
+							"Name": "Osuuspankki (OKOYFIHH)"
+						},
+						"Limit": 0,
+						"AllowedBalance": null,
+						"Balance": -103.68,
+						"Description": null,
+						"LastUpdated": "2020-11-05T00:00:00+02:00",
+						"IsMain": false,
+						"Link": null,
+						"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+						"Name": "FI6850000120350201"
+					},
+					"InvoiceStatus": {
+						"Value": 100000000,
+						"Label": "Not paid"
+					},
+					"PaymentDate": null,
+					"InvoiceDate": "2020-11-12T00:00:00+02:00",
+					"AccountingDate": "2020-11-12T00:00:00+02:00",
+					"Comment": null,
+					"RejectComment": null,
+					"AllowedPay": false,
+					"AllowedEdit": true,
+					"Link": "/main.aspx?etn=invoice&id=9fdb5441-c533-eb11-817e-005056bbf149&pagetype=entityrecord",
+					"Validation": [
+						{
+							"EntityId": "9fdb5441-c533-eb11-817e-005056bbf149",
+							"ResponseCode": 3,
+							"Message": "Not all required fields (Operator, Bank ID) are filled in the Payer Bank Account",
+							"MessageCode": 101
+						}
+					],
+					"Id": "9fdb5441-c533-eb11-817e-005056bbf149",
+					"Name": "2004253216"
+				},
+				{
+					"Payer": {
+						"Id": "a98ee91c-e3ea-e711-8105-005056ac5819",
+						"Name": "As Oy Demotalo"
+					},
+					"Seller": "DNA Welho Oy",
+					"DueDate": "2020-12-04T00:00:00+02:00",
+					"Amount": 24.66,
+					"InvoiceNumber": "77360720",
+					"BankAccounts": [
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": 87.49,
+							"Balance": 87.49,
+							"Description": "second",
+							"LastUpdated": "2020-11-09T18:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "62ed235d-66f6-ea11-810e-005056ac5877",
+							"Name": "FI0383183710016878"
+						},
+						{
+							"Operator": {
+								"Id": "446337be-e332-e611-80fd-005056ac2752",
+								"Name": "Osuuspankki (OKOYFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": null,
+							"Balance": -103.68,
+							"Description": null,
+							"LastUpdated": "2020-11-05T00:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+							"Name": "FI6850000120350201"
+						},
+						{
+							"Operator": {
+								"Id": "e82f8838-1a4f-e611-80ff-005056ac5819",
+								"Name": "POP Pankki (POPFFI22)"
+							},
+							"Limit": null,
+							"AllowedBalance": 136.02,
+							"Balance": 136.02,
+							"Description": "Discription",
+							"LastUpdated": "2020-11-23T03:35:00+02:00",
+							"IsMain": true,
+							"Link": null,
+							"Id": "34f0ec6f-8eac-ea11-8110-005056ac71e1",
+							"Name": "FI7647300010355781"
+						},
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": null,
+							"AllowedBalance": null,
+							"Balance": null,
+							"Description": null,
+							"LastUpdated": null,
+							"IsMain": false,
+							"Link": null,
+							"Id": "87195a45-9938-eb11-817e-005056bbf149",
+							"Name": "FI0383183710016878"
+						}
+					],
+					"BuyerBankAccountId": "03739f96-66f6-ea11-810e-005056ac5877",
+					"BankAccount": {
+						"Operator": {
+							"Id": "446337be-e332-e611-80fd-005056ac2752",
+							"Name": "Osuuspankki (OKOYFIHH)"
+						},
+						"Limit": 0,
+						"AllowedBalance": null,
+						"Balance": -103.68,
+						"Description": null,
+						"LastUpdated": "2020-11-05T00:00:00+02:00",
+						"IsMain": false,
+						"Link": null,
+						"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+						"Name": "FI6850000120350201"
+					},
+					"InvoiceStatus": {
+						"Value": 100000000,
+						"Label": "Not paid"
+					},
+					"PaymentDate": null,
+					"InvoiceDate": "2020-11-05T00:00:00+02:00",
+					"AccountingDate": "2020-11-05T00:00:00+02:00",
+					"Comment": null,
+					"RejectComment": null,
+					"AllowedPay": false,
+					"AllowedEdit": true,
+					"Link": "/main.aspx?etn=invoice&id=a5db5441-c533-eb11-817e-005056bbf149&pagetype=entityrecord",
+					"Validation": [
+						{
+							"EntityId": "a5db5441-c533-eb11-817e-005056bbf149",
+							"ResponseCode": 3,
+							"Message": "Not all required fields (Operator, Bank ID) are filled in the Payer Bank Account",
+							"MessageCode": 101
+						}
+					],
+					"Id": "a5db5441-c533-eb11-817e-005056bbf149",
+					"Name": "77360720"
+				},
+				{
+					"Payer": {
+						"Id": "a98ee91c-e3ea-e711-8105-005056ac5819",
+						"Name": "As Oy Demotalo"
+					},
+					"Seller": "Kiinteistöhuolto Jurvelin Oy",
+					"DueDate": "2020-12-06T00:00:00+02:00",
+					"Amount": 127.88,
+					"InvoiceNumber": "145284",
+					"BankAccounts": [
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": 87.49,
+							"Balance": 87.49,
+							"Description": "second",
+							"LastUpdated": "2020-11-09T18:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "62ed235d-66f6-ea11-810e-005056ac5877",
+							"Name": "FI0383183710016878"
+						},
+						{
+							"Operator": {
+								"Id": "446337be-e332-e611-80fd-005056ac2752",
+								"Name": "Osuuspankki (OKOYFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": null,
+							"Balance": -103.68,
+							"Description": null,
+							"LastUpdated": "2020-11-05T00:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+							"Name": "FI6850000120350201"
+						},
+						{
+							"Operator": {
+								"Id": "e82f8838-1a4f-e611-80ff-005056ac5819",
+								"Name": "POP Pankki (POPFFI22)"
+							},
+							"Limit": null,
+							"AllowedBalance": 136.02,
+							"Balance": 136.02,
+							"Description": "Discription",
+							"LastUpdated": "2020-11-23T03:35:00+02:00",
+							"IsMain": true,
+							"Link": null,
+							"Id": "34f0ec6f-8eac-ea11-8110-005056ac71e1",
+							"Name": "FI7647300010355781"
+						},
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": null,
+							"AllowedBalance": null,
+							"Balance": null,
+							"Description": null,
+							"LastUpdated": null,
+							"IsMain": false,
+							"Link": null,
+							"Id": "87195a45-9938-eb11-817e-005056bbf149",
+							"Name": "FI0383183710016878"
+						}
+					],
+					"BuyerBankAccountId": "03739f96-66f6-ea11-810e-005056ac5877",
+					"BankAccount": {
+						"Operator": {
+							"Id": "446337be-e332-e611-80fd-005056ac2752",
+							"Name": "Osuuspankki (OKOYFIHH)"
+						},
+						"Limit": 0,
+						"AllowedBalance": null,
+						"Balance": -103.68,
+						"Description": null,
+						"LastUpdated": "2020-11-05T00:00:00+02:00",
+						"IsMain": false,
+						"Link": null,
+						"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+						"Name": "FI6850000120350201"
+					},
+					"InvoiceStatus": {
+						"Value": 100000000,
+						"Label": "Not paid"
+					},
+					"PaymentDate": null,
+					"InvoiceDate": "2020-11-26T00:00:00+02:00",
+					"AccountingDate": "2020-11-26T00:00:00+02:00",
+					"Comment": null,
+					"RejectComment": null,
+					"AllowedPay": false,
+					"AllowedEdit": true,
+					"Link": "/main.aspx?etn=invoice&id=abdb5441-c533-eb11-817e-005056bbf149&pagetype=entityrecord",
+					"Validation": [
+						{
+							"EntityId": "abdb5441-c533-eb11-817e-005056bbf149",
+							"ResponseCode": 3,
+							"Message": "Not all required fields (Operator, Bank ID) are filled in the Payer Bank Account",
+							"MessageCode": 101
+						}
+					],
+					"Id": "abdb5441-c533-eb11-817e-005056bbf149",
+					"Name": "145284"
+				},
+				{
+					"Payer": {
+						"Id": "a98ee91c-e3ea-e711-8105-005056ac5819",
+						"Name": "As Oy Demotalo"
+					},
+					"Seller": "RTJ Group Oy / Ropo Laskutuspalvelu",
+					"DueDate": "2020-12-14T00:00:00+02:00",
+					"Amount": 83.08,
+					"InvoiceNumber": "8074",
+					"BankAccounts": [
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": 87.49,
+							"Balance": 87.49,
+							"Description": "second",
+							"LastUpdated": "2020-11-09T18:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "62ed235d-66f6-ea11-810e-005056ac5877",
+							"Name": "FI0383183710016878"
+						},
+						{
+							"Operator": {
+								"Id": "446337be-e332-e611-80fd-005056ac2752",
+								"Name": "Osuuspankki (OKOYFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": null,
+							"Balance": -103.68,
+							"Description": null,
+							"LastUpdated": "2020-11-05T00:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+							"Name": "FI6850000120350201"
+						},
+						{
+							"Operator": {
+								"Id": "e82f8838-1a4f-e611-80ff-005056ac5819",
+								"Name": "POP Pankki (POPFFI22)"
+							},
+							"Limit": null,
+							"AllowedBalance": 136.02,
+							"Balance": 136.02,
+							"Description": "Discription",
+							"LastUpdated": "2020-11-23T03:35:00+02:00",
+							"IsMain": true,
+							"Link": null,
+							"Id": "34f0ec6f-8eac-ea11-8110-005056ac71e1",
+							"Name": "FI7647300010355781"
+						},
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": null,
+							"AllowedBalance": null,
+							"Balance": null,
+							"Description": null,
+							"LastUpdated": null,
+							"IsMain": false,
+							"Link": null,
+							"Id": "87195a45-9938-eb11-817e-005056bbf149",
+							"Name": "FI0383183710016878"
+						}
+					],
+					"BuyerBankAccountId": "03739f96-66f6-ea11-810e-005056ac5877",
+					"BankAccount": {
+						"Operator": {
+							"Id": "446337be-e332-e611-80fd-005056ac2752",
+							"Name": "Osuuspankki (OKOYFIHH)"
+						},
+						"Limit": 0,
+						"AllowedBalance": null,
+						"Balance": -103.68,
+						"Description": null,
+						"LastUpdated": "2020-11-05T00:00:00+02:00",
+						"IsMain": false,
+						"Link": null,
+						"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+						"Name": "FI6850000120350201"
+					},
+					"InvoiceStatus": {
+						"Value": 100000000,
+						"Label": "Not paid"
+					},
+					"PaymentDate": null,
+					"InvoiceDate": "2020-11-30T00:00:00+02:00",
+					"AccountingDate": "2020-11-30T00:00:00+02:00",
+					"Comment": null,
+					"RejectComment": null,
+					"AllowedPay": false,
+					"AllowedEdit": true,
+					"Link": "/main.aspx?etn=invoice&id=4e365647-c533-eb11-817e-005056bbf149&pagetype=entityrecord",
+					"Validation": [
+						{
+							"EntityId": "4e365647-c533-eb11-817e-005056bbf149",
+							"ResponseCode": 3,
+							"Message": "Not all required fields (Operator, Bank ID) are filled in the Payer Bank Account",
+							"MessageCode": 101
+						}
+					],
+					"Id": "4e365647-c533-eb11-817e-005056bbf149",
+					"Name": "8074"
+				},
+				{
+					"Payer": {
+						"Id": "a98ee91c-e3ea-e711-8105-005056ac5819",
+						"Name": "As Oy Demotalo"
+					},
+					"Seller": "Kiinteistöhuolto Jurvelin Oy",
+					"DueDate": "2020-12-10T00:00:00+02:00",
+					"Amount": 298.94,
+					"InvoiceNumber": "145605",
+					"BankAccounts": [
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": 87.49,
+							"Balance": 87.49,
+							"Description": "second",
+							"LastUpdated": "2020-11-09T18:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "62ed235d-66f6-ea11-810e-005056ac5877",
+							"Name": "FI0383183710016878"
+						},
+						{
+							"Operator": {
+								"Id": "446337be-e332-e611-80fd-005056ac2752",
+								"Name": "Osuuspankki (OKOYFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": null,
+							"Balance": -103.68,
+							"Description": null,
+							"LastUpdated": "2020-11-05T00:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+							"Name": "FI6850000120350201"
+						},
+						{
+							"Operator": {
+								"Id": "e82f8838-1a4f-e611-80ff-005056ac5819",
+								"Name": "POP Pankki (POPFFI22)"
+							},
+							"Limit": null,
+							"AllowedBalance": 136.02,
+							"Balance": 136.02,
+							"Description": "Discription",
+							"LastUpdated": "2020-11-23T03:35:00+02:00",
+							"IsMain": true,
+							"Link": null,
+							"Id": "34f0ec6f-8eac-ea11-8110-005056ac71e1",
+							"Name": "FI7647300010355781"
+						},
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": null,
+							"AllowedBalance": null,
+							"Balance": null,
+							"Description": null,
+							"LastUpdated": null,
+							"IsMain": false,
+							"Link": null,
+							"Id": "87195a45-9938-eb11-817e-005056bbf149",
+							"Name": "FI0383183710016878"
+						}
+					],
+					"BuyerBankAccountId": "03739f96-66f6-ea11-810e-005056ac5877",
+					"BankAccount": {
+						"Operator": {
+							"Id": "446337be-e332-e611-80fd-005056ac2752",
+							"Name": "Osuuspankki (OKOYFIHH)"
+						},
+						"Limit": 0,
+						"AllowedBalance": null,
+						"Balance": -103.68,
+						"Description": null,
+						"LastUpdated": "2020-11-05T00:00:00+02:00",
+						"IsMain": false,
+						"Link": null,
+						"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+						"Name": "FI6850000120350201"
+					},
+					"InvoiceStatus": {
+						"Value": 100000000,
+						"Label": "Not paid"
+					},
+					"PaymentDate": null,
+					"InvoiceDate": "2020-11-30T00:00:00+02:00",
+					"AccountingDate": "2020-11-30T00:00:00+02:00",
+					"Comment": null,
+					"RejectComment": null,
+					"AllowedPay": false,
+					"AllowedEdit": true,
+					"Link": "/main.aspx?etn=invoice&id=54365647-c533-eb11-817e-005056bbf149&pagetype=entityrecord",
+					"Validation": [
+						{
+							"EntityId": "54365647-c533-eb11-817e-005056bbf149",
+							"ResponseCode": 3,
+							"Message": "Not all required fields (Operator, Bank ID) are filled in the Payer Bank Account",
+							"MessageCode": 101
+						}
+					],
+					"Id": "54365647-c533-eb11-817e-005056bbf149",
+					"Name": "145605"
+				},
+				{
+					"Payer": {
+						"Id": "a98ee91c-e3ea-e711-8105-005056ac5819",
+						"Name": "As Oy Demotalo"
+					},
+					"Seller": "Kiinteistöhuolto Jurvelin Oy",
+					"DueDate": "2020-12-10T00:00:00+02:00",
+					"Amount": 188.79,
+					"InvoiceNumber": "145681",
+					"BankAccounts": [
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": 87.49,
+							"Balance": 87.49,
+							"Description": "second",
+							"LastUpdated": "2020-11-09T18:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "62ed235d-66f6-ea11-810e-005056ac5877",
+							"Name": "FI0383183710016878"
+						},
+						{
+							"Operator": {
+								"Id": "446337be-e332-e611-80fd-005056ac2752",
+								"Name": "Osuuspankki (OKOYFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": null,
+							"Balance": -103.68,
+							"Description": null,
+							"LastUpdated": "2020-11-05T00:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+							"Name": "FI6850000120350201"
+						},
+						{
+							"Operator": {
+								"Id": "e82f8838-1a4f-e611-80ff-005056ac5819",
+								"Name": "POP Pankki (POPFFI22)"
+							},
+							"Limit": null,
+							"AllowedBalance": 136.02,
+							"Balance": 136.02,
+							"Description": "Discription",
+							"LastUpdated": "2020-11-23T03:35:00+02:00",
+							"IsMain": true,
+							"Link": null,
+							"Id": "34f0ec6f-8eac-ea11-8110-005056ac71e1",
+							"Name": "FI7647300010355781"
+						},
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": null,
+							"AllowedBalance": null,
+							"Balance": null,
+							"Description": null,
+							"LastUpdated": null,
+							"IsMain": false,
+							"Link": null,
+							"Id": "87195a45-9938-eb11-817e-005056bbf149",
+							"Name": "FI0383183710016878"
+						}
+					],
+					"BuyerBankAccountId": "03739f96-66f6-ea11-810e-005056ac5877",
+					"BankAccount": {
+						"Operator": {
+							"Id": "446337be-e332-e611-80fd-005056ac2752",
+							"Name": "Osuuspankki (OKOYFIHH)"
+						},
+						"Limit": 0,
+						"AllowedBalance": null,
+						"Balance": -103.68,
+						"Description": null,
+						"LastUpdated": "2020-11-05T00:00:00+02:00",
+						"IsMain": false,
+						"Link": null,
+						"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+						"Name": "FI6850000120350201"
+					},
+					"InvoiceStatus": {
+						"Value": 100000000,
+						"Label": "Not paid"
+					},
+					"PaymentDate": null,
+					"InvoiceDate": "2020-11-30T00:00:00+02:00",
+					"AccountingDate": "2020-11-30T00:00:00+02:00",
+					"Comment": null,
+					"RejectComment": null,
+					"AllowedPay": false,
+					"AllowedEdit": true,
+					"Link": "/main.aspx?etn=invoice&id=5a365647-c533-eb11-817e-005056bbf149&pagetype=entityrecord",
+					"Validation": [
+						{
+							"EntityId": "5a365647-c533-eb11-817e-005056bbf149",
+							"ResponseCode": 3,
+							"Message": "Not all required fields (Operator, Bank ID) are filled in the Payer Bank Account",
+							"MessageCode": 101
+						}
+					],
+					"Id": "5a365647-c533-eb11-817e-005056bbf149",
+					"Name": "145681"
+				},
+				{
+					"Payer": {
+						"Id": "a98ee91c-e3ea-e711-8105-005056ac5819",
+						"Name": "As Oy Demotalo"
+					},
+					"Seller": "Kiinteistöhuolto Paavo Sarkkinen Oy",
+					"DueDate": "2020-12-13T00:00:00+02:00",
+					"Amount": 173.6,
+					"InvoiceNumber": "8184",
+					"BankAccounts": [
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": 87.49,
+							"Balance": 87.49,
+							"Description": "second",
+							"LastUpdated": "2020-11-09T18:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "62ed235d-66f6-ea11-810e-005056ac5877",
+							"Name": "FI0383183710016878"
+						},
+						{
+							"Operator": {
+								"Id": "446337be-e332-e611-80fd-005056ac2752",
+								"Name": "Osuuspankki (OKOYFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": null,
+							"Balance": -103.68,
+							"Description": null,
+							"LastUpdated": "2020-11-05T00:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+							"Name": "FI6850000120350201"
+						},
+						{
+							"Operator": {
+								"Id": "e82f8838-1a4f-e611-80ff-005056ac5819",
+								"Name": "POP Pankki (POPFFI22)"
+							},
+							"Limit": null,
+							"AllowedBalance": 136.02,
+							"Balance": 136.02,
+							"Description": "Discription",
+							"LastUpdated": "2020-11-23T03:35:00+02:00",
+							"IsMain": true,
+							"Link": null,
+							"Id": "34f0ec6f-8eac-ea11-8110-005056ac71e1",
+							"Name": "FI7647300010355781"
+						},
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": null,
+							"AllowedBalance": null,
+							"Balance": null,
+							"Description": null,
+							"LastUpdated": null,
+							"IsMain": false,
+							"Link": null,
+							"Id": "87195a45-9938-eb11-817e-005056bbf149",
+							"Name": "FI0383183710016878"
+						}
+					],
+					"BuyerBankAccountId": "03739f96-66f6-ea11-810e-005056ac5877",
+					"BankAccount": {
+						"Operator": {
+							"Id": "446337be-e332-e611-80fd-005056ac2752",
+							"Name": "Osuuspankki (OKOYFIHH)"
+						},
+						"Limit": 0,
+						"AllowedBalance": null,
+						"Balance": -103.68,
+						"Description": null,
+						"LastUpdated": "2020-11-05T00:00:00+02:00",
+						"IsMain": false,
+						"Link": null,
+						"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+						"Name": "FI6850000120350201"
+					},
+					"InvoiceStatus": {
+						"Value": 100000000,
+						"Label": "Not paid"
+					},
+					"PaymentDate": null,
+					"InvoiceDate": "2020-12-01T00:00:00+02:00",
+					"AccountingDate": "2020-12-01T00:00:00+02:00",
+					"Comment": null,
+					"RejectComment": null,
+					"AllowedPay": false,
+					"AllowedEdit": true,
+					"Link": "/main.aspx?etn=invoice&id=60365647-c533-eb11-817e-005056bbf149&pagetype=entityrecord",
+					"Validation": [
+						{
+							"EntityId": "60365647-c533-eb11-817e-005056bbf149",
+							"ResponseCode": 3,
+							"Message": "Not all required fields (Operator, Bank ID) are filled in the Payer Bank Account",
+							"MessageCode": 101
+						}
+					],
+					"Id": "60365647-c533-eb11-817e-005056bbf149",
+					"Name": "8184"
+				},
+				{
+					"Payer": {
+						"Id": "a98ee91c-e3ea-e711-8105-005056ac5819",
+						"Name": "As Oy Demotalo"
+					},
+					"Seller": "Sanna Ollila",
+					"DueDate": "2020-12-15T00:00:00+02:00",
+					"Amount": 3,
+					"InvoiceNumber": "1004139618",
+					"BankAccounts": [
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": 87.49,
+							"Balance": 87.49,
+							"Description": "second",
+							"LastUpdated": "2020-11-09T18:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "62ed235d-66f6-ea11-810e-005056ac5877",
+							"Name": "FI0383183710016878"
+						},
+						{
+							"Operator": {
+								"Id": "446337be-e332-e611-80fd-005056ac2752",
+								"Name": "Osuuspankki (OKOYFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": null,
+							"Balance": -103.68,
+							"Description": null,
+							"LastUpdated": "2020-11-05T00:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+							"Name": "FI6850000120350201"
+						},
+						{
+							"Operator": {
+								"Id": "e82f8838-1a4f-e611-80ff-005056ac5819",
+								"Name": "POP Pankki (POPFFI22)"
+							},
+							"Limit": null,
+							"AllowedBalance": 136.02,
+							"Balance": 136.02,
+							"Description": "Discription",
+							"LastUpdated": "2020-11-23T03:35:00+02:00",
+							"IsMain": true,
+							"Link": null,
+							"Id": "34f0ec6f-8eac-ea11-8110-005056ac71e1",
+							"Name": "FI7647300010355781"
+						},
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": null,
+							"AllowedBalance": null,
+							"Balance": null,
+							"Description": null,
+							"LastUpdated": null,
+							"IsMain": false,
+							"Link": null,
+							"Id": "87195a45-9938-eb11-817e-005056bbf149",
+							"Name": "FI0383183710016878"
+						}
+					],
+					"BuyerBankAccountId": "03739f96-66f6-ea11-810e-005056ac5877",
+					"BankAccount": {
+						"Operator": {
+							"Id": "446337be-e332-e611-80fd-005056ac2752",
+							"Name": "Osuuspankki (OKOYFIHH)"
+						},
+						"Limit": 0,
+						"AllowedBalance": null,
+						"Balance": -103.68,
+						"Description": null,
+						"LastUpdated": "2020-11-05T00:00:00+02:00",
+						"IsMain": false,
+						"Link": null,
+						"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+						"Name": "FI6850000120350201"
+					},
+					"InvoiceStatus": {
+						"Value": 752560000,
+						"Label": "Error"
+					},
+					"PaymentDate": null,
+					"InvoiceDate": "2020-12-01T00:00:00+02:00",
+					"AccountingDate": "2020-12-01T00:00:00+02:00",
+					"Comment": null,
+					"RejectComment": null,
+					"AllowedPay": false,
+					"AllowedEdit": true,
+					"Link": "/main.aspx?etn=invoice&id=66365647-c533-eb11-817e-005056bbf149&pagetype=entityrecord",
+					"Validation": [
+						{
+							"EntityId": "66365647-c533-eb11-817e-005056bbf149",
+							"ResponseCode": 3,
+							"Message": "Not all required fields (Operator, Bank ID) are filled in the Payer Bank Account",
+							"MessageCode": 101
+						}
+					],
+					"Id": "66365647-c533-eb11-817e-005056bbf149",
+					"Name": "1004139618"
+				},
+				{
+					"Payer": {
+						"Id": "a98ee91c-e3ea-e711-8105-005056ac5819",
+						"Name": "As Oy Demotalo"
+					},
+					"Seller": "Alltime Kiinteistöhuolto Oy",
+					"DueDate": "2020-12-15T00:00:00+02:00",
+					"Amount": 409.99,
+					"InvoiceNumber": "25-10635",
+					"BankAccounts": [
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": 87.49,
+							"Balance": 87.49,
+							"Description": "second",
+							"LastUpdated": "2020-11-09T18:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "62ed235d-66f6-ea11-810e-005056ac5877",
+							"Name": "FI0383183710016878"
+						},
+						{
+							"Operator": {
+								"Id": "446337be-e332-e611-80fd-005056ac2752",
+								"Name": "Osuuspankki (OKOYFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": null,
+							"Balance": -103.68,
+							"Description": null,
+							"LastUpdated": "2020-11-05T00:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+							"Name": "FI6850000120350201"
+						},
+						{
+							"Operator": {
+								"Id": "e82f8838-1a4f-e611-80ff-005056ac5819",
+								"Name": "POP Pankki (POPFFI22)"
+							},
+							"Limit": null,
+							"AllowedBalance": 136.02,
+							"Balance": 136.02,
+							"Description": "Discription",
+							"LastUpdated": "2020-11-23T03:35:00+02:00",
+							"IsMain": true,
+							"Link": null,
+							"Id": "34f0ec6f-8eac-ea11-8110-005056ac71e1",
+							"Name": "FI7647300010355781"
+						},
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": null,
+							"AllowedBalance": null,
+							"Balance": null,
+							"Description": null,
+							"LastUpdated": null,
+							"IsMain": false,
+							"Link": null,
+							"Id": "87195a45-9938-eb11-817e-005056bbf149",
+							"Name": "FI0383183710016878"
+						}
+					],
+					"BuyerBankAccountId": "03739f96-66f6-ea11-810e-005056ac5877",
+					"BankAccount": {
+						"Operator": {
+							"Id": "446337be-e332-e611-80fd-005056ac2752",
+							"Name": "Osuuspankki (OKOYFIHH)"
+						},
+						"Limit": 0,
+						"AllowedBalance": null,
+						"Balance": -103.68,
+						"Description": null,
+						"LastUpdated": "2020-11-05T00:00:00+02:00",
+						"IsMain": false,
+						"Link": null,
+						"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+						"Name": "FI6850000120350201"
+					},
+					"InvoiceStatus": {
+						"Value": 100000000,
+						"Label": "Not paid"
+					},
+					"PaymentDate": null,
+					"InvoiceDate": "2020-12-01T00:00:00+02:00",
+					"AccountingDate": "2020-12-01T00:00:00+02:00",
+					"Comment": null,
+					"RejectComment": null,
+					"AllowedPay": false,
+					"AllowedEdit": true,
+					"Link": "/main.aspx?etn=invoice&id=78365647-c533-eb11-817e-005056bbf149&pagetype=entityrecord",
+					"Validation": [
+						{
+							"EntityId": "78365647-c533-eb11-817e-005056bbf149",
+							"ResponseCode": 3,
+							"Message": "Not all required fields (Operator, Bank ID) are filled in the Payer Bank Account",
+							"MessageCode": 101
+						}
+					],
+					"Id": "78365647-c533-eb11-817e-005056bbf149",
+					"Name": "25-10635"
+				},
+				{
+					"Payer": {
+						"Id": "a98ee91c-e3ea-e711-8105-005056ac5819",
+						"Name": "As Oy Demotalo"
+					},
+					"Seller": "Oulun kaupunki",
+					"DueDate": "2020-12-21T00:00:00+02:00",
+					"Amount": 1643.95,
+					"InvoiceNumber": "20122782",
+					"BankAccounts": [
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": 87.49,
+							"Balance": 87.49,
+							"Description": "second",
+							"LastUpdated": "2020-11-09T18:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "62ed235d-66f6-ea11-810e-005056ac5877",
+							"Name": "FI0383183710016878"
+						},
+						{
+							"Operator": {
+								"Id": "446337be-e332-e611-80fd-005056ac2752",
+								"Name": "Osuuspankki (OKOYFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": null,
+							"Balance": -103.68,
+							"Description": null,
+							"LastUpdated": "2020-11-05T00:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+							"Name": "FI6850000120350201"
+						},
+						{
+							"Operator": {
+								"Id": "e82f8838-1a4f-e611-80ff-005056ac5819",
+								"Name": "POP Pankki (POPFFI22)"
+							},
+							"Limit": null,
+							"AllowedBalance": 136.02,
+							"Balance": 136.02,
+							"Description": "Discription",
+							"LastUpdated": "2020-11-23T03:35:00+02:00",
+							"IsMain": true,
+							"Link": null,
+							"Id": "34f0ec6f-8eac-ea11-8110-005056ac71e1",
+							"Name": "FI7647300010355781"
+						},
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": null,
+							"AllowedBalance": null,
+							"Balance": null,
+							"Description": null,
+							"LastUpdated": null,
+							"IsMain": false,
+							"Link": null,
+							"Id": "87195a45-9938-eb11-817e-005056bbf149",
+							"Name": "FI0383183710016878"
+						}
+					],
+					"BuyerBankAccountId": "03739f96-66f6-ea11-810e-005056ac5877",
+					"BankAccount": {
+						"Operator": {
+							"Id": "446337be-e332-e611-80fd-005056ac2752",
+							"Name": "Osuuspankki (OKOYFIHH)"
+						},
+						"Limit": 0,
+						"AllowedBalance": null,
+						"Balance": -103.68,
+						"Description": null,
+						"LastUpdated": "2020-11-05T00:00:00+02:00",
+						"IsMain": false,
+						"Link": null,
+						"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+						"Name": "FI6850000120350201"
+					},
+					"InvoiceStatus": {
+						"Value": 100000000,
+						"Label": "Not paid"
+					},
+					"PaymentDate": null,
+					"InvoiceDate": "2020-11-30T00:00:00+02:00",
+					"AccountingDate": "2020-11-30T00:00:00+02:00",
+					"Comment": null,
+					"RejectComment": null,
+					"AllowedPay": false,
+					"AllowedEdit": true,
+					"Link": "/main.aspx?etn=invoice&id=874e544d-c533-eb11-817e-005056bbf149&pagetype=entityrecord",
+					"Validation": [
+						{
+							"EntityId": "874e544d-c533-eb11-817e-005056bbf149",
+							"ResponseCode": 3,
+							"Message": "Not all required fields (Operator, Bank ID) are filled in the Payer Bank Account",
+							"MessageCode": 101
+						}
+					],
+					"Id": "874e544d-c533-eb11-817e-005056bbf149",
+					"Name": "20122782"
+				},
+				{
+					"Payer": {
+						"Id": "a98ee91c-e3ea-e711-8105-005056ac5819",
+						"Name": "As Oy Demotalo"
+					},
+					"Seller": "Oulun kaupunki",
+					"DueDate": "2020-12-21T00:00:00+02:00",
+					"Amount": 1282.5,
+					"InvoiceNumber": "20124242",
+					"BankAccounts": [
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": 87.49,
+							"Balance": 87.49,
+							"Description": "second",
+							"LastUpdated": "2020-11-09T18:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "62ed235d-66f6-ea11-810e-005056ac5877",
+							"Name": "FI0383183710016878"
+						},
+						{
+							"Operator": {
+								"Id": "446337be-e332-e611-80fd-005056ac2752",
+								"Name": "Osuuspankki (OKOYFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": null,
+							"Balance": -103.68,
+							"Description": null,
+							"LastUpdated": "2020-11-05T00:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+							"Name": "FI6850000120350201"
+						},
+						{
+							"Operator": {
+								"Id": "e82f8838-1a4f-e611-80ff-005056ac5819",
+								"Name": "POP Pankki (POPFFI22)"
+							},
+							"Limit": null,
+							"AllowedBalance": 136.02,
+							"Balance": 136.02,
+							"Description": "Discription",
+							"LastUpdated": "2020-11-23T03:35:00+02:00",
+							"IsMain": true,
+							"Link": null,
+							"Id": "34f0ec6f-8eac-ea11-8110-005056ac71e1",
+							"Name": "FI7647300010355781"
+						},
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": null,
+							"AllowedBalance": null,
+							"Balance": null,
+							"Description": null,
+							"LastUpdated": null,
+							"IsMain": false,
+							"Link": null,
+							"Id": "87195a45-9938-eb11-817e-005056bbf149",
+							"Name": "FI0383183710016878"
+						}
+					],
+					"BuyerBankAccountId": "03739f96-66f6-ea11-810e-005056ac5877",
+					"BankAccount": {
+						"Operator": {
+							"Id": "446337be-e332-e611-80fd-005056ac2752",
+							"Name": "Osuuspankki (OKOYFIHH)"
+						},
+						"Limit": 0,
+						"AllowedBalance": null,
+						"Balance": -103.68,
+						"Description": null,
+						"LastUpdated": "2020-11-05T00:00:00+02:00",
+						"IsMain": false,
+						"Link": null,
+						"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+						"Name": "FI6850000120350201"
+					},
+					"InvoiceStatus": {
+						"Value": 100000000,
+						"Label": "Not paid"
+					},
+					"PaymentDate": null,
+					"InvoiceDate": "2020-11-30T00:00:00+02:00",
+					"AccountingDate": "2020-11-30T00:00:00+02:00",
+					"Comment": null,
+					"RejectComment": null,
+					"AllowedPay": false,
+					"AllowedEdit": true,
+					"Link": "/main.aspx?etn=invoice&id=8d4e544d-c533-eb11-817e-005056bbf149&pagetype=entityrecord",
+					"Validation": [
+						{
+							"EntityId": "8d4e544d-c533-eb11-817e-005056bbf149",
+							"ResponseCode": 3,
+							"Message": "Not all required fields (Operator, Bank ID) are filled in the Payer Bank Account",
+							"MessageCode": 101
+						}
+					],
+					"Id": "8d4e544d-c533-eb11-817e-005056bbf149",
+					"Name": "20124242"
+				},
+				{
+					"Payer": {
+						"Id": "a98ee91c-e3ea-e711-8105-005056ac5819",
+						"Name": "As Oy Demotalo"
+					},
+					"Seller": "Asunto-osakeyhtiö Kontiohovi",
+					"DueDate": "2020-11-30T00:00:00+02:00",
+					"Amount": 241.32,
+					"InvoiceNumber": "271120",
+					"BankAccounts": [
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": 87.49,
+							"Balance": 87.49,
+							"Description": "second",
+							"LastUpdated": "2020-11-09T18:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "62ed235d-66f6-ea11-810e-005056ac5877",
+							"Name": "FI0383183710016878"
+						},
+						{
+							"Operator": {
+								"Id": "446337be-e332-e611-80fd-005056ac2752",
+								"Name": "Osuuspankki (OKOYFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": null,
+							"Balance": -103.68,
+							"Description": null,
+							"LastUpdated": "2020-11-05T00:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+							"Name": "FI6850000120350201"
+						},
+						{
+							"Operator": {
+								"Id": "e82f8838-1a4f-e611-80ff-005056ac5819",
+								"Name": "POP Pankki (POPFFI22)"
+							},
+							"Limit": null,
+							"AllowedBalance": 136.02,
+							"Balance": 136.02,
+							"Description": "Discription",
+							"LastUpdated": "2020-11-23T03:35:00+02:00",
+							"IsMain": true,
+							"Link": null,
+							"Id": "34f0ec6f-8eac-ea11-8110-005056ac71e1",
+							"Name": "FI7647300010355781"
+						},
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": null,
+							"AllowedBalance": null,
+							"Balance": null,
+							"Description": null,
+							"LastUpdated": null,
+							"IsMain": false,
+							"Link": null,
+							"Id": "87195a45-9938-eb11-817e-005056bbf149",
+							"Name": "FI0383183710016878"
+						}
+					],
+					"BuyerBankAccountId": "03739f96-66f6-ea11-810e-005056ac5877",
+					"BankAccount": {
+						"Operator": {
+							"Id": "446337be-e332-e611-80fd-005056ac2752",
+							"Name": "Osuuspankki (OKOYFIHH)"
+						},
+						"Limit": 0,
+						"AllowedBalance": null,
+						"Balance": -103.68,
+						"Description": null,
+						"LastUpdated": "2020-11-05T00:00:00+02:00",
+						"IsMain": false,
+						"Link": null,
+						"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+						"Name": "FI6850000120350201"
+					},
+					"InvoiceStatus": {
+						"Value": 100000000,
+						"Label": "Not paid"
+					},
+					"PaymentDate": null,
+					"InvoiceDate": "2020-11-26T00:00:00+02:00",
+					"AccountingDate": "2020-11-26T00:00:00+02:00",
+					"Comment": null,
+					"RejectComment": null,
+					"AllowedPay": false,
+					"AllowedEdit": true,
+					"Link": "/main.aspx?etn=invoice&id=934e544d-c533-eb11-817e-005056bbf149&pagetype=entityrecord",
+					"Validation": [
+						{
+							"EntityId": "934e544d-c533-eb11-817e-005056bbf149",
+							"ResponseCode": 3,
+							"Message": "Not all required fields (Operator, Bank ID) are filled in the Payer Bank Account",
+							"MessageCode": 101
+						}
+					],
+					"Id": "934e544d-c533-eb11-817e-005056bbf149",
+					"Name": "271120"
+				},
+				{
+					"Payer": {
+						"Id": "a98ee91c-e3ea-e711-8105-005056ac5819",
+						"Name": "As Oy Demotalo"
+					},
+					"Seller": "Oulun kaupunki",
+					"DueDate": "2020-12-21T00:00:00+02:00",
+					"Amount": 1197.45,
+					"InvoiceNumber": "20125369",
+					"BankAccounts": [
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": 87.49,
+							"Balance": 87.49,
+							"Description": "second",
+							"LastUpdated": "2020-11-09T18:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "62ed235d-66f6-ea11-810e-005056ac5877",
+							"Name": "FI0383183710016878"
+						},
+						{
+							"Operator": {
+								"Id": "446337be-e332-e611-80fd-005056ac2752",
+								"Name": "Osuuspankki (OKOYFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": null,
+							"Balance": -103.68,
+							"Description": null,
+							"LastUpdated": "2020-11-05T00:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+							"Name": "FI6850000120350201"
+						},
+						{
+							"Operator": {
+								"Id": "e82f8838-1a4f-e611-80ff-005056ac5819",
+								"Name": "POP Pankki (POPFFI22)"
+							},
+							"Limit": null,
+							"AllowedBalance": 136.02,
+							"Balance": 136.02,
+							"Description": "Discription",
+							"LastUpdated": "2020-11-23T03:35:00+02:00",
+							"IsMain": true,
+							"Link": null,
+							"Id": "34f0ec6f-8eac-ea11-8110-005056ac71e1",
+							"Name": "FI7647300010355781"
+						},
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": null,
+							"AllowedBalance": null,
+							"Balance": null,
+							"Description": null,
+							"LastUpdated": null,
+							"IsMain": false,
+							"Link": null,
+							"Id": "87195a45-9938-eb11-817e-005056bbf149",
+							"Name": "FI0383183710016878"
+						}
+					],
+					"BuyerBankAccountId": "03739f96-66f6-ea11-810e-005056ac5877",
+					"BankAccount": {
+						"Operator": {
+							"Id": "446337be-e332-e611-80fd-005056ac2752",
+							"Name": "Osuuspankki (OKOYFIHH)"
+						},
+						"Limit": 0,
+						"AllowedBalance": null,
+						"Balance": -103.68,
+						"Description": null,
+						"LastUpdated": "2020-11-05T00:00:00+02:00",
+						"IsMain": false,
+						"Link": null,
+						"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+						"Name": "FI6850000120350201"
+					},
+					"InvoiceStatus": {
+						"Value": 100000000,
+						"Label": "Not paid"
+					},
+					"PaymentDate": null,
+					"InvoiceDate": "2020-11-30T00:00:00+02:00",
+					"AccountingDate": "2020-11-30T00:00:00+02:00",
+					"Comment": null,
+					"RejectComment": null,
+					"AllowedPay": false,
+					"AllowedEdit": true,
+					"Link": "/main.aspx?etn=invoice&id=a54e544d-c533-eb11-817e-005056bbf149&pagetype=entityrecord",
+					"Validation": [
+						{
+							"EntityId": "a54e544d-c533-eb11-817e-005056bbf149",
+							"ResponseCode": 3,
+							"Message": "Not all required fields (Operator, Bank ID) are filled in the Payer Bank Account",
+							"MessageCode": 101
+						}
+					],
+					"Id": "a54e544d-c533-eb11-817e-005056bbf149",
+					"Name": "20125369"
+				},
+				{
+					"Payer": {
+						"Id": "a98ee91c-e3ea-e711-8105-005056ac5819",
+						"Name": "As Oy Demotalo"
+					},
+					"Seller": "Mandatum Life Vuokratontit 1 Oy",
+					"DueDate": "2020-12-30T00:00:00+02:00",
+					"Amount": 54807.24,
+					"InvoiceNumber": "9099040000000869",
+					"BankAccounts": [
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": 87.49,
+							"Balance": 87.49,
+							"Description": "second",
+							"LastUpdated": "2020-11-09T18:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "62ed235d-66f6-ea11-810e-005056ac5877",
+							"Name": "FI0383183710016878"
+						},
+						{
+							"Operator": {
+								"Id": "446337be-e332-e611-80fd-005056ac2752",
+								"Name": "Osuuspankki (OKOYFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": null,
+							"Balance": -103.68,
+							"Description": null,
+							"LastUpdated": "2020-11-05T00:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+							"Name": "FI6850000120350201"
+						},
+						{
+							"Operator": {
+								"Id": "e82f8838-1a4f-e611-80ff-005056ac5819",
+								"Name": "POP Pankki (POPFFI22)"
+							},
+							"Limit": null,
+							"AllowedBalance": 136.02,
+							"Balance": 136.02,
+							"Description": "Discription",
+							"LastUpdated": "2020-11-23T03:35:00+02:00",
+							"IsMain": true,
+							"Link": null,
+							"Id": "34f0ec6f-8eac-ea11-8110-005056ac71e1",
+							"Name": "FI7647300010355781"
+						},
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": null,
+							"AllowedBalance": null,
+							"Balance": null,
+							"Description": null,
+							"LastUpdated": null,
+							"IsMain": false,
+							"Link": null,
+							"Id": "87195a45-9938-eb11-817e-005056bbf149",
+							"Name": "FI0383183710016878"
+						}
+					],
+					"BuyerBankAccountId": "03739f96-66f6-ea11-810e-005056ac5877",
+					"BankAccount": {
+						"Operator": {
+							"Id": "446337be-e332-e611-80fd-005056ac2752",
+							"Name": "Osuuspankki (OKOYFIHH)"
+						},
+						"Limit": 0,
+						"AllowedBalance": null,
+						"Balance": -103.68,
+						"Description": null,
+						"LastUpdated": "2020-11-05T00:00:00+02:00",
+						"IsMain": false,
+						"Link": null,
+						"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+						"Name": "FI6850000120350201"
+					},
+					"InvoiceStatus": {
+						"Value": 100000000,
+						"Label": "Not paid"
+					},
+					"PaymentDate": null,
+					"InvoiceDate": "2020-06-15T00:00:00+03:00",
+					"AccountingDate": "2020-12-01T00:00:00+02:00",
+					"Comment": null,
+					"RejectComment": null,
+					"AllowedPay": false,
+					"AllowedEdit": true,
+					"Link": "/main.aspx?etn=invoice&id=ad4e544d-c533-eb11-817e-005056bbf149&pagetype=entityrecord",
+					"Validation": [
+						{
+							"EntityId": "ad4e544d-c533-eb11-817e-005056bbf149",
+							"ResponseCode": 3,
+							"Message": "Not all required fields (Operator, Bank ID) are filled in the Payer Bank Account",
+							"MessageCode": 101
+						}
+					],
+					"Id": "ad4e544d-c533-eb11-817e-005056bbf149",
+					"Name": "9099040000000869"
+				},
+				{
+					"Payer": {
+						"Id": "a98ee91c-e3ea-e711-8105-005056ac5819",
+						"Name": "As Oy Demotalo"
+					},
+					"Seller": "Lukkopro Oy",
+					"DueDate": "2020-12-04T00:00:00+02:00",
+					"Amount": 26.4,
+					"InvoiceNumber": "201041",
+					"BankAccounts": [
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": 87.49,
+							"Balance": 87.49,
+							"Description": "second",
+							"LastUpdated": "2020-11-09T18:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "62ed235d-66f6-ea11-810e-005056ac5877",
+							"Name": "FI0383183710016878"
+						},
+						{
+							"Operator": {
+								"Id": "446337be-e332-e611-80fd-005056ac2752",
+								"Name": "Osuuspankki (OKOYFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": null,
+							"Balance": -103.68,
+							"Description": null,
+							"LastUpdated": "2020-11-05T00:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+							"Name": "FI6850000120350201"
+						},
+						{
+							"Operator": {
+								"Id": "e82f8838-1a4f-e611-80ff-005056ac5819",
+								"Name": "POP Pankki (POPFFI22)"
+							},
+							"Limit": null,
+							"AllowedBalance": 136.02,
+							"Balance": 136.02,
+							"Description": "Discription",
+							"LastUpdated": "2020-11-23T03:35:00+02:00",
+							"IsMain": true,
+							"Link": null,
+							"Id": "34f0ec6f-8eac-ea11-8110-005056ac71e1",
+							"Name": "FI7647300010355781"
+						},
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": null,
+							"AllowedBalance": null,
+							"Balance": null,
+							"Description": null,
+							"LastUpdated": null,
+							"IsMain": false,
+							"Link": null,
+							"Id": "87195a45-9938-eb11-817e-005056bbf149",
+							"Name": "FI0383183710016878"
+						}
+					],
+					"BuyerBankAccountId": "03739f96-66f6-ea11-810e-005056ac5877",
+					"BankAccount": {
+						"Operator": {
+							"Id": "446337be-e332-e611-80fd-005056ac2752",
+							"Name": "Osuuspankki (OKOYFIHH)"
+						},
+						"Limit": 0,
+						"AllowedBalance": null,
+						"Balance": -103.68,
+						"Description": null,
+						"LastUpdated": "2020-11-05T00:00:00+02:00",
+						"IsMain": false,
+						"Link": null,
+						"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+						"Name": "FI6850000120350201"
+					},
+					"InvoiceStatus": {
+						"Value": 100000000,
+						"Label": "Not paid"
+					},
+					"PaymentDate": null,
+					"InvoiceDate": "2020-11-20T00:00:00+02:00",
+					"AccountingDate": "2020-11-20T00:00:00+02:00",
+					"Comment": null,
+					"RejectComment": null,
+					"AllowedPay": false,
+					"AllowedEdit": true,
+					"Link": "/main.aspx?etn=invoice&id=b34e544d-c533-eb11-817e-005056bbf149&pagetype=entityrecord",
+					"Validation": [
+						{
+							"EntityId": "b34e544d-c533-eb11-817e-005056bbf149",
+							"ResponseCode": 3,
+							"Message": "Not all required fields (Operator, Bank ID) are filled in the Payer Bank Account",
+							"MessageCode": 101
+						}
+					],
+					"Id": "b34e544d-c533-eb11-817e-005056bbf149",
+					"Name": "201041"
+				},
+				{
+					"Payer": {
+						"Id": "a98ee91c-e3ea-e711-8105-005056ac5819",
+						"Name": "As Oy Demotalo"
+					},
+					"Seller": "Kiinteistöhuolto Jurvelin Oy",
+					"DueDate": "2020-12-06T00:00:00+02:00",
+					"Amount": 129.78,
+					"InvoiceNumber": "145334",
+					"BankAccounts": [
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": 87.49,
+							"Balance": 87.49,
+							"Description": "second",
+							"LastUpdated": "2020-11-09T18:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "62ed235d-66f6-ea11-810e-005056ac5877",
+							"Name": "FI0383183710016878"
+						},
+						{
+							"Operator": {
+								"Id": "446337be-e332-e611-80fd-005056ac2752",
+								"Name": "Osuuspankki (OKOYFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": null,
+							"Balance": -103.68,
+							"Description": null,
+							"LastUpdated": "2020-11-05T00:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+							"Name": "FI6850000120350201"
+						},
+						{
+							"Operator": {
+								"Id": "e82f8838-1a4f-e611-80ff-005056ac5819",
+								"Name": "POP Pankki (POPFFI22)"
+							},
+							"Limit": null,
+							"AllowedBalance": 136.02,
+							"Balance": 136.02,
+							"Description": "Discription",
+							"LastUpdated": "2020-11-23T03:35:00+02:00",
+							"IsMain": true,
+							"Link": null,
+							"Id": "34f0ec6f-8eac-ea11-8110-005056ac71e1",
+							"Name": "FI7647300010355781"
+						},
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": null,
+							"AllowedBalance": null,
+							"Balance": null,
+							"Description": null,
+							"LastUpdated": null,
+							"IsMain": false,
+							"Link": null,
+							"Id": "87195a45-9938-eb11-817e-005056bbf149",
+							"Name": "FI0383183710016878"
+						}
+					],
+					"BuyerBankAccountId": "03739f96-66f6-ea11-810e-005056ac5877",
+					"BankAccount": {
+						"Operator": {
+							"Id": "446337be-e332-e611-80fd-005056ac2752",
+							"Name": "Osuuspankki (OKOYFIHH)"
+						},
+						"Limit": 0,
+						"AllowedBalance": null,
+						"Balance": -103.68,
+						"Description": null,
+						"LastUpdated": "2020-11-05T00:00:00+02:00",
+						"IsMain": false,
+						"Link": null,
+						"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+						"Name": "FI6850000120350201"
+					},
+					"InvoiceStatus": {
+						"Value": 100000000,
+						"Label": "Not paid"
+					},
+					"PaymentDate": null,
+					"InvoiceDate": "2020-11-26T00:00:00+02:00",
+					"AccountingDate": "2020-11-26T00:00:00+02:00",
+					"Comment": null,
+					"RejectComment": null,
+					"AllowedPay": false,
+					"AllowedEdit": true,
+					"Link": "/main.aspx?etn=invoice&id=b94e544d-c533-eb11-817e-005056bbf149&pagetype=entityrecord",
+					"Validation": [
+						{
+							"EntityId": "b94e544d-c533-eb11-817e-005056bbf149",
+							"ResponseCode": 3,
+							"Message": "Not all required fields (Operator, Bank ID) are filled in the Payer Bank Account",
+							"MessageCode": 101
+						}
+					],
+					"Id": "b94e544d-c533-eb11-817e-005056bbf149",
+					"Name": "145334"
+				},
+				{
+					"Payer": {
+						"Id": "a98ee91c-e3ea-e711-8105-005056ac5819",
+						"Name": "As Oy Demotalo"
+					},
+					"Seller": "Kiinteistöhuolto Jurvelin Oy",
+					"DueDate": "2020-12-06T00:00:00+02:00",
+					"Amount": 164.47,
+					"InvoiceNumber": "145329",
+					"BankAccounts": [
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": 87.49,
+							"Balance": 87.49,
+							"Description": "second",
+							"LastUpdated": "2020-11-09T18:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "62ed235d-66f6-ea11-810e-005056ac5877",
+							"Name": "FI0383183710016878"
+						},
+						{
+							"Operator": {
+								"Id": "446337be-e332-e611-80fd-005056ac2752",
+								"Name": "Osuuspankki (OKOYFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": null,
+							"Balance": -103.68,
+							"Description": null,
+							"LastUpdated": "2020-11-05T00:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+							"Name": "FI6850000120350201"
+						},
+						{
+							"Operator": {
+								"Id": "e82f8838-1a4f-e611-80ff-005056ac5819",
+								"Name": "POP Pankki (POPFFI22)"
+							},
+							"Limit": null,
+							"AllowedBalance": 136.02,
+							"Balance": 136.02,
+							"Description": "Discription",
+							"LastUpdated": "2020-11-23T03:35:00+02:00",
+							"IsMain": true,
+							"Link": null,
+							"Id": "34f0ec6f-8eac-ea11-8110-005056ac71e1",
+							"Name": "FI7647300010355781"
+						},
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": null,
+							"AllowedBalance": null,
+							"Balance": null,
+							"Description": null,
+							"LastUpdated": null,
+							"IsMain": false,
+							"Link": null,
+							"Id": "87195a45-9938-eb11-817e-005056bbf149",
+							"Name": "FI0383183710016878"
+						}
+					],
+					"BuyerBankAccountId": "03739f96-66f6-ea11-810e-005056ac5877",
+					"BankAccount": {
+						"Operator": {
+							"Id": "446337be-e332-e611-80fd-005056ac2752",
+							"Name": "Osuuspankki (OKOYFIHH)"
+						},
+						"Limit": 0,
+						"AllowedBalance": null,
+						"Balance": -103.68,
+						"Description": null,
+						"LastUpdated": "2020-11-05T00:00:00+02:00",
+						"IsMain": false,
+						"Link": null,
+						"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+						"Name": "FI6850000120350201"
+					},
+					"InvoiceStatus": {
+						"Value": 100000000,
+						"Label": "Not paid"
+					},
+					"PaymentDate": null,
+					"InvoiceDate": "2020-11-26T00:00:00+02:00",
+					"AccountingDate": "2020-11-26T00:00:00+02:00",
+					"Comment": null,
+					"RejectComment": null,
+					"AllowedPay": false,
+					"AllowedEdit": true,
+					"Link": "/main.aspx?etn=invoice&id=b0915153-c533-eb11-817e-005056bbf149&pagetype=entityrecord",
+					"Validation": [
+						{
+							"EntityId": "b0915153-c533-eb11-817e-005056bbf149",
+							"ResponseCode": 3,
+							"Message": "Not all required fields (Operator, Bank ID) are filled in the Payer Bank Account",
+							"MessageCode": 101
+						}
+					],
+					"Id": "b0915153-c533-eb11-817e-005056bbf149",
+					"Name": "145329"
+				},
+				{
+					"Payer": {
+						"Id": "a98ee91c-e3ea-e711-8105-005056ac5819",
+						"Name": "As Oy Demotalo"
+					},
+					"Seller": "Suomen Vartijat / P Valvonta-avustaja Oy",
+					"DueDate": "2020-12-07T00:00:00+02:00",
+					"Amount": 209.46,
+					"InvoiceNumber": "14564",
+					"BankAccounts": [
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": 87.49,
+							"Balance": 87.49,
+							"Description": "second",
+							"LastUpdated": "2020-11-09T18:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "62ed235d-66f6-ea11-810e-005056ac5877",
+							"Name": "FI0383183710016878"
+						},
+						{
+							"Operator": {
+								"Id": "446337be-e332-e611-80fd-005056ac2752",
+								"Name": "Osuuspankki (OKOYFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": null,
+							"Balance": -103.68,
+							"Description": null,
+							"LastUpdated": "2020-11-05T00:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+							"Name": "FI6850000120350201"
+						},
+						{
+							"Operator": {
+								"Id": "e82f8838-1a4f-e611-80ff-005056ac5819",
+								"Name": "POP Pankki (POPFFI22)"
+							},
+							"Limit": null,
+							"AllowedBalance": 136.02,
+							"Balance": 136.02,
+							"Description": "Discription",
+							"LastUpdated": "2020-11-23T03:35:00+02:00",
+							"IsMain": true,
+							"Link": null,
+							"Id": "34f0ec6f-8eac-ea11-8110-005056ac71e1",
+							"Name": "FI7647300010355781"
+						},
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": null,
+							"AllowedBalance": null,
+							"Balance": null,
+							"Description": null,
+							"LastUpdated": null,
+							"IsMain": false,
+							"Link": null,
+							"Id": "87195a45-9938-eb11-817e-005056bbf149",
+							"Name": "FI0383183710016878"
+						}
+					],
+					"BuyerBankAccountId": "03739f96-66f6-ea11-810e-005056ac5877",
+					"BankAccount": {
+						"Operator": {
+							"Id": "446337be-e332-e611-80fd-005056ac2752",
+							"Name": "Osuuspankki (OKOYFIHH)"
+						},
+						"Limit": 0,
+						"AllowedBalance": null,
+						"Balance": -103.68,
+						"Description": null,
+						"LastUpdated": "2020-11-05T00:00:00+02:00",
+						"IsMain": false,
+						"Link": null,
+						"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+						"Name": "FI6850000120350201"
+					},
+					"InvoiceStatus": {
+						"Value": 100000000,
+						"Label": "Not paid"
+					},
+					"PaymentDate": null,
+					"InvoiceDate": "2020-11-23T00:00:00+02:00",
+					"AccountingDate": "2020-11-23T00:00:00+02:00",
+					"Comment": null,
+					"RejectComment": null,
+					"AllowedPay": false,
+					"AllowedEdit": true,
+					"Link": "/main.aspx?etn=invoice&id=b6915153-c533-eb11-817e-005056bbf149&pagetype=entityrecord",
+					"Validation": [
+						{
+							"EntityId": "b6915153-c533-eb11-817e-005056bbf149",
+							"ResponseCode": 3,
+							"Message": "Not all required fields (Operator, Bank ID) are filled in the Payer Bank Account",
+							"MessageCode": 101
+						}
+					],
+					"Id": "b6915153-c533-eb11-817e-005056bbf149",
+					"Name": "14564"
+				},
+				{
+					"Payer": {
+						"Id": "a98ee91c-e3ea-e711-8105-005056ac5819",
+						"Name": "As Oy Demotalo"
+					},
+					"Seller": "Huoltia Oy",
+					"DueDate": "2020-12-07T00:00:00+02:00",
+					"Amount": 377.02,
+					"InvoiceNumber": "24540",
+					"BankAccounts": [
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": 87.49,
+							"Balance": 87.49,
+							"Description": "second",
+							"LastUpdated": "2020-11-09T18:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "62ed235d-66f6-ea11-810e-005056ac5877",
+							"Name": "FI0383183710016878"
+						},
+						{
+							"Operator": {
+								"Id": "446337be-e332-e611-80fd-005056ac2752",
+								"Name": "Osuuspankki (OKOYFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": null,
+							"Balance": -103.68,
+							"Description": null,
+							"LastUpdated": "2020-11-05T00:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+							"Name": "FI6850000120350201"
+						},
+						{
+							"Operator": {
+								"Id": "e82f8838-1a4f-e611-80ff-005056ac5819",
+								"Name": "POP Pankki (POPFFI22)"
+							},
+							"Limit": null,
+							"AllowedBalance": 136.02,
+							"Balance": 136.02,
+							"Description": "Discription",
+							"LastUpdated": "2020-11-23T03:35:00+02:00",
+							"IsMain": true,
+							"Link": null,
+							"Id": "34f0ec6f-8eac-ea11-8110-005056ac71e1",
+							"Name": "FI7647300010355781"
+						},
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": null,
+							"AllowedBalance": null,
+							"Balance": null,
+							"Description": null,
+							"LastUpdated": null,
+							"IsMain": false,
+							"Link": null,
+							"Id": "87195a45-9938-eb11-817e-005056bbf149",
+							"Name": "FI0383183710016878"
+						}
+					],
+					"BuyerBankAccountId": "03739f96-66f6-ea11-810e-005056ac5877",
+					"BankAccount": {
+						"Operator": {
+							"Id": "446337be-e332-e611-80fd-005056ac2752",
+							"Name": "Osuuspankki (OKOYFIHH)"
+						},
+						"Limit": 0,
+						"AllowedBalance": null,
+						"Balance": -103.68,
+						"Description": null,
+						"LastUpdated": "2020-11-05T00:00:00+02:00",
+						"IsMain": false,
+						"Link": null,
+						"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+						"Name": "FI6850000120350201"
+					},
+					"InvoiceStatus": {
+						"Value": 100000000,
+						"Label": "Not paid"
+					},
+					"PaymentDate": null,
+					"InvoiceDate": "2020-11-30T00:00:00+02:00",
+					"AccountingDate": "2020-11-30T00:00:00+02:00",
+					"Comment": null,
+					"RejectComment": null,
+					"AllowedPay": false,
+					"AllowedEdit": true,
+					"Link": "/main.aspx?etn=invoice&id=bc915153-c533-eb11-817e-005056bbf149&pagetype=entityrecord",
+					"Validation": [
+						{
+							"EntityId": "bc915153-c533-eb11-817e-005056bbf149",
+							"ResponseCode": 3,
+							"Message": "Not all required fields (Operator, Bank ID) are filled in the Payer Bank Account",
+							"MessageCode": 101
+						}
+					],
+					"Id": "bc915153-c533-eb11-817e-005056bbf149",
+					"Name": "24540"
+				},
+				{
+					"Payer": {
+						"Id": "a98ee91c-e3ea-e711-8105-005056ac5819",
+						"Name": "As Oy Demotalo"
+					},
+					"Seller": "Oulun kaupunki",
+					"DueDate": "2020-12-09T00:00:00+02:00",
+					"Amount": 450,
+					"InvoiceNumber": "76502826",
+					"BankAccounts": [
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": 87.49,
+							"Balance": 87.49,
+							"Description": "second",
+							"LastUpdated": "2020-11-09T18:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "62ed235d-66f6-ea11-810e-005056ac5877",
+							"Name": "FI0383183710016878"
+						},
+						{
+							"Operator": {
+								"Id": "446337be-e332-e611-80fd-005056ac2752",
+								"Name": "Osuuspankki (OKOYFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": null,
+							"Balance": -103.68,
+							"Description": null,
+							"LastUpdated": "2020-11-05T00:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+							"Name": "FI6850000120350201"
+						},
+						{
+							"Operator": {
+								"Id": "e82f8838-1a4f-e611-80ff-005056ac5819",
+								"Name": "POP Pankki (POPFFI22)"
+							},
+							"Limit": null,
+							"AllowedBalance": 136.02,
+							"Balance": 136.02,
+							"Description": "Discription",
+							"LastUpdated": "2020-11-23T03:35:00+02:00",
+							"IsMain": true,
+							"Link": null,
+							"Id": "34f0ec6f-8eac-ea11-8110-005056ac71e1",
+							"Name": "FI7647300010355781"
+						},
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": null,
+							"AllowedBalance": null,
+							"Balance": null,
+							"Description": null,
+							"LastUpdated": null,
+							"IsMain": false,
+							"Link": null,
+							"Id": "87195a45-9938-eb11-817e-005056bbf149",
+							"Name": "FI0383183710016878"
+						}
+					],
+					"BuyerBankAccountId": "03739f96-66f6-ea11-810e-005056ac5877",
+					"BankAccount": {
+						"Operator": {
+							"Id": "446337be-e332-e611-80fd-005056ac2752",
+							"Name": "Osuuspankki (OKOYFIHH)"
+						},
+						"Limit": 0,
+						"AllowedBalance": null,
+						"Balance": -103.68,
+						"Description": null,
+						"LastUpdated": "2020-11-05T00:00:00+02:00",
+						"IsMain": false,
+						"Link": null,
+						"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+						"Name": "FI6850000120350201"
+					},
+					"InvoiceStatus": {
+						"Value": 100000000,
+						"Label": "Not paid"
+					},
+					"PaymentDate": null,
+					"InvoiceDate": "2020-11-18T00:00:00+02:00",
+					"AccountingDate": "2020-11-18T00:00:00+02:00",
+					"Comment": null,
+					"RejectComment": null,
+					"AllowedPay": false,
+					"AllowedEdit": true,
+					"Link": "/main.aspx?etn=invoice&id=c2915153-c533-eb11-817e-005056bbf149&pagetype=entityrecord",
+					"Validation": [
+						{
+							"EntityId": "c2915153-c533-eb11-817e-005056bbf149",
+							"ResponseCode": 3,
+							"Message": "Not all required fields (Operator, Bank ID) are filled in the Payer Bank Account",
+							"MessageCode": 101
+						}
+					],
+					"Id": "c2915153-c533-eb11-817e-005056bbf149",
+					"Name": "76502826"
+				},
+				{
+					"Payer": {
+						"Id": "a98ee91c-e3ea-e711-8105-005056ac5819",
+						"Name": "As Oy Demotalo"
+					},
+					"Seller": "DNA Welho Oy",
+					"DueDate": "2020-11-23T00:00:00+02:00",
+					"Amount": 81,
+					"InvoiceNumber": "35821113",
+					"BankAccounts": [
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": 87.49,
+							"Balance": 87.49,
+							"Description": "second",
+							"LastUpdated": "2020-11-09T18:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "62ed235d-66f6-ea11-810e-005056ac5877",
+							"Name": "FI0383183710016878"
+						},
+						{
+							"Operator": {
+								"Id": "446337be-e332-e611-80fd-005056ac2752",
+								"Name": "Osuuspankki (OKOYFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": null,
+							"Balance": -103.68,
+							"Description": null,
+							"LastUpdated": "2020-11-05T00:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+							"Name": "FI6850000120350201"
+						},
+						{
+							"Operator": {
+								"Id": "e82f8838-1a4f-e611-80ff-005056ac5819",
+								"Name": "POP Pankki (POPFFI22)"
+							},
+							"Limit": null,
+							"AllowedBalance": 136.02,
+							"Balance": 136.02,
+							"Description": "Discription",
+							"LastUpdated": "2020-11-23T03:35:00+02:00",
+							"IsMain": true,
+							"Link": null,
+							"Id": "34f0ec6f-8eac-ea11-8110-005056ac71e1",
+							"Name": "FI7647300010355781"
+						},
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": null,
+							"AllowedBalance": null,
+							"Balance": null,
+							"Description": null,
+							"LastUpdated": null,
+							"IsMain": false,
+							"Link": null,
+							"Id": "87195a45-9938-eb11-817e-005056bbf149",
+							"Name": "FI0383183710016878"
+						}
+					],
+					"BuyerBankAccountId": "03739f96-66f6-ea11-810e-005056ac5877",
+					"BankAccount": {
+						"Operator": {
+							"Id": "446337be-e332-e611-80fd-005056ac2752",
+							"Name": "Osuuspankki (OKOYFIHH)"
+						},
+						"Limit": 0,
+						"AllowedBalance": null,
+						"Balance": -103.68,
+						"Description": null,
+						"LastUpdated": "2020-11-05T00:00:00+02:00",
+						"IsMain": false,
+						"Link": null,
+						"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+						"Name": "FI6850000120350201"
+					},
+					"InvoiceStatus": {
+						"Value": 752560000,
+						"Label": "Error"
+					},
+					"PaymentDate": null,
+					"InvoiceDate": "2020-11-02T00:00:00+02:00",
+					"AccountingDate": "2020-11-02T00:00:00+02:00",
+					"Comment": null,
+					"RejectComment": null,
+					"AllowedPay": false,
+					"AllowedEdit": true,
+					"Link": "/main.aspx?etn=invoice&id=ce915153-c533-eb11-817e-005056bbf149&pagetype=entityrecord",
+					"Validation": [
+						{
+							"EntityId": "ce915153-c533-eb11-817e-005056bbf149",
+							"ResponseCode": 3,
+							"Message": "Not all required fields (Operator, Bank ID) are filled in the Payer Bank Account",
+							"MessageCode": 101
+						}
+					],
+					"Id": "ce915153-c533-eb11-817e-005056bbf149",
+					"Name": "35821113"
+				},
+				{
+					"Payer": {
+						"Id": "a98ee91c-e3ea-e711-8105-005056ac5819",
+						"Name": "As Oy Demotalo"
+					},
+					"Seller": "Suomen valtio / Oikeusministeriö",
+					"DueDate": "2020-11-24T00:00:00+02:00",
+					"Amount": 515,
+					"InvoiceNumber": "1550076763",
+					"BankAccounts": [
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": 87.49,
+							"Balance": 87.49,
+							"Description": "second",
+							"LastUpdated": "2020-11-09T18:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "62ed235d-66f6-ea11-810e-005056ac5877",
+							"Name": "FI0383183710016878"
+						},
+						{
+							"Operator": {
+								"Id": "446337be-e332-e611-80fd-005056ac2752",
+								"Name": "Osuuspankki (OKOYFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": null,
+							"Balance": -103.68,
+							"Description": null,
+							"LastUpdated": "2020-11-05T00:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+							"Name": "FI6850000120350201"
+						},
+						{
+							"Operator": {
+								"Id": "e82f8838-1a4f-e611-80ff-005056ac5819",
+								"Name": "POP Pankki (POPFFI22)"
+							},
+							"Limit": null,
+							"AllowedBalance": 136.02,
+							"Balance": 136.02,
+							"Description": "Discription",
+							"LastUpdated": "2020-11-23T03:35:00+02:00",
+							"IsMain": true,
+							"Link": null,
+							"Id": "34f0ec6f-8eac-ea11-8110-005056ac71e1",
+							"Name": "FI7647300010355781"
+						},
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": null,
+							"AllowedBalance": null,
+							"Balance": null,
+							"Description": null,
+							"LastUpdated": null,
+							"IsMain": false,
+							"Link": null,
+							"Id": "87195a45-9938-eb11-817e-005056bbf149",
+							"Name": "FI0383183710016878"
+						}
+					],
+					"BuyerBankAccountId": "03739f96-66f6-ea11-810e-005056ac5877",
+					"BankAccount": {
+						"Operator": {
+							"Id": "446337be-e332-e611-80fd-005056ac2752",
+							"Name": "Osuuspankki (OKOYFIHH)"
+						},
+						"Limit": 0,
+						"AllowedBalance": null,
+						"Balance": -103.68,
+						"Description": null,
+						"LastUpdated": "2020-11-05T00:00:00+02:00",
+						"IsMain": false,
+						"Link": null,
+						"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+						"Name": "FI6850000120350201"
+					},
+					"InvoiceStatus": {
+						"Value": 100000000,
+						"Label": "Not paid"
+					},
+					"PaymentDate": null,
+					"InvoiceDate": "2020-11-17T00:00:00+02:00",
+					"AccountingDate": "2020-11-17T00:00:00+02:00",
+					"Comment": null,
+					"RejectComment": null,
+					"AllowedPay": false,
+					"AllowedEdit": true,
+					"Link": "/main.aspx?etn=invoice&id=d8915153-c533-eb11-817e-005056bbf149&pagetype=entityrecord",
+					"Validation": [
+						{
+							"EntityId": "d8915153-c533-eb11-817e-005056bbf149",
+							"ResponseCode": 3,
+							"Message": "Not all required fields (Operator, Bank ID) are filled in the Payer Bank Account",
+							"MessageCode": 101
+						}
+					],
+					"Id": "d8915153-c533-eb11-817e-005056bbf149",
+					"Name": "1550076763"
+				},
+				{
+					"Payer": {
+						"Id": "a98ee91c-e3ea-e711-8105-005056ac5819",
+						"Name": "As Oy Demotalo"
+					},
+					"Seller": "Kiinteistöhuolto Jurvelin Oy",
+					"DueDate": "2020-11-29T00:00:00+02:00",
+					"Amount": 67.88,
+					"InvoiceNumber": "145100",
+					"BankAccounts": [
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": 87.49,
+							"Balance": 87.49,
+							"Description": "second",
+							"LastUpdated": "2020-11-09T18:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "62ed235d-66f6-ea11-810e-005056ac5877",
+							"Name": "FI0383183710016878"
+						},
+						{
+							"Operator": {
+								"Id": "446337be-e332-e611-80fd-005056ac2752",
+								"Name": "Osuuspankki (OKOYFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": null,
+							"Balance": -103.68,
+							"Description": null,
+							"LastUpdated": "2020-11-05T00:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+							"Name": "FI6850000120350201"
+						},
+						{
+							"Operator": {
+								"Id": "e82f8838-1a4f-e611-80ff-005056ac5819",
+								"Name": "POP Pankki (POPFFI22)"
+							},
+							"Limit": null,
+							"AllowedBalance": 136.02,
+							"Balance": 136.02,
+							"Description": "Discription",
+							"LastUpdated": "2020-11-23T03:35:00+02:00",
+							"IsMain": true,
+							"Link": null,
+							"Id": "34f0ec6f-8eac-ea11-8110-005056ac71e1",
+							"Name": "FI7647300010355781"
+						},
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": null,
+							"AllowedBalance": null,
+							"Balance": null,
+							"Description": null,
+							"LastUpdated": null,
+							"IsMain": false,
+							"Link": null,
+							"Id": "87195a45-9938-eb11-817e-005056bbf149",
+							"Name": "FI0383183710016878"
+						}
+					],
+					"BuyerBankAccountId": "03739f96-66f6-ea11-810e-005056ac5877",
+					"BankAccount": {
+						"Operator": {
+							"Id": "446337be-e332-e611-80fd-005056ac2752",
+							"Name": "Osuuspankki (OKOYFIHH)"
+						},
+						"Limit": 0,
+						"AllowedBalance": null,
+						"Balance": -103.68,
+						"Description": null,
+						"LastUpdated": "2020-11-05T00:00:00+02:00",
+						"IsMain": false,
+						"Link": null,
+						"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+						"Name": "FI6850000120350201"
+					},
+					"InvoiceStatus": {
+						"Value": 100000000,
+						"Label": "Not paid"
+					},
+					"PaymentDate": null,
+					"InvoiceDate": "2020-11-19T00:00:00+02:00",
+					"AccountingDate": "2020-11-19T00:00:00+02:00",
+					"Comment": null,
+					"RejectComment": null,
+					"AllowedPay": false,
+					"AllowedEdit": true,
+					"Link": "/main.aspx?etn=invoice&id=de915153-c533-eb11-817e-005056bbf149&pagetype=entityrecord",
+					"Validation": [
+						{
+							"EntityId": "de915153-c533-eb11-817e-005056bbf149",
+							"ResponseCode": 3,
+							"Message": "Not all required fields (Operator, Bank ID) are filled in the Payer Bank Account",
+							"MessageCode": 101
+						}
+					],
+					"Id": "de915153-c533-eb11-817e-005056bbf149",
+					"Name": "145100"
+				},
+				{
+					"Payer": {
+						"Id": "a98ee91c-e3ea-e711-8105-005056ac5819",
+						"Name": "As Oy Demotalo"
+					},
+					"Seller": "Pohjanmaan Siivous Oy",
+					"DueDate": "2020-11-29T00:00:00+02:00",
+					"Amount": 200,
+					"InvoiceNumber": "23788",
+					"BankAccounts": [
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": 87.49,
+							"Balance": 87.49,
+							"Description": "second",
+							"LastUpdated": "2020-11-09T18:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "62ed235d-66f6-ea11-810e-005056ac5877",
+							"Name": "FI0383183710016878"
+						},
+						{
+							"Operator": {
+								"Id": "446337be-e332-e611-80fd-005056ac2752",
+								"Name": "Osuuspankki (OKOYFIHH)"
+							},
+							"Limit": 0,
+							"AllowedBalance": null,
+							"Balance": -103.68,
+							"Description": null,
+							"LastUpdated": "2020-11-05T00:00:00+02:00",
+							"IsMain": false,
+							"Link": null,
+							"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+							"Name": "FI6850000120350201"
+						},
+						{
+							"Operator": {
+								"Id": "e82f8838-1a4f-e611-80ff-005056ac5819",
+								"Name": "POP Pankki (POPFFI22)"
+							},
+							"Limit": null,
+							"AllowedBalance": 136.02,
+							"Balance": 136.02,
+							"Description": "Discription",
+							"LastUpdated": "2020-11-23T03:35:00+02:00",
+							"IsMain": true,
+							"Link": null,
+							"Id": "34f0ec6f-8eac-ea11-8110-005056ac71e1",
+							"Name": "FI7647300010355781"
+						},
+						{
+							"Operator": {
+								"Id": "386337be-e332-e611-80fd-005056ac2752",
+								"Name": "Danske Bank (DABAFIHH)"
+							},
+							"Limit": null,
+							"AllowedBalance": null,
+							"Balance": null,
+							"Description": null,
+							"LastUpdated": null,
+							"IsMain": false,
+							"Link": null,
+							"Id": "87195a45-9938-eb11-817e-005056bbf149",
+							"Name": "FI0383183710016878"
+						}
+					],
+					"BuyerBankAccountId": "03739f96-66f6-ea11-810e-005056ac5877",
+					"BankAccount": {
+						"Operator": {
+							"Id": "446337be-e332-e611-80fd-005056ac2752",
+							"Name": "Osuuspankki (OKOYFIHH)"
+						},
+						"Limit": 0,
+						"AllowedBalance": null,
+						"Balance": -103.68,
+						"Description": null,
+						"LastUpdated": "2020-11-05T00:00:00+02:00",
+						"IsMain": false,
+						"Link": null,
+						"Id": "03739f96-66f6-ea11-810e-005056ac5877",
+						"Name": "FI6850000120350201"
+					},
+					"InvoiceStatus": {
+						"Value": 100000000,
+						"Label": "Not paid"
+					},
+					"PaymentDate": null,
+					"InvoiceDate": "2020-11-15T00:00:00+02:00",
+					"AccountingDate": "2020-11-15T00:00:00+02:00",
+					"Comment": null,
+					"RejectComment": null,
+					"AllowedPay": false,
+					"AllowedEdit": true,
+					"Link": "/main.aspx?etn=invoice&id=e4915153-c533-eb11-817e-005056bbf149&pagetype=entityrecord",
+					"Validation": [
+						{
+							"EntityId": "e4915153-c533-eb11-817e-005056bbf149",
+							"ResponseCode": 3,
+							"Message": "Not all required fields (Operator, Bank ID) are filled in the Payer Bank Account",
+							"MessageCode": 101
+						}
+					],
+					"Id": "e4915153-c533-eb11-817e-005056bbf149",
+					"Name": "23788"
+				}
+			]
 		};
-		switch (substitutorId) {
-			case "5adb6708-fe11-e611-80c6-000d3a23a1dc":
-				result.PurchaseInvoices = fakeData.PurchaseInvoices.PurchaseInvoices;
-				return result;
 
-			case "19c0f96c-5533-e911-810f-005056ac126a":
-				result.PurchaseInvoices = fakeData.PurchaseInvoices.PurchaseInvoices;
-				return result;
-
-			case "d9977306-9280-e611-8103-005056ac5819":
-			case "19c83fec-7f33-e611-8100-005056ac126a":
-				result.PurchaseInvoices = fakeData.PurchaseInvoices.PurchaseInvoices;
-				return result;
-
-			default:
-				result.PurchaseInvoices = fakeData.PurchaseInvoices.PurchaseInvoices;
-				return result;
-		}
+		return result
 	}
 
 	getPurchaseInvoices = (substitutorId) => {

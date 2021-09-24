@@ -29,6 +29,7 @@ const ReportInvoiceTableHead: React.FC<ReportInvoiceTableHeadProps> = ({
           orderBy={orderBy}
           label={t('#table.reportinvoice.cell.seller')}
           onClick={() => handleChangeSortParams('Seller', 'string')}
+          style={{ width: '28%' }}
         />
         <SortedTableCell 
           id="InvoiceNumber"
@@ -36,6 +37,7 @@ const ReportInvoiceTableHead: React.FC<ReportInvoiceTableHeadProps> = ({
           orderBy={orderBy}
           label={t('#table.reportinvoice.cell.invoicenumber')}
           onClick={() => handleChangeSortParams('InvoiceNumber', 'number')}
+          style={{ width: '15%' }}
         />
         <SortedTableCell 
           id="AccountingDate"
@@ -43,6 +45,7 @@ const ReportInvoiceTableHead: React.FC<ReportInvoiceTableHeadProps> = ({
           orderBy={orderBy}
           label={t('#table.reportinvoice.cell.accountingdate')}
           onClick={() => handleChangeSortParams('AccountingDate', 'date')}
+          style={{ width: '11%' }}
         />
         <SortedTableCell 
           id="DueDate"
@@ -50,6 +53,7 @@ const ReportInvoiceTableHead: React.FC<ReportInvoiceTableHeadProps> = ({
           orderBy={orderBy}
           label={t('#table.reportinvoice.cell.duedate')}
           onClick={() => handleChangeSortParams('DueDate', 'date')}
+          style={{ width: '11%' }}
         />
         <SortedTableCell 
           id="PaymentDate"
@@ -57,6 +61,7 @@ const ReportInvoiceTableHead: React.FC<ReportInvoiceTableHeadProps> = ({
           orderBy={orderBy}
           label={t('#table.reportinvoice.cell.paymentdate')}
           onClick={() => handleChangeSortParams('PaymentDate', 'date')}
+          style={{ width: '11%' }}
         />
         <SortedTableCell 
           id="Amount"
@@ -64,6 +69,7 @@ const ReportInvoiceTableHead: React.FC<ReportInvoiceTableHeadProps> = ({
           orderBy={orderBy}
           label={t('#table.reportinvoice.cell.totalamount')}
           onClick={() => handleChangeSortParams('Amount', 'number')}
+          style={{ width: '14%' }}
         />
         <td></td>
       </tr>

@@ -4,7 +4,7 @@ import { SortArrows, SortArrowDesc } from 'components/Icons';
 import clsx from 'clsx';
 import { useStyles } from "./style";
 
-interface SortedTableCellProps {
+interface SortedTableCellProps extends React.HTMLProps<HTMLTableCellElement> {
   orderBy: string;
   order: 'asc' | 'desc';
   id: string;
@@ -17,12 +17,13 @@ const SortedTableCell: React.FC<SortedTableCellProps> = ({
   order,
   id,
   label,
-  onClick
+  onClick,
+  ...rest
 }) => {
   const classes = useStyles();
 
   return (
-    <td className={classes.td}>
+    <td className={classes.td} {...rest}>
       <span className={classes.label} onClick={onClick}>
         {label}
         <IconButton className={classes.sortIconBtn}>

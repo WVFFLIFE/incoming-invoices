@@ -543,8 +543,9 @@ export const getFilteredPayments = createDeepEqualSelector(
 
 const defaultSortingSelector = (state) => state.payments.defaultSorting;
 const defaultSortedInvoices = createDeepEqualSelector(
-  getFilteredPaymentsByCooperatives,
+  getFilteredPayments,
   (invoices) => {
+    console.log(invoices, "INVOICES DEFAULT SORTED");
     let rejectedWithComment = [], 
       rejected = [],
       withComment = [],
@@ -552,14 +553,14 @@ const defaultSortedInvoices = createDeepEqualSelector(
 
     for (let invoice of invoices) {
       if (
-        invoice.InvoiceStatus?.Value === 752560001 &&
+        isRejectedInvoice(invoice) &&
         invoice.Comment
       ) {
         rejectedWithComment.push(invoice);
         continue;
       }
 
-      if (invoice.InvoiceStatus?.Value === 752560001) {
+      if (isRejectedInvoice(invoice)) {
         rejected.push(invoice);
         continue;
       }
@@ -570,7 +571,9 @@ const defaultSortedInvoices = createDeepEqualSelector(
       }
       
       others.push(invoice);
-    }
+    };
+
+    console.log(rejectedWithComment, rejected, withComment, others);
 
     return _.concat(
       _.orderBy(

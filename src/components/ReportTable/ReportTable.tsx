@@ -66,6 +66,8 @@ const ReportTable: React.FC<ReportTableProps> = ({
     )
   }, [sortParams, bankAccounts]);
 
+  const hasMainBankAccount = bankAccounts.some(bankAccount => bankAccount.IsMain);
+
   return (
     <StyledTable>
       <ReportTableHead 
@@ -77,12 +79,14 @@ const ReportTable: React.FC<ReportTableProps> = ({
       />
       <tbody>
       {
-        sortedBankAccounts.map(bankAccount => {
+        sortedBankAccounts.map((bankAccount, idx) => {
+          const exp = (!hasMainBankAccount && idx === 0) || expandedAll;
+
           return (
             <ReportTableRow 
               key={bankAccount.Id}
               bankAccount={bankAccount}
-              expanded={expandedAll}
+              expanded={exp}
               searchTerm={searchTerm}
             />
           )
