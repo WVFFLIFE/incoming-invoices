@@ -573,8 +573,6 @@ const defaultSortedInvoices = createDeepEqualSelector(
       others.push(invoice);
     };
 
-    console.log(rejectedWithComment, rejected, withComment, others);
-
     return _.concat(
       _.orderBy(
         rejectedWithComment,
