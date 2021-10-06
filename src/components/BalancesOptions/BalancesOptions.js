@@ -1,7 +1,10 @@
 import { useState } from 'react';
-import {
-  Button
-} from '@material-ui/core';
+import { useTranslation } from 'react-i18next';
+
+import find from 'lodash/find';
+import toLower from 'lodash/toLower';
+import { formatNum } from 'helpers';
+
 import { List } from 'react-virtualized';
 import { ResizableBox } from 'react-resizable';
 import { CancelButton, ApplyButton } from 'components/StyledComponents';
@@ -9,16 +12,13 @@ import { BalanceIcon, ContractIcon } from 'components/Icons';
 import FiltersBar from 'components/FiltersBar';
 import Checkbox from 'components/Checkbox';
 import DropdownSearch from 'components/DropdownSearch';
+
 import clsx from 'clsx';
-import find from 'lodash/find';
-import toLower from 'lodash/toLower';
-import { useTranslation } from 'react-i18next';
-import { formatNum } from 'helpers';
 import { useStyles } from './style';
 
 const filtersList = [
   { id: 'inadequateBalance', label: '#filter.inadequatebalance' },
-  { id: 'all', label: '#filter.all' }
+  { id: 'all', label: '#filter.all' },
 ];
 
 const filterAll = el => el;

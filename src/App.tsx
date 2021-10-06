@@ -17,8 +17,6 @@ function App() {
 
   useEffect(() => {
     document.title = t("#page.title");
-    
-    /* eslint-disable-next-line */
   }, []);
 
   const handleTabChange = useCallback((e, newVal) => {

@@ -292,28 +292,20 @@ const filterByPaymentDate = (invoice, { start, end }) => {
   }
 
   return true;
-} 
+}
 
 function getPaymentsFilterFn(filter) {
   switch (filter) {
     case 'all':
       return () => true
     case 'urgent':
-      return (el) => {
-        return isUrgentDate(new Date(), new Date(el.DueDate))
-      }
+      return (el) => isUrgentDate(new Date(), new Date(el.DueDate));
     case 'upToTomorrow':
-      return el => {
-        return isTomorrow(new Date(el.DueDate)) || isAfter(new Date(), new Date(el.DueDate))
-      }
+      return (el) => isTomorrow(new Date(el.DueDate)) || isAfter(new Date(), new Date(el.DueDate));
     case 'endOfMonth':
-      return el => {
-        return isBefore(new Date(el.DueDate), endOfMonth(new Date()));
-      }
+      return el => isBefore(new Date(el.DueDate), endOfMonth(endOfDay(new Date())));
     case 'endOfWeek':
-      return el => {
-        return isBefore(new Date(el.DueDate), endOfWeek(new Date()))
-      }
+      return el => isBefore(new Date(el.DueDate), endOfWeek(endOfDay(new Date()), { weekStartsOn: 1 }));
     default:
       return filterAll
   }
@@ -465,7 +457,7 @@ export const getPaymentError = createSelector(
           }
           return acc;
         }, {});
-        
+
         return _.some(accounts, account => account.Amount > account.Balance)
       }
     }
@@ -546,7 +538,7 @@ const defaultSortedInvoices = createDeepEqualSelector(
   getFilteredPayments,
   (invoices) => {
     console.log(invoices, "INVOICES DEFAULT SORTED");
-    let rejectedWithComment = [], 
+    let rejectedWithComment = [],
       rejected = [],
       withComment = [],
       others = [];
@@ -569,7 +561,7 @@ const defaultSortedInvoices = createDeepEqualSelector(
         withComment.push(invoice);
         continue;
       }
-      
+
       others.push(invoice);
     };
 
@@ -728,26 +720,15 @@ const getCustomPaidInvoicesFilter = createDeepEqualSelector(
       }
 
       if (customFilters.accountingDate.start) {
-        if (
-          paidInvoice.InvoiceStatus?.Value === 100000001 ||
-          paidInvoice?.InvoiceStatus?.Value === 100000003
-        ) {
-          res.push(
-            filterByAccountingDate(paidInvoice, customFilters.accountingDate)
-          )
-        }
-        
+        res.push(
+          filterByAccountingDate(paidInvoice, customFilters.accountingDate)
+        )
       }
 
       if (customFilters.paymentDate.start) {
-        if (
-          paidInvoice?.InvoiceStatus?.Value === 100000001 ||
-          paidInvoice?.InvoiceStatus?.Value === 100000003
-        ) {
-          res.push(
-            filterByPaymentDate(paidInvoice, customFilters.paymentDate)
-          )
-        }
+        res.push(
+          filterByPaymentDate(paidInvoice, customFilters.paymentDate)
+        )
       }
 
       return res.length === 0 ? true : res.some(o => o === true)
@@ -763,7 +744,7 @@ const getFilteredPaidInvoices = createDeepEqualSelector(
     const filterFn = getPaidInvoicesFilterFn(filter);
 
     return paidInvoices.filter(paidInvoice => (
-      filterFn(paidInvoice) && 
+      filterFn(paidInvoice) &&
       filterByPaymentSearchTerm(paymentSearchConfig, paidInvoice, searchTerm)
     ));
   }
