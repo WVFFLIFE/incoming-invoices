@@ -214,7 +214,7 @@ export const toDateResponse = date => {
   const month = String(getMonth(date) + 1).padStart(2, '0');
   const year = getYear(date);
 
-  return `${year}-${month}-${day}T00:00:00Z`;
+  return `${year}-${month}-${day}T00:00:00`;
 }
 
 export const formatNum = (num) => {
